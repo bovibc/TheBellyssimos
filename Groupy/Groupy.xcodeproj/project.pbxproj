@@ -15,7 +15,31 @@
 		0838F9912A49B18C00897044 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0838F9902A49B18C00897044 /* Assets.xcassets */; };
 		0838F9942A49B18C00897044 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0838F9922A49B18C00897044 /* LaunchScreen.storyboard */; };
 		08D7B47A2A49B96900712E7A /* CriteriaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08D7B4792A49B96900712E7A /* CriteriaViewController.swift */; };
-		08D7B47C2A49B97600712E7A /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08D7B47B2A49B97600712E7A /* ProfileViewController.swift */; };
+		5733FF0E2A4EF40A004D6C85 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5733FF0D2A4EF40A004D6C85 /* OnboardingViewController.swift */; };
+		5733FF122A4EF4AD004D6C85 /* CriteriaDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5733FF112A4EF4AD004D6C85 /* CriteriaDetailsViewController.swift */; };
+		5733FF142A4EF5ED004D6C85 /* LoginFlow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5733FF132A4EF5ED004D6C85 /* LoginFlow.storyboard */; };
+		5733FF162A4EF5FB004D6C85 /* StudentFlow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5733FF152A4EF5FB004D6C85 /* StudentFlow.storyboard */; };
+		5733FF182A4EF614004D6C85 /* EducatorFlow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5733FF172A4EF614004D6C85 /* EducatorFlow.storyboard */; };
+		5733FF1E2A4EF85F004D6C85 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5733FF1D2A4EF85F004D6C85 /* ProfileViewController.swift */; };
+		5733FF202A4EFA00004D6C85 /* CreateClassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5733FF1F2A4EFA00004D6C85 /* CreateClassViewController.swift */; };
+		5733FF222A4EFA23004D6C85 /* ShareCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5733FF212A4EFA23004D6C85 /* ShareCodeViewController.swift */; };
+		5733FF262A4EFCFE004D6C85 /* ShareCodeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5733FF252A4EFCFE004D6C85 /* ShareCodeDetailViewController.swift */; };
+		57E3D9DD2A4EFDFF0081F8F5 /* CreateProjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E3D9DC2A4EFDFF0081F8F5 /* CreateProjectViewController.swift */; };
+		57E3D9DF2A4EFE160081F8F5 /* CriteriaCustomizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E3D9DE2A4EFE160081F8F5 /* CriteriaCustomizationViewController.swift */; };
+		57E3D9E12A4EFE3F0081F8F5 /* CriteriaHelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E3D9E02A4EFE3F0081F8F5 /* CriteriaHelpViewController.swift */; };
+		57E3D9E52A4EFF8A0081F8F5 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E3D9E42A4EFF8A0081F8F5 /* LoginViewController.swift */; };
+		57E3D9E72A4EFF9A0081F8F5 /* ChooseAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E3D9E62A4EFF9A0081F8F5 /* ChooseAccountViewController.swift */; };
+		57E3D9EB2A4F07870081F8F5 /* CreateStudentPersonalityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E3D9EA2A4F07870081F8F5 /* CreateStudentPersonalityViewController.swift */; };
+		57E3D9ED2A4F08E70081F8F5 /* CreateEducatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E3D9EC2A4F08E70081F8F5 /* CreateEducatorViewController.swift */; };
+		57E3D9EF2A4F0FB10081F8F5 /* EducatorJoinClassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E3D9EE2A4F0FB10081F8F5 /* EducatorJoinClassViewController.swift */; };
+		57E3D9F12A4F0FFA0081F8F5 /* EducatorProjectStatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E3D9F02A4F0FFA0081F8F5 /* EducatorProjectStatusViewController.swift */; };
+		57E3D9F32A4F10510081F8F5 /* EducatorClassStatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E3D9F22A4F10510081F8F5 /* EducatorClassStatusViewController.swift */; };
+		57E3D9F52A4F10780081F8F5 /* StudentProjectStatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E3D9F42A4F10780081F8F5 /* StudentProjectStatusViewController.swift */; };
+		57E3D9F72A4F10890081F8F5 /* StudentJoinClassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E3D9F62A4F10880081F8F5 /* StudentJoinClassViewController.swift */; };
+		57E3D9F92A4F109F0081F8F5 /* StudentClassStatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E3D9F82A4F109F0081F8F5 /* StudentClassStatusViewController.swift */; };
+		57E3DA032A4F151E0081F8F5 /* GiveFeedbackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E3DA022A4F151E0081F8F5 /* GiveFeedbackViewController.swift */; };
+		57E3DA052A4F15320081F8F5 /* ReadFeedbackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E3DA042A4F15320081F8F5 /* ReadFeedbackViewController.swift */; };
+		57E3DA072A4F1ECD0081F8F5 /* CreateStudentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E3DA062A4F1ECD0081F8F5 /* CreateStudentViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,7 +53,31 @@
 		0838F9932A49B18C00897044 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0838F9952A49B18C00897044 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		08D7B4792A49B96900712E7A /* CriteriaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CriteriaViewController.swift; sourceTree = "<group>"; };
-		08D7B47B2A49B97600712E7A /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		5733FF0D2A4EF40A004D6C85 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		5733FF112A4EF4AD004D6C85 /* CriteriaDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CriteriaDetailsViewController.swift; sourceTree = "<group>"; };
+		5733FF132A4EF5ED004D6C85 /* LoginFlow.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginFlow.storyboard; sourceTree = "<group>"; };
+		5733FF152A4EF5FB004D6C85 /* StudentFlow.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StudentFlow.storyboard; sourceTree = "<group>"; };
+		5733FF172A4EF614004D6C85 /* EducatorFlow.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EducatorFlow.storyboard; sourceTree = "<group>"; };
+		5733FF1D2A4EF85F004D6C85 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		5733FF1F2A4EFA00004D6C85 /* CreateClassViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateClassViewController.swift; sourceTree = "<group>"; };
+		5733FF212A4EFA23004D6C85 /* ShareCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareCodeViewController.swift; sourceTree = "<group>"; };
+		5733FF252A4EFCFE004D6C85 /* ShareCodeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareCodeDetailViewController.swift; sourceTree = "<group>"; };
+		57E3D9DC2A4EFDFF0081F8F5 /* CreateProjectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateProjectViewController.swift; sourceTree = "<group>"; };
+		57E3D9DE2A4EFE160081F8F5 /* CriteriaCustomizationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CriteriaCustomizationViewController.swift; sourceTree = "<group>"; };
+		57E3D9E02A4EFE3F0081F8F5 /* CriteriaHelpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CriteriaHelpViewController.swift; sourceTree = "<group>"; };
+		57E3D9E42A4EFF8A0081F8F5 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		57E3D9E62A4EFF9A0081F8F5 /* ChooseAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseAccountViewController.swift; sourceTree = "<group>"; };
+		57E3D9EA2A4F07870081F8F5 /* CreateStudentPersonalityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateStudentPersonalityViewController.swift; sourceTree = "<group>"; };
+		57E3D9EC2A4F08E70081F8F5 /* CreateEducatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateEducatorViewController.swift; sourceTree = "<group>"; };
+		57E3D9EE2A4F0FB10081F8F5 /* EducatorJoinClassViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EducatorJoinClassViewController.swift; sourceTree = "<group>"; };
+		57E3D9F02A4F0FFA0081F8F5 /* EducatorProjectStatusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EducatorProjectStatusViewController.swift; sourceTree = "<group>"; };
+		57E3D9F22A4F10510081F8F5 /* EducatorClassStatusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EducatorClassStatusViewController.swift; sourceTree = "<group>"; };
+		57E3D9F42A4F10780081F8F5 /* StudentProjectStatusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentProjectStatusViewController.swift; sourceTree = "<group>"; };
+		57E3D9F62A4F10880081F8F5 /* StudentJoinClassViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentJoinClassViewController.swift; sourceTree = "<group>"; };
+		57E3D9F82A4F109F0081F8F5 /* StudentClassStatusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentClassStatusViewController.swift; sourceTree = "<group>"; };
+		57E3DA022A4F151E0081F8F5 /* GiveFeedbackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiveFeedbackViewController.swift; sourceTree = "<group>"; };
+		57E3DA042A4F15320081F8F5 /* ReadFeedbackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadFeedbackViewController.swift; sourceTree = "<group>"; };
+		57E3DA062A4F1ECD0081F8F5 /* CreateStudentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateStudentViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,10 +110,13 @@
 		0838F9832A49B18B00897044 /* Groupy */ = {
 			isa = PBXGroup;
 			children = (
-				08D7B4782A49B91B00712E7A /* Principal Screns */,
+				5733FF192A4EF65D004D6C85 /* Main */,
+				08D7B4782A49B91B00712E7A /* Delegates */,
 				0838F9842A49B18B00897044 /* AppDelegate.swift */,
 				0838F9862A49B18B00897044 /* SceneDelegate.swift */,
-				0838F98A2A49B18B00897044 /* Main.storyboard */,
+				5733FF1C2A4EF6E9004D6C85 /* StudentFlow */,
+				5733FF1B2A4EF6DF004D6C85 /* EducatorFlow */,
+				5733FF1A2A4EF6C1004D6C85 /* LoginFlow */,
 				0838F9902A49B18C00897044 /* Assets.xcassets */,
 				0838F9922A49B18C00897044 /* LaunchScreen.storyboard */,
 				0838F9952A49B18C00897044 /* Info.plist */,
@@ -74,14 +125,67 @@
 			path = Groupy;
 			sourceTree = "<group>";
 		};
-		08D7B4782A49B91B00712E7A /* Principal Screns */ = {
+		08D7B4782A49B91B00712E7A /* Delegates */ = {
 			isa = PBXGroup;
 			children = (
+			);
+			path = Delegates;
+			sourceTree = "<group>";
+		};
+		5733FF192A4EF65D004D6C85 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				0838F98A2A49B18B00897044 /* Main.storyboard */,
 				0838F9882A49B18B00897044 /* MyClassesViewController.swift */,
 				08D7B4792A49B96900712E7A /* CriteriaViewController.swift */,
-				08D7B47B2A49B97600712E7A /* ProfileViewController.swift */,
+				5733FF1D2A4EF85F004D6C85 /* ProfileViewController.swift */,
+				5733FF112A4EF4AD004D6C85 /* CriteriaDetailsViewController.swift */,
+				5733FF0D2A4EF40A004D6C85 /* OnboardingViewController.swift */,
 			);
-			path = "Principal Screns";
+			path = Main;
+			sourceTree = "<group>";
+		};
+		5733FF1A2A4EF6C1004D6C85 /* LoginFlow */ = {
+			isa = PBXGroup;
+			children = (
+				5733FF132A4EF5ED004D6C85 /* LoginFlow.storyboard */,
+				57E3D9E42A4EFF8A0081F8F5 /* LoginViewController.swift */,
+				57E3D9E62A4EFF9A0081F8F5 /* ChooseAccountViewController.swift */,
+				57E3D9EC2A4F08E70081F8F5 /* CreateEducatorViewController.swift */,
+				57E3DA062A4F1ECD0081F8F5 /* CreateStudentViewController.swift */,
+				57E3D9EA2A4F07870081F8F5 /* CreateStudentPersonalityViewController.swift */,
+			);
+			path = LoginFlow;
+			sourceTree = "<group>";
+		};
+		5733FF1B2A4EF6DF004D6C85 /* EducatorFlow */ = {
+			isa = PBXGroup;
+			children = (
+				5733FF172A4EF614004D6C85 /* EducatorFlow.storyboard */,
+				5733FF1F2A4EFA00004D6C85 /* CreateClassViewController.swift */,
+				57E3D9F22A4F10510081F8F5 /* EducatorClassStatusViewController.swift */,
+				57E3D9EE2A4F0FB10081F8F5 /* EducatorJoinClassViewController.swift */,
+				5733FF212A4EFA23004D6C85 /* ShareCodeViewController.swift */,
+				5733FF252A4EFCFE004D6C85 /* ShareCodeDetailViewController.swift */,
+				57E3D9F02A4F0FFA0081F8F5 /* EducatorProjectStatusViewController.swift */,
+				57E3D9DC2A4EFDFF0081F8F5 /* CreateProjectViewController.swift */,
+				57E3D9DE2A4EFE160081F8F5 /* CriteriaCustomizationViewController.swift */,
+				57E3D9E02A4EFE3F0081F8F5 /* CriteriaHelpViewController.swift */,
+			);
+			path = EducatorFlow;
+			sourceTree = "<group>";
+		};
+		5733FF1C2A4EF6E9004D6C85 /* StudentFlow */ = {
+			isa = PBXGroup;
+			children = (
+				5733FF152A4EF5FB004D6C85 /* StudentFlow.storyboard */,
+				57E3D9F82A4F109F0081F8F5 /* StudentClassStatusViewController.swift */,
+				57E3D9F62A4F10880081F8F5 /* StudentJoinClassViewController.swift */,
+				57E3D9F42A4F10780081F8F5 /* StudentProjectStatusViewController.swift */,
+				57E3DA042A4F15320081F8F5 /* ReadFeedbackViewController.swift */,
+				57E3DA022A4F151E0081F8F5 /* GiveFeedbackViewController.swift */,
+			);
+			path = StudentFlow;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -142,9 +246,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5733FF142A4EF5ED004D6C85 /* LoginFlow.storyboard in Resources */,
+				5733FF162A4EF5FB004D6C85 /* StudentFlow.storyboard in Resources */,
 				0838F9942A49B18C00897044 /* LaunchScreen.storyboard in Resources */,
 				0838F9912A49B18C00897044 /* Assets.xcassets in Resources */,
 				0838F98C2A49B18B00897044 /* Main.storyboard in Resources */,
+				5733FF182A4EF614004D6C85 /* EducatorFlow.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -155,12 +262,33 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				08D7B47C2A49B97600712E7A /* ProfileViewController.swift in Sources */,
 				0838F9892A49B18B00897044 /* MyClassesViewController.swift in Sources */,
+				57E3DA072A4F1ECD0081F8F5 /* CreateStudentViewController.swift in Sources */,
 				0838F98F2A49B18B00897044 /* Groupy.xcdatamodeld in Sources */,
+				5733FF262A4EFCFE004D6C85 /* ShareCodeDetailViewController.swift in Sources */,
 				08D7B47A2A49B96900712E7A /* CriteriaViewController.swift in Sources */,
+				57E3DA052A4F15320081F8F5 /* ReadFeedbackViewController.swift in Sources */,
+				57E3D9F32A4F10510081F8F5 /* EducatorClassStatusViewController.swift in Sources */,
+				57E3D9F92A4F109F0081F8F5 /* StudentClassStatusViewController.swift in Sources */,
+				5733FF0E2A4EF40A004D6C85 /* OnboardingViewController.swift in Sources */,
 				0838F9852A49B18B00897044 /* AppDelegate.swift in Sources */,
+				5733FF122A4EF4AD004D6C85 /* CriteriaDetailsViewController.swift in Sources */,
+				5733FF1E2A4EF85F004D6C85 /* ProfileViewController.swift in Sources */,
 				0838F9872A49B18B00897044 /* SceneDelegate.swift in Sources */,
+				5733FF202A4EFA00004D6C85 /* CreateClassViewController.swift in Sources */,
+				57E3D9F72A4F10890081F8F5 /* StudentJoinClassViewController.swift in Sources */,
+				57E3D9ED2A4F08E70081F8F5 /* CreateEducatorViewController.swift in Sources */,
+				57E3D9F52A4F10780081F8F5 /* StudentProjectStatusViewController.swift in Sources */,
+				57E3D9E12A4EFE3F0081F8F5 /* CriteriaHelpViewController.swift in Sources */,
+				57E3D9EF2A4F0FB10081F8F5 /* EducatorJoinClassViewController.swift in Sources */,
+				57E3D9DD2A4EFDFF0081F8F5 /* CreateProjectViewController.swift in Sources */,
+				57E3DA032A4F151E0081F8F5 /* GiveFeedbackViewController.swift in Sources */,
+				57E3D9E52A4EFF8A0081F8F5 /* LoginViewController.swift in Sources */,
+				57E3D9E72A4EFF9A0081F8F5 /* ChooseAccountViewController.swift in Sources */,
+				5733FF222A4EFA23004D6C85 /* ShareCodeViewController.swift in Sources */,
+				57E3D9F12A4F0FFA0081F8F5 /* EducatorProjectStatusViewController.swift in Sources */,
+				57E3D9DF2A4EFE160081F8F5 /* CriteriaCustomizationViewController.swift in Sources */,
+				57E3D9EB2A4F07870081F8F5 /* CreateStudentPersonalityViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

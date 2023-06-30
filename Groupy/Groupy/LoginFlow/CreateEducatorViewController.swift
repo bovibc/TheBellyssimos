@@ -1,13 +1,13 @@
 //
-//  ProfileViewController.swift
+//  CreateEducatorViewController.swift
 //  Groupy
 //
-//  Created by Clissia Bozzer Bovi on 26/06/23.
+//  Created by Luan Fazolin on 30/06/23.
 //
 
 import UIKit
 
-class ProfileViewController: UIViewController {
+class CreateEducatorViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

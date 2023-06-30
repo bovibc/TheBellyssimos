@@ -8,22 +8,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Profile-->
-        <scene sceneID="cyB-5b-lLG">
-            <objects>
-                <viewController id="mW5-oK-erd" customClass="ProfileViewController" customModule="Groupy" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Tah-Rc-ih4">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="ybx-Kn-cMK"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Profile" image="person" catalog="system" selectedImage="person.fill" id="rXU-0v-yQL"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ldL-tC-650" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-512" y="582"/>
-        </scene>
         <!--Criteria-->
         <scene sceneID="fAC-GO-WhZ">
             <objects>
@@ -39,6 +23,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gbw-SA-nYa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1321" y="582"/>
+        </scene>
+        <!--Profile-->
+        <scene sceneID="tay-qJ-a4d">
+            <objects>
+                <viewController id="VfM-BH-APk" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kex-Hv-LX6">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="viz-hX-vNW"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Profile" image="person" catalog="system" selectedImage="person.fill" id="fnq-p5-GgC"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hfS-0b-SSD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-511" y="582"/>
         </scene>
         <!--My Classes-->
         <scene sceneID="n89-T2-5sI">
@@ -56,6 +56,21 @@
             </objects>
             <point key="canvasLocation" x="-2082" y="582"/>
         </scene>
+        <!--Onboarding View Controller-->
+        <scene sceneID="Drf-s9-e6y">
+            <objects>
+                <viewController id="hU5-HA-9lh" customClass="OnboardingViewController" customModule="Groupy" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="LdJ-zP-YrC">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="rIS-8P-Im7"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="40x-bO-hUk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2373" y="-395"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="tYD-HI-wjP">
             <objects>
@@ -68,12 +83,27 @@
                     <connections>
                         <segue destination="CTt-Ts-hw3" kind="relationship" relationship="viewControllers" id="tCs-bn-W9s"/>
                         <segue destination="ue9-O3-VlH" kind="relationship" relationship="viewControllers" id="irI-uC-67e"/>
-                        <segue destination="mW5-oK-erd" kind="relationship" relationship="viewControllers" id="qfD-5U-96x"/>
+                        <segue destination="VfM-BH-APk" kind="relationship" relationship="viewControllers" id="Dhi-dQ-S7n"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KFs-oE-GoM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1320" y="-395"/>
+        </scene>
+        <!--Criteria Details View Controller-->
+        <scene sceneID="Pqo-m2-tO5">
+            <objects>
+                <viewController id="KNu-n9-USD" customClass="CriteriaDetailsViewController" customModule="Groupy" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="lJQ-CG-rp8">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="dYb-mc-AoI"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Eok-sS-YXb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1291" y="1291"/>
         </scene>
     </scenes>
     <resources>
