@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hU5-HA-9lh">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Criteria View Controller-->
+        <!--Criteria-->
         <scene sceneID="fAC-GO-WhZ">
             <objects>
                 <viewController id="ue9-O3-VlH" customClass="CriteriaViewController" customModule="Groupy" customModuleProvider="target" sceneMemberID="viewController">
@@ -19,13 +19,13 @@
                         <viewLayoutGuide key="safeArea" id="fQ0-WI-qLA"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" id="c4H-9H-5b7"/>
+                    <navigationItem key="navigationItem" title="Criteria" id="c4H-9H-5b7"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gbw-SA-nYa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-396" y="1370"/>
         </scene>
-        <!--View Controller-->
+        <!--Profile-->
         <scene sceneID="tay-qJ-a4d">
             <objects>
                 <viewController id="VfM-BH-APk" sceneMemberID="viewController">
@@ -35,13 +35,13 @@
                         <viewLayoutGuide key="safeArea" id="viz-hX-vNW"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" id="QiV-6V-mgI"/>
+                    <navigationItem key="navigationItem" title="Profile" id="QiV-6V-mgI"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hfS-0b-SSD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="601" y="1370"/>
         </scene>
-        <!--My Classes View Controller-->
+        <!--My Classes-->
         <scene sceneID="n89-T2-5sI">
             <objects>
                 <viewController id="CTt-Ts-hw3" customClass="MyClassesViewController" customModule="Groupy" customModuleProvider="target" sceneMemberID="viewController">
@@ -51,7 +51,7 @@
                         <viewLayoutGuide key="safeArea" id="Bes-BK-aHh"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" id="oqE-aI-5Sa"/>
+                    <navigationItem key="navigationItem" title="My Classes" id="oqE-aI-5Sa"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wa7-TM-eF3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
