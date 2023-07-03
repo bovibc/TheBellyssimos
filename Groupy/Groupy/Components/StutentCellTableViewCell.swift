@@ -13,17 +13,16 @@ class StutentCellTableViewCell: UITableViewCell {
 
     @IBOutlet weak var Name: UILabel!
     @IBOutlet weak var picture: UIImageView!
-    
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        picture.layer.cornerRadius = picture.frame.size.width / 2
+        picture.clipsToBounds = true
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
     
 }
