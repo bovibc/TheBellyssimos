@@ -41,6 +41,8 @@
 		57E3DA032A4F151E0081F8F5 /* GiveFeedbackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E3DA022A4F151E0081F8F5 /* GiveFeedbackViewController.swift */; };
 		57E3DA052A4F15320081F8F5 /* ReadFeedbackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E3DA042A4F15320081F8F5 /* ReadFeedbackViewController.swift */; };
 		57E3DA072A4F1ECD0081F8F5 /* CreateStudentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E3DA062A4F1ECD0081F8F5 /* CreateStudentViewController.swift */; };
+		D32482CE2A530A3D003D25B3 /* StutentCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32482CC2A530A3D003D25B3 /* StutentCellTableViewCell.swift */; };
+		D32482CF2A530A3D003D25B3 /* StutentCellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D32482CD2A530A3D003D25B3 /* StutentCellTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,6 +82,8 @@
 		57E3DA022A4F151E0081F8F5 /* GiveFeedbackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiveFeedbackViewController.swift; sourceTree = "<group>"; };
 		57E3DA042A4F15320081F8F5 /* ReadFeedbackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadFeedbackViewController.swift; sourceTree = "<group>"; };
 		57E3DA062A4F1ECD0081F8F5 /* CreateStudentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateStudentViewController.swift; sourceTree = "<group>"; };
+		D32482CC2A530A3D003D25B3 /* StutentCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StutentCellTableViewCell.swift; sourceTree = "<group>"; };
+		D32482CD2A530A3D003D25B3 /* StutentCellTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StutentCellTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +123,7 @@
 				5733FF1C2A4EF6E9004D6C85 /* StudentFlow */,
 				5733FF1B2A4EF6DF004D6C85 /* EducatorFlow */,
 				5733FF1A2A4EF6C1004D6C85 /* LoginFlow */,
+				D32482CB2A5309FB003D25B3 /* Components */,
 				0838F9902A49B18C00897044 /* Assets.xcassets */,
 				0838F9922A49B18C00897044 /* LaunchScreen.storyboard */,
 				0838F9952A49B18C00897044 /* Info.plist */,
@@ -191,6 +196,15 @@
 			path = StudentFlow;
 			sourceTree = "<group>";
 		};
+		D32482CB2A5309FB003D25B3 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				D32482CC2A530A3D003D25B3 /* StutentCellTableViewCell.swift */,
+				D32482CD2A530A3D003D25B3 /* StutentCellTableViewCell.xib */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -249,6 +263,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D32482CF2A530A3D003D25B3 /* StutentCellTableViewCell.xib in Resources */,
 				5733FF142A4EF5ED004D6C85 /* LoginFlow.storyboard in Resources */,
 				5733FF162A4EF5FB004D6C85 /* StudentFlow.storyboard in Resources */,
 				0838F9942A49B18C00897044 /* LaunchScreen.storyboard in Resources */,
@@ -273,6 +288,7 @@
 				08D7B47A2A49B96900712E7A /* CriteriaViewController.swift in Sources */,
 				57E3DA052A4F15320081F8F5 /* ReadFeedbackViewController.swift in Sources */,
 				57E3D9F32A4F10510081F8F5 /* EducatorClassStatusViewController.swift in Sources */,
+				D32482CE2A530A3D003D25B3 /* StutentCellTableViewCell.swift in Sources */,
 				57E3D9F92A4F109F0081F8F5 /* StudentClassStatusViewController.swift in Sources */,
 				5733FF0E2A4EF40A004D6C85 /* OnboardingViewController.swift in Sources */,
 				0838F9852A49B18B00897044 /* AppDelegate.swift in Sources */,
