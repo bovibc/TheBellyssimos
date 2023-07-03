@@ -20,7 +20,6 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Criteria" image="book" catalog="system" selectedImage="book.fill" id="69P-aN-p4o"/>
-                    <navigationItem key="navigationItem" title="Criteria" id="c4H-9H-5b7"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gbw-SA-nYa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -37,7 +36,6 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Profile" image="person" catalog="system" selectedImage="person.fill" id="rn3-wo-4Nb"/>
-                    <navigationItem key="navigationItem" title="Profile" id="QiV-6V-mgI"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hfS-0b-SSD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -54,7 +52,6 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="My Classes" image="person.3" catalog="system" selectedImage="person.3.fill" id="x5d-ET-i69"/>
-                    <navigationItem key="navigationItem" title="My Classes" id="oqE-aI-5Sa"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wa7-TM-eF3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -231,7 +228,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iHp-fU-PeO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-425" y="-1121"/>
+            <point key="canvasLocation" x="-396" y="-1118"/>
         </scene>
         <!--Criteria Details View Controller-->
         <scene sceneID="Pqo-m2-tO5">

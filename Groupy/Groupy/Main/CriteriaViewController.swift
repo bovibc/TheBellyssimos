@@ -11,6 +11,6 @@ class CriteriaViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.parent?.title = "Criteria"
+        self.navigationController?.navigationBar.topItem?.title = "Criteria"
     }
 }

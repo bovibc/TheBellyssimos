@@ -25,7 +25,8 @@ class TabBarViewController: UITabBarController {
     private func showOnboarding() {
         let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let viewController = mainStoryboard.instantiateViewController(withIdentifier: "OnboardingViewController")
-        let navigationController = UINavigationController(rootViewController: viewController)
-        self.present(navigationController, animated: true, completion: nil)
+        viewController.modalTransitionStyle = .coverVertical
+        viewController.modalPresentationStyle = .pageSheet
+        navigationController?.showDetailViewController(viewController, sender: true)
     }
 }

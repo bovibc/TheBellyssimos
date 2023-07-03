@@ -11,6 +11,6 @@ class ProfileViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.parent?.title = "Profile"
+        self.navigationController?.navigationBar.topItem?.title = "Profile"
     }
 }

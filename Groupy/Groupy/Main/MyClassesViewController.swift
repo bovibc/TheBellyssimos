@@ -14,8 +14,8 @@ class MyClassesViewController: UIViewController {
     }
 
     private func configureItem() {
-        self.parent?.title = "My Classes"
-        self.navigationController?.navigationItem.leftBarButtonItem = UIBarButtonItem(
+        self.navigationController?.navigationBar.topItem?.title = "My Classes"
+        self.navigationController?.navigationBar.topItem?.rightBarButtonItem = UIBarButtonItem(
             barButtonSystemItem: .add,
             target: self,
             action: nil
