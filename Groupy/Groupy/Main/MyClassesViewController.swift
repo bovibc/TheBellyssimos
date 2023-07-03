@@ -8,11 +8,8 @@
 import UIKit
 
 class MyClassesViewController: UIViewController {
-
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        configureItem()
     }
 
     private func configureItem() {
@@ -22,6 +19,5 @@ class MyClassesViewController: UIViewController {
             action: nil
         )
     }
-
 }
 
