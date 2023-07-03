@@ -10,10 +10,12 @@ import UIKit
 class MyClassesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureItem()
     }
 
     private func configureItem() {
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(
+        self.parent?.title = "My Classes"
+        self.navigationController?.navigationItem.leftBarButtonItem = UIBarButtonItem(
             barButtonSystemItem: .add,
             target: self,
             action: nil
