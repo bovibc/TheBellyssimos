@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0801E4D52A5438660048526A /* MyClassesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0801E4D32A5438660048526A /* MyClassesCollectionViewCell.swift */; };
+		0801E4D62A5438660048526A /* MyClassesCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0801E4D42A5438660048526A /* MyClassesCollectionViewCell.xib */; };
 		0838F9852A49B18B00897044 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0838F9842A49B18B00897044 /* AppDelegate.swift */; };
 		0838F9872A49B18B00897044 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0838F9862A49B18B00897044 /* SceneDelegate.swift */; };
 		0838F9892A49B18B00897044 /* MyClassesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0838F9882A49B18B00897044 /* MyClassesViewController.swift */; };
@@ -59,6 +61,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0801E4D32A5438660048526A /* MyClassesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyClassesCollectionViewCell.swift; sourceTree = "<group>"; };
+		0801E4D42A5438660048526A /* MyClassesCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyClassesCollectionViewCell.xib; sourceTree = "<group>"; };
 		0838F9812A49B18B00897044 /* Groupy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Groupy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0838F9842A49B18B00897044 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0838F9862A49B18B00897044 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -248,6 +252,8 @@
 			children = (
 				D32482CC2A530A3D003D25B3 /* StutentCellTableViewCell.swift */,
 				D32482CD2A530A3D003D25B3 /* StutentCellTableViewCell.xib */,
+				0801E4D32A5438660048526A /* MyClassesCollectionViewCell.swift */,
+				0801E4D42A5438660048526A /* MyClassesCollectionViewCell.xib */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -313,6 +319,7 @@
 				D32482CF2A530A3D003D25B3 /* StutentCellTableViewCell.xib in Resources */,
 				5733FF142A4EF5ED004D6C85 /* LoginFlow.storyboard in Resources */,
 				5733FF162A4EF5FB004D6C85 /* StudentFlow.storyboard in Resources */,
+				0801E4D62A5438660048526A /* MyClassesCollectionViewCell.xib in Resources */,
 				0838F9942A49B18C00897044 /* LaunchScreen.storyboard in Resources */,
 				0838F9912A49B18C00897044 /* Assets.xcassets in Resources */,
 				0838F98C2A49B18B00897044 /* Main.storyboard in Resources */,
@@ -369,6 +376,7 @@
 				57E3D9F12A4F0FFA0081F8F5 /* EducatorProjectStatusViewController.swift in Sources */,
 				57E3D9DF2A4EFE160081F8F5 /* CriteriaCustomizationViewController.swift in Sources */,
 				57E3D9EB2A4F07870081F8F5 /* CreateStudentPersonalityViewController.swift in Sources */,
+				0801E4D52A5438660048526A /* MyClassesCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
