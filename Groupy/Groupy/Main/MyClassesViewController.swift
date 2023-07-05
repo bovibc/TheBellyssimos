@@ -13,13 +13,34 @@ class MyClassesViewController: UIViewController {
         configureItem()
     }
 
+    
     private func configureItem() {
         self.navigationController?.navigationBar.topItem?.title = "My Classes"
         self.navigationController?.navigationBar.topItem?.rightBarButtonItem = UIBarButtonItem(
-            barButtonSystemItem: .add,
-            target: self,
-            action: nil
-        )
-    }
+                systemItem: .add,
+                primaryAction: nil,
+                menu: createMenu()
+            )
+        }
+        
+        func createMenu() -> UIMenu {
+            var educatorStoryboard = UIStoryboard(name: "EducatorFlow", bundle: nil)
+            
+            
+            var menuItems: [UIAction] {
+                return [
+                    UIAction(title: "Join class", handler: { _ in
+                        let joinClassView = educatorStoryboard.instantiateViewController(withIdentifier: "EducatorJoinClass" )
+                        self.navigationController?.present(joinClassView, animated: true)
+                    }),
+                    UIAction(title: "Create class", handler: { _ in
+                        let createClassView = educatorStoryboard.instantiateViewController(withIdentifier: "CreateClass")
+                        self.navigationController?.present(createClassView, animated: true)
+                    }),
+                ]
+            }
+            
+            return UIMenu(title: "", image: nil, identifier: nil, options: [], children: menuItems)
+        }
 }
 
