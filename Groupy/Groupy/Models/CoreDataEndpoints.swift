@@ -13,7 +13,7 @@ class ExampleCoreData {
 
     // declarar contexto do CoreData no arquivo em que o endpoint vai ser usado
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-
+    
     // variavel que vai receber um array de Users e ser usada no componente
     var items:[User]?
 

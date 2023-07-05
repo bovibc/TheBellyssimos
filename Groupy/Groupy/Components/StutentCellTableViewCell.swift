@@ -10,6 +10,7 @@ import UIKit
 class StutentCellTableViewCell: UITableViewCell {
     
     var rowHeight : CGFloat!
+    static let cellIdentifier = "cell"
 
     @IBOutlet weak var Name: UILabel!
     @IBOutlet weak var picture: UIImageView!
