@@ -42,16 +42,6 @@
             </objects>
             <point key="canvasLocation" x="628" y="420"/>
         </scene>
-        <!--EducatorProjectStatusViewController-->
-        <scene sceneID="4n8-8O-L5e">
-            <objects>
-                <viewControllerPlaceholder storyboardIdentifier="EducatorProjectStatusViewController" storyboardName="EducatorFlow" referencedIdentifier="EducatorProjectStatusViewController" id="JMS-R3-ZqL" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="c2i-JE-EJ7"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="2d7-R6-dhH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1984" y="831"/>
-        </scene>
         <!--My Classes-->
         <scene sceneID="n89-T2-5sI">
             <objects>
@@ -59,29 +49,10 @@
                     <view key="view" contentMode="scaleToFill" id="WMX-bb-uOR">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JZb-80-vkW">
-                                <rect key="frame" x="200" y="355" width="75" height="214"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Button"/>
-                                <connections>
-                                    <segue destination="JMS-R3-ZqL" kind="show" id="2gv-Zs-YYv"/>
-                                </connections>
-                            </button>
-                        </subviews>
                         <viewLayoutGuide key="safeArea" id="Bes-BK-aHh"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="JZb-80-vkW" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Bes-BK-aHh" secondAttribute="leading" id="9eq-PG-ECc"/>
-                            <constraint firstItem="Bes-BK-aHh" firstAttribute="bottom" secondItem="JZb-80-vkW" secondAttribute="bottom" constant="200" id="Ip9-Vt-ZF9"/>
-                            <constraint firstItem="Bes-BK-aHh" firstAttribute="trailing" secondItem="JZb-80-vkW" secondAttribute="trailing" constant="118" id="Xgh-6n-OrA"/>
-                            <constraint firstItem="JZb-80-vkW" firstAttribute="top" secondItem="Bes-BK-aHh" secondAttribute="top" constant="200" id="Xxp-XJ-0nT"/>
-                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="My Classes" image="person.3" catalog="system" selectedImage="person.3.fill" id="x5d-ET-i69"/>
-                    <connections>
-                        <outlet property="teste" destination="JZb-80-vkW" id="QaR-ZH-ElP"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wa7-TM-eF3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

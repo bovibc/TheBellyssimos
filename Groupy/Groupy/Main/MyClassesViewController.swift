@@ -8,7 +8,6 @@
 import UIKit
 
 class MyClassesViewController: UIViewController {
-    @IBOutlet weak var teste: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         configureItem()

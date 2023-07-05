@@ -21,9 +21,5 @@ class StutentCellTableViewCell: UITableViewCell {
         picture.layer.cornerRadius = picture.frame.size.width / 2
         picture.clipsToBounds = true
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-    }
     
 }
