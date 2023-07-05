@@ -11,6 +11,16 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--EducatorFlow-->
+        <scene sceneID="t05-Xd-fJL">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="EducatorProjectStatusViewController" storyboardName="EducatorFlow" id="eMU-gd-I17" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="fdc-PO-XrU"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NtJ-Pm-SFD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-869" y="361"/>
+        </scene>
         <!--Criteria-->
         <scene sceneID="fAC-GO-WhZ">
             <objects>
@@ -18,10 +28,24 @@
                     <view key="view" contentMode="scaleToFill" id="SPR-70-uZx">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tTZ-Ol-T3b">
+                                <rect key="frame" x="139" y="321" width="75" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Button"/>
+                                <connections>
+                                    <segue destination="eMU-gd-I17" kind="show" id="nT5-MM-Zhq"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="fQ0-WI-qLA"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Criteria" image="book" catalog="system" selectedImage="book.fill" id="69P-aN-p4o"/>
+                    <connections>
+                        <outlet property="apagar" destination="tTZ-Ol-T3b" id="zbr-uV-rwG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gbw-SA-nYa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

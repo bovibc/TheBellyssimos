@@ -12,30 +12,29 @@ class EducatorProjectStatusViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var classDescription: UILabel!
     
+    var mockedProject: Project? = nil
+    var mockedGroups: [Group]? = nil
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.setProject()
+        self.setMockedProject()
         let nib = UINib(nibName: "StutentCellTableViewCell", bundle: nil)
-        tableView.register(nib, forCellReuseIdentifier: StutentCellTableViewCell.cellIdentifier)
+        tableView.register(nib, forCellReuseIdentifier: StudentCellTableViewCell.cellIdentifier)
         tableView.delegate = self
         tableView.dataSource = self
         
     }
     
     
-    private func setProject() {
+    private func setMockedProject() {
         let classData: Class = MockData().mockedClasses[0]
         
         let mockedProjects: [Project]? = classData.projects?.allObjects as? [Project]
         
-        let mockedProject = mockedProjects?[0]
+        mockedProject = mockedProjects?[0]
         
-        let mockedGroups: [Group]? = mockedProject?.groups?.allObjects as? [Group]
-        
-        let mockedGroup = mockedGroups?[0]
-        
-        let membersNumber = mockedGroup?.members?.count
+        mockedGroups = mockedProject?.groups?.allObjects as? [Group]
 
     }
     
@@ -54,19 +53,35 @@ extension EducatorProjectStatusViewController: UITableViewDelegate {
 }
 
 extension EducatorProjectStatusViewController: UITableViewDataSource {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return mockedGroups?.count ?? 0
+    }
 
     // quantidade de celulas
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let tamanhoGrupo = 3
-        return tamanhoGrupo
+        return mockedGroups?[section].members?.count ?? 0
     }
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: StutentCellTableViewCell.cellIdentifier, for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: StudentCellTableViewCell.cellIdentifier, for: indexPath) as! StudentCellTableViewCell
+        
+        let grupo = mockedGroups?[indexPath.section]
+        let estudantes = grupo?.members?.allObjects as? [Student]
+        let estudante = estudantes?[indexPath.row]
+        
+        print(2)
+        print(estudante?.name ?? "a")
+        
+        cell.setCell(myStudent: estudante!)
         
         return cell
         
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return mockedGroups?[section].name
     }
 }

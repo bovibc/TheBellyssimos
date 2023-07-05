@@ -22,12 +22,12 @@ class StudentCellTableViewCell: UITableViewCell {
         picture.clipsToBounds = true
     }
     
-    func setCell(myStudent: Student) {
+    func setCell(myStudent: Student?) {
         setCellData(myStudent)
     }
     
-    private func setCellData(_ myStudent: Student) {
-        self.name.text = myStudent.name ?? ""
+    private func setCellData(_ myStudent: Student?) {
+        self.name.text = myStudent?.name ?? ""
         self.picture.image = UIImage(systemName: "person")
     }
     
