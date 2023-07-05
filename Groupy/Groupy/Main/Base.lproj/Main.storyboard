@@ -51,7 +51,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="eQ5-xU-96Y">
-                                <rect key="frame" x="16" y="119" width="361" height="650"/>
+                                <rect key="frame" x="16" y="175" width="361" height="594"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="nev-vB-tBj">
                                     <size key="itemSize" width="128" height="128"/>
@@ -70,19 +70,30 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <searchBar contentMode="redraw" placeholder="Search" translatesAutoresizingMaskIntoConstraints="NO" id="EYf-1a-b9t">
+                                <rect key="frame" x="0.0" y="103" width="393" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="CTt-Ts-hw3" id="h8Z-Xa-6Gd"/>
+                                </connections>
+                            </searchBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Bes-BK-aHh"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="eQ5-xU-96Y" firstAttribute="top" secondItem="Bes-BK-aHh" secondAttribute="top" constant="16" id="3Fk-x3-kAb"/>
+                            <constraint firstItem="EYf-1a-b9t" firstAttribute="leading" secondItem="Bes-BK-aHh" secondAttribute="leading" id="5PV-Gf-ica"/>
                             <constraint firstItem="eQ5-xU-96Y" firstAttribute="leading" secondItem="Bes-BK-aHh" secondAttribute="leading" constant="16" id="98f-xN-WCN"/>
                             <constraint firstItem="Bes-BK-aHh" firstAttribute="bottom" secondItem="eQ5-xU-96Y" secondAttribute="bottom" id="Fau-2F-Fez"/>
+                            <constraint firstItem="EYf-1a-b9t" firstAttribute="trailing" secondItem="Bes-BK-aHh" secondAttribute="trailing" id="XIF-jU-gva"/>
                             <constraint firstItem="Bes-BK-aHh" firstAttribute="trailing" secondItem="eQ5-xU-96Y" secondAttribute="trailing" constant="16" id="roq-8s-9oF"/>
+                            <constraint firstItem="eQ5-xU-96Y" firstAttribute="top" secondItem="EYf-1a-b9t" secondAttribute="bottom" constant="16" id="tBe-CB-4FW"/>
+                            <constraint firstItem="Bes-BK-aHh" firstAttribute="top" secondItem="EYf-1a-b9t" secondAttribute="top" id="uQu-AV-FPw"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="My Classes" image="person.3" catalog="system" selectedImage="person.3.fill" id="x5d-ET-i69"/>
                     <connections>
                         <outlet property="collectionView" destination="eQ5-xU-96Y" id="TgF-s5-Pe5"/>
+                        <outlet property="searchBar" destination="EYf-1a-b9t" id="jTG-Mm-Gwq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wa7-TM-eF3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

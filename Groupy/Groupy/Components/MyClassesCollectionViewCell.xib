@@ -50,31 +50,57 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ga6-Gr-A80" userLabel="Project View">
                                 <rect key="frame" x="-8" y="60" width="400" height="84"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="idJ-sv-c3g">
-                                        <rect key="frame" x="24" y="0.0" width="376" height="84"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="idJ-sv-c3g">
+                                        <rect key="frame" x="24" y="8" width="376" height="76"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="Fpq-a1-kwh">
-                                                <rect key="frame" x="0.0" y="0.0" width="376" height="40"/>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5ac-8I-TwB">
+                                                <rect key="frame" x="0.0" y="0.0" width="376" height="38"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Projeto" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Q0-1z-Xut">
-                                                        <rect key="frame" x="0.0" y="0.0" width="376" height="40"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="54.333333333333336" height="20.333333333333332"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="First Project Data" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Ky-Zw-7RD" userLabel="First Date">
+                                                        <rect key="frame" x="70.333333333333329" y="3.3333333333333286" width="111.99999999999999" height="17"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <color key="textColor" red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
                                                 </subviews>
-                                            </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="Wuf-wK-dxs">
-                                                <rect key="frame" x="0.0" y="44" width="376" height="40"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstItem="2Q0-1z-Xut" firstAttribute="leading" secondItem="5ac-8I-TwB" secondAttribute="leading" id="8TR-hd-6xL"/>
+                                                    <constraint firstItem="3Ky-Zw-7RD" firstAttribute="leading" secondItem="2Q0-1z-Xut" secondAttribute="trailing" constant="16" id="Jem-hA-Fd0"/>
+                                                    <constraint firstItem="2Q0-1z-Xut" firstAttribute="top" secondItem="5ac-8I-TwB" secondAttribute="top" id="QrO-eU-fqZ"/>
+                                                    <constraint firstItem="3Ky-Zw-7RD" firstAttribute="bottom" secondItem="2Q0-1z-Xut" secondAttribute="bottom" id="yt5-Su-FCi"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A2T-bv-YgK">
+                                                <rect key="frame" x="0.0" y="38" width="376" height="38"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Projeto" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Ke-M5-e7T">
-                                                        <rect key="frame" x="0.0" y="0.0" width="376" height="40"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="54.333333333333336" height="20.333333333333332"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Second Project Data" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OdJ-Ux-4xy" userLabel="Second Date">
+                                                        <rect key="frame" x="70.333333333333329" y="3.3333333333333286" width="132.33333333333337" height="17"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <color key="textColor" red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
                                                 </subviews>
-                                            </stackView>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstItem="OdJ-Ux-4xy" firstAttribute="bottom" secondItem="7Ke-M5-e7T" secondAttribute="bottom" id="6Ue-ia-CP1"/>
+                                                    <constraint firstItem="7Ke-M5-e7T" firstAttribute="top" secondItem="A2T-bv-YgK" secondAttribute="top" id="U3u-Rd-8bq"/>
+                                                    <constraint firstItem="7Ke-M5-e7T" firstAttribute="leading" secondItem="A2T-bv-YgK" secondAttribute="leading" id="Yoo-1t-wSe"/>
+                                                    <constraint firstItem="OdJ-Ux-4xy" firstAttribute="leading" secondItem="7Ke-M5-e7T" secondAttribute="trailing" constant="16" id="eK2-CY-Xry"/>
+                                                </constraints>
+                                            </view>
                                         </subviews>
                                     </stackView>
                                 </subviews>
@@ -82,7 +108,7 @@
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="idJ-sv-c3g" secondAttribute="trailing" id="2Ys-fy-Ue0"/>
                                     <constraint firstAttribute="bottom" secondItem="idJ-sv-c3g" secondAttribute="bottom" id="EoR-76-a5k"/>
-                                    <constraint firstItem="idJ-sv-c3g" firstAttribute="top" secondItem="ga6-Gr-A80" secondAttribute="top" id="NmN-fn-sNH"/>
+                                    <constraint firstItem="idJ-sv-c3g" firstAttribute="top" secondItem="ga6-Gr-A80" secondAttribute="top" constant="8" id="Oof-aW-NUX"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wp6-rN-Oot" userLabel="Line View">
@@ -126,7 +152,9 @@
             <connections>
                 <outlet property="cellView" destination="VPZ-ZF-nhX" id="52x-41-ZGX"/>
                 <outlet property="firstProject" destination="2Q0-1z-Xut" id="E7T-hZ-tjY"/>
+                <outlet property="firstProjectDate" destination="3Ky-Zw-7RD" id="UWT-4g-nhl"/>
                 <outlet property="secondProject" destination="7Ke-M5-e7T" id="WDU-Lp-Htx"/>
+                <outlet property="secondProjectDate" destination="OdJ-Ux-4xy" id="gJa-yO-Vao"/>
                 <outlet property="titleLabel" destination="7Bd-Gv-1Zm" id="M5F-Nx-puG"/>
             </connections>
             <point key="canvasLocation" x="149.61832061068702" y="-12.67605633802817"/>

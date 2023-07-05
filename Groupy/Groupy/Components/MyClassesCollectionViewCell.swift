@@ -12,6 +12,6 @@ class MyClassesCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var firstProject: UILabel!
     @IBOutlet weak var secondProject: UILabel!
-    
-    
+    @IBOutlet weak var firstProjectDate: UILabel!
+    @IBOutlet weak var secondProjectDate: UILabel!
 }

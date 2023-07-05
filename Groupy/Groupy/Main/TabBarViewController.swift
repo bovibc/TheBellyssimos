@@ -9,7 +9,7 @@ import UIKit
 
 class TabBarViewController: UITabBarController {
 
-    private var isFirstLogin: Bool = true
+    private var isFirstLogin: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -23,10 +23,10 @@
             </objects>
             <point key="canvasLocation" x="132" y="-35"/>
         </scene>
-        <!--Class Status View Controller-->
+        <!--Educator Class Status View Controller-->
         <scene sceneID="oLf-Gl-pMj">
             <objects>
-                <viewController id="pdN-Kf-Fg6" customClass="ClassStatusViewController" customModule="Groupy" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="classStatusViewController" id="pdN-Kf-Fg6" customClass="EducatorClassStatusViewController" customModule="Groupy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7jX-E2-EZO">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
