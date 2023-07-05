@@ -16,7 +16,7 @@
     <entity name="Group" representedClassName="Group" syncable="YES">
         <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="name" optional="YES" attributeType="String"/>
-        <relationship name="members" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Student" inverseName="groups" inverseEntity="Student"/>
+        <relationship name="members" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Student" inverseName="groups" inverseEntity="Student"/>
     </entity>
     <entity name="Project" representedClassName="Project" syncable="YES">
         <attribute name="criteria" optional="YES" attributeType="String"/>
