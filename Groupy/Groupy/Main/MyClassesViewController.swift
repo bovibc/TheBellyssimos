@@ -24,9 +24,8 @@ class MyClassesViewController: UIViewController {
         }
         
         func createMenu() -> UIMenu {
-            var educatorStoryboard = UIStoryboard(name: "EducatorFlow", bundle: nil)
-            
-            
+            let educatorStoryboard = UIStoryboard(name: "EducatorFlow", bundle: nil)
+    
             var menuItems: [UIAction] {
                 return [
                     UIAction(title: "Join class", handler: { _ in
