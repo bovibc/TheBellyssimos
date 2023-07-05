@@ -38,6 +38,7 @@
 		5733FF202A4EFA00004D6C85 /* CreateClassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5733FF1F2A4EFA00004D6C85 /* CreateClassViewController.swift */; };
 		5733FF222A4EFA23004D6C85 /* ShareCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5733FF212A4EFA23004D6C85 /* ShareCodeViewController.swift */; };
 		5733FF262A4EFCFE004D6C85 /* ShareCodeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5733FF252A4EFCFE004D6C85 /* ShareCodeDetailViewController.swift */; };
+		57A386D52A5462750082760F /* MockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A386D42A5462750082760F /* MockData.swift */; };
 		57E3D9DD2A4EFDFF0081F8F5 /* CreateProjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E3D9DC2A4EFDFF0081F8F5 /* CreateProjectViewController.swift */; };
 		57E3D9DF2A4EFE160081F8F5 /* CriteriaCustomizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E3D9DE2A4EFE160081F8F5 /* CriteriaCustomizationViewController.swift */; };
 		57E3D9E12A4EFE3F0081F8F5 /* CriteriaHelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E3D9E02A4EFE3F0081F8F5 /* CriteriaHelpViewController.swift */; };
@@ -92,6 +93,7 @@
 		5733FF1F2A4EFA00004D6C85 /* CreateClassViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateClassViewController.swift; sourceTree = "<group>"; };
 		5733FF212A4EFA23004D6C85 /* ShareCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareCodeViewController.swift; sourceTree = "<group>"; };
 		5733FF252A4EFCFE004D6C85 /* ShareCodeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareCodeDetailViewController.swift; sourceTree = "<group>"; };
+		57A386D42A5462750082760F /* MockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockData.swift; sourceTree = "<group>"; };
 		57E3D9DC2A4EFDFF0081F8F5 /* CreateProjectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateProjectViewController.swift; sourceTree = "<group>"; };
 		57E3D9DE2A4EFE160081F8F5 /* CriteriaCustomizationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CriteriaCustomizationViewController.swift; sourceTree = "<group>"; };
 		57E3D9E02A4EFE3F0081F8F5 /* CriteriaHelpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CriteriaHelpViewController.swift; sourceTree = "<group>"; };
@@ -182,6 +184,7 @@
 				571336732A54468400F9698E /* Group+CoreDataClass.swift */,
 				571336742A54468400F9698E /* Group+CoreDataProperties.swift */,
 				571336672A54393F00F9698E /* CoreDataEndpoints.swift */,
+				57A386D42A5462750082760F /* MockData.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -349,6 +352,7 @@
 				571336802A54468400F9698E /* Group+CoreDataProperties.swift in Sources */,
 				5733FF122A4EF4AD004D6C85 /* CriteriaDetailsViewController.swift in Sources */,
 				5733FF1E2A4EF85F004D6C85 /* ProfileViewController.swift in Sources */,
+				57A386D52A5462750082760F /* MockData.swift in Sources */,
 				0838F9872A49B18B00897044 /* SceneDelegate.swift in Sources */,
 				5733FF202A4EFA00004D6C85 /* CreateClassViewController.swift in Sources */,
 				5713367D2A54468400F9698E /* Educator+CoreDataClass.swift in Sources */,
