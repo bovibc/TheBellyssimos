@@ -10,6 +10,7 @@ import UIKit
 class StutentCellTableViewCell: UITableViewCell {
     
     var rowHeight : CGFloat!
+    static let cellIdentifier = "cell"
 
     @IBOutlet weak var Name: UILabel!
     @IBOutlet weak var picture: UIImageView!
@@ -19,10 +20,6 @@ class StutentCellTableViewCell: UITableViewCell {
         
         picture.layer.cornerRadius = picture.frame.size.width / 2
         picture.clipsToBounds = true
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
     }
     
 }
