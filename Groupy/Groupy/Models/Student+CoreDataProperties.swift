@@ -2,7 +2,7 @@
 //  Student+CoreDataProperties.swift
 //  Groupy
 //
-//  Created by Luan Fazolin on 04/07/23.
+//  Created by Luan Fazolin on 05/07/23.
 //
 //
 
@@ -18,12 +18,12 @@ extension Student {
 
     @NSManaged public var ethnicity: String?
     @NSManaged public var gender: String?
-    @NSManaged public var skinTone: String?
     @NSManaged public var lgbt: Bool
     @NSManaged public var mbtiPersonality: String?
-    @NSManaged public var wsPersonality: String?
     @NSManaged public var motivation: String?
     @NSManaged public var skills: NSObject?
+    @NSManaged public var skinTone: String?
+    @NSManaged public var wsPersonality: String?
     @NSManaged public var classes: NSSet?
     @NSManaged public var groups: NSSet?
     @NSManaged public var workedWith: NSSet?

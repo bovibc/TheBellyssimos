@@ -84,6 +84,39 @@ class MockData {
                 newClass.addToStudents(newStudent)
             }
             
+            let projectNames = ["Hignoso", "Bird Belly", "Hike it!", "Fast and Furious"]
+            
+            for projectIndex in 0...3 {
+                let newProject = Project(context: self.context)
+
+                var studentIndex = 0
+                
+                let students: [Student]? = newClass.students?.allObjects as? [Student]
+                
+                let groupNames = ["Grupo Incrível", "Somos nós", "A esperança", "Fosso e fossa", "Renascer", "Just do it!", "Cafézin?", "Desperados", "Mergeia e sofre", "IFCH hoje?"]
+
+                for groupIndex in 0...9 {
+                    
+                    let newGroup = Group(context: self.context)
+                    
+                    for _ in 0...3
+                    {
+
+                        let student: Student = students![studentIndex]
+                        newGroup.addToMembers(student)
+                        studentIndex += 1
+                    }
+                    
+                    newGroup.name = groupNames[groupIndex]
+                    
+                    newProject.addToGroups(newGroup)
+                }
+
+                newProject.name = projectNames[projectIndex]
+                
+                newClass.addToProjects(newProject)
+            }
+            
             let className = ["Apple Academy", "F128", "Extecamp", "Design", "FAU"]
             
             newClass.id = Int64(Int.random(in: 100...999))
