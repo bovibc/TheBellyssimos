@@ -15,28 +15,28 @@ class EducatorProjectStatusViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-//        let mocked = MockData()
-//
-//        let mockedProject: Project = mocked.mockedProject
-//
-//        for mockedGroup in mockedProject
-//        {
-//            var mockedGroup: [Group]? = mockedGroup.group?.allObjects as? [Group]
-//
-//            for mockedStudent in mockedGroup!
-//            {
-//                print(mockedStudent.name!)
-//            }
-//        }
-//
-        
+        self.setProject()
         let nib = UINib(nibName: "StutentCellTableViewCell", bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: StutentCellTableViewCell.cellIdentifier)
-        
         tableView.delegate = self
         tableView.dataSource = self
         
+    }
+    
+    
+    private func setProject() {
+        let classData: Class = MockData().mockedClasses[0]
         
+        let mockedProjects: [Project]? = classData.projects?.allObjects as? [Project]
+        
+        let mockedProject = mockedProjects?[0]
+        
+        let mockedGroups: [Group]? = mockedProject?.groups?.allObjects as? [Group]
+        
+        let mockedGroup = mockedGroups?[0]
+        
+        let membersNumber = mockedGroup?.members?.count
+
     }
     
 }
@@ -47,9 +47,9 @@ extension EducatorProjectStatusViewController: UITableViewDelegate {
     }
     
     // tamanho celula
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 140
-    }
+//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        return 140
+//    }
     
 }
 
