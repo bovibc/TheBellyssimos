@@ -42,22 +42,10 @@ class MyClassesViewController: UIViewController, UICollectionViewDelegate, UICol
         collectionView.delegate = self
         self.collectionView.register(UINib(nibName: "MyClassesCollectionViewCell", bundle: Bundle.main), forCellWithReuseIdentifier: "myClassesCollectionViewCell")
     }
-    
-    private func setCellData(cell: MyClassesCollectionViewCell, myClass: Class) -> MyClassesCollectionViewCell {
-        cell.layer.borderColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.3).cgColor
-        cell.layer.cornerRadius = 15
-        cell.layer.borderWidth = 1
-        cell.titleLabel.text = myClass.name ?? ""
-        cell.firstProject.text = ""
-        cell.secondProject.text = ""
-        cell.firstProjectDate.text = ""
-        cell.secondProjectDate.text = ""
-        return cell
-    }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        var cell = collectionView.dequeueReusableCell(withReuseIdentifier: "myClassesCollectionViewCell", for: indexPath as IndexPath) as! MyClassesCollectionViewCell
-        cell = setCellData(cell: cell, myClass: filteredData[indexPath.row])
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "myClassesCollectionViewCell", for: indexPath as IndexPath) as! MyClassesCollectionViewCell
+        cell.setCell(myClass: filteredData[indexPath.row])
         return cell
     }
     

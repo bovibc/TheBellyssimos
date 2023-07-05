@@ -16,6 +16,8 @@
 		0838F98F2A49B18B00897044 /* Groupy.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0838F98D2A49B18B00897044 /* Groupy.xcdatamodeld */; };
 		0838F9912A49B18C00897044 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0838F9902A49B18C00897044 /* Assets.xcassets */; };
 		0838F9942A49B18C00897044 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0838F9922A49B18C00897044 /* LaunchScreen.storyboard */; };
+		085C253F2A55AB6800B01639 /* ClassStatusTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 085C253D2A55AB6800B01639 /* ClassStatusTableViewCell.swift */; };
+		085C25402A55AB6800B01639 /* ClassStatusTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 085C253E2A55AB6800B01639 /* ClassStatusTableViewCell.xib */; };
 		0887D72F2A52F75B00DC9560 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0887D72E2A52F75B00DC9560 /* TabBarViewController.swift */; };
 		08D7B47A2A49B96900712E7A /* CriteriaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08D7B4792A49B96900712E7A /* CriteriaViewController.swift */; };
 		571336682A54393F00F9698E /* CoreDataEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571336672A54393F00F9698E /* CoreDataEndpoints.swift */; };
@@ -73,6 +75,8 @@
 		0838F9902A49B18C00897044 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0838F9932A49B18C00897044 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0838F9952A49B18C00897044 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		085C253D2A55AB6800B01639 /* ClassStatusTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassStatusTableViewCell.swift; sourceTree = "<group>"; };
+		085C253E2A55AB6800B01639 /* ClassStatusTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ClassStatusTableViewCell.xib; sourceTree = "<group>"; };
 		0887D72E2A52F75B00DC9560 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		08D7B4792A49B96900712E7A /* CriteriaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CriteriaViewController.swift; sourceTree = "<group>"; };
 		571336672A54393F00F9698E /* CoreDataEndpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataEndpoints.swift; sourceTree = "<group>"; };
@@ -257,6 +261,8 @@
 				D32482CD2A530A3D003D25B3 /* StutentCellTableViewCell.xib */,
 				0801E4D32A5438660048526A /* MyClassesCollectionViewCell.swift */,
 				0801E4D42A5438660048526A /* MyClassesCollectionViewCell.xib */,
+				085C253D2A55AB6800B01639 /* ClassStatusTableViewCell.swift */,
+				085C253E2A55AB6800B01639 /* ClassStatusTableViewCell.xib */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -325,6 +331,7 @@
 				0801E4D62A5438660048526A /* MyClassesCollectionViewCell.xib in Resources */,
 				0838F9942A49B18C00897044 /* LaunchScreen.storyboard in Resources */,
 				0838F9912A49B18C00897044 /* Assets.xcassets in Resources */,
+				085C25402A55AB6800B01639 /* ClassStatusTableViewCell.xib in Resources */,
 				0838F98C2A49B18B00897044 /* Main.storyboard in Resources */,
 				5733FF182A4EF614004D6C85 /* EducatorFlow.storyboard in Resources */,
 			);
@@ -345,6 +352,7 @@
 				0887D72F2A52F75B00DC9560 /* TabBarViewController.swift in Sources */,
 				08D7B47A2A49B96900712E7A /* CriteriaViewController.swift in Sources */,
 				57E3DA052A4F15320081F8F5 /* ReadFeedbackViewController.swift in Sources */,
+				085C253F2A55AB6800B01639 /* ClassStatusTableViewCell.swift in Sources */,
 				57E3D9F32A4F10510081F8F5 /* EducatorClassStatusViewController.swift in Sources */,
 				D32482CE2A530A3D003D25B3 /* StutentCellTableViewCell.swift in Sources */,
 				57E3D9F92A4F109F0081F8F5 /* StudentClassStatusViewController.swift in Sources */,
