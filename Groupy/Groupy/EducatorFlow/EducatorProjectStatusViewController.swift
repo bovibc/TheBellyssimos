@@ -10,31 +10,38 @@ import UIKit
 class EducatorProjectStatusViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var classDescription: UILabel!
+    @IBOutlet weak var projectDescription: UILabel!
     
-    var mockedProject: Project? = nil
-    var mockedGroups: [Group]? = nil
+    var viewProject: Project? = nil
+    var viewGroups: [Group]? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.setMockedProject()
+        self.setProject()
+        self.title = viewProject?.name
         let nib = UINib(nibName: "StutentCellTableViewCell", bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: StudentCellTableViewCell.cellIdentifier)
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.allowsSelection = false
         
+        view.backgroundColor = UIColor.systemGray6
+        self.navigationController?.navigationBar.barTintColor = UIColor.green
     }
     
     
-    private func setMockedProject() {
+    private func setProject() {
+        
         let classData: Class = MockData().mockedClasses[0]
         
         let mockedProjects: [Project]? = classData.projects?.allObjects as? [Project]
         
-        mockedProject = mockedProjects?[0]
+        viewProject = mockedProjects?[0]
         
-        mockedGroups = mockedProject?.groups?.allObjects as? [Group]
+        projectDescription.text = viewProject?.info
+        
+        viewGroups = viewProject?.groups?.allObjects as? [Group]
 
     }
     
@@ -55,12 +62,12 @@ extension EducatorProjectStatusViewController: UITableViewDelegate {
 extension EducatorProjectStatusViewController: UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return mockedGroups?.count ?? 0
+        return viewGroups?.count ?? 0
     }
 
     // quantidade de celulas
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return mockedGroups?[section].members?.count ?? 0
+        return viewGroups?[section].members?.count ?? 0
     }
     
     
@@ -68,12 +75,10 @@ extension EducatorProjectStatusViewController: UITableViewDataSource {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: StudentCellTableViewCell.cellIdentifier, for: indexPath) as! StudentCellTableViewCell
         
-        let grupo = mockedGroups?[indexPath.section]
-        let estudantes = grupo?.members?.allObjects as? [Student]
+        let grupo = viewGroups?[indexPath.section]
+        var estudantes = grupo?.members?.allObjects as? [Student]
+        estudantes = estudantes?.sorted {($0.name?.prefix(1))! < ($1.name?.prefix(1))!}
         let estudante = estudantes?[indexPath.row]
-        
-        print(2)
-        print(estudante?.name ?? "a")
         
         cell.setCell(myStudent: estudante!)
         
@@ -82,6 +87,6 @@ extension EducatorProjectStatusViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return mockedGroups?[section].name
+        return viewGroups?[section].name
     }
 }

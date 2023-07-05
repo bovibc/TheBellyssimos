@@ -216,7 +216,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="classDescription" destination="bZM-IB-73F" id="4N1-JA-qFd"/>
+                        <outlet property="projectDescription" destination="bZM-IB-73F" id="4N1-JA-qFd"/>
                         <outlet property="tableView" destination="l0M-J7-QEp" id="PuA-f9-IbX"/>
                     </connections>
                 </viewController>
