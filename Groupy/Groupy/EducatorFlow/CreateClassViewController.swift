@@ -9,8 +9,33 @@ import UIKit
 
 class CreateClassViewController: UIViewController {
 
+    @IBOutlet weak var className: UITextField!
+    @IBOutlet weak var classDescription: UITextField!
+    
+    
+    @IBAction func closeModal(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func createClass(_ sender: UIButton) {
+        let name = className.text
+        let description = classDescription.text
+
+        // space to add endpoint to create a class
+        if name != "" && description != ""
+        {
+            self.dismiss(animated: true, completion: nil)
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.view.backgroundColor = UIColor.systemGray6
+
+        title = "Create Class"
+
+        
 
         // Do any additional setup after loading the view.
     }

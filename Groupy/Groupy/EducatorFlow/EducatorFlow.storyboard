@@ -16,24 +16,31 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3Xj-ac-DR7">
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Xj-ac-DR7">
                                 <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                                <color key="barTintColor" systemColor="systemGray6Color"/>
                                 <items>
                                     <navigationItem title="Create Class" id="AOQ-ww-9wh">
                                         <barButtonItem key="leftBarButtonItem" style="plain" id="0Fn-Gk-J3h">
-                                            <button key="customView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="noq-xx-eTN">
+                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="noq-xx-eTN">
                                                 <rect key="frame" x="16" y="5" width="87" height="34.333333333333336"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="Close"/>
+                                                <connections>
+                                                    <action selector="closeModal:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="JlT-Mq-lXY"/>
+                                                </connections>
                                             </button>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" style="plain" id="IDz-4e-E7w">
-                                            <button key="customView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="Wot-FE-YUW">
+                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="Wot-FE-YUW">
                                                 <rect key="frame" x="290" y="5" width="87" height="34.333333333333336"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="OK"/>
+                                                <connections>
+                                                    <action selector="createClass:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Cgo-gO-reH"/>
+                                                </connections>
                                             </button>
                                         </barButtonItem>
                                     </navigationItem>
@@ -42,7 +49,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="JFp-qH-l0G">
                                 <rect key="frame" x="16" y="119" width="361" height="68"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Classe name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1sm-Bt-ifI">
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Class name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1sm-Bt-ifI">
                                         <rect key="frame" x="0.0" y="0.0" width="361" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -62,10 +69,16 @@
                             <constraint firstItem="JFp-qH-l0G" firstAttribute="leading" secondItem="ara-Ft-niM" secondAttribute="leading" constant="16" id="86Z-A4-wtl"/>
                             <constraint firstItem="ara-Ft-niM" firstAttribute="trailing" secondItem="JFp-qH-l0G" secondAttribute="trailing" constant="16" id="9ho-Sl-Su0"/>
                             <constraint firstItem="JFp-qH-l0G" firstAttribute="centerX" secondItem="jyO-4f-Qbk" secondAttribute="centerX" id="PKW-eK-96U"/>
+                            <constraint firstItem="3Xj-ac-DR7" firstAttribute="leading" secondItem="ara-Ft-niM" secondAttribute="leading" id="jdg-lI-Qm2"/>
                             <constraint firstItem="3Xj-ac-DR7" firstAttribute="top" secondItem="ara-Ft-niM" secondAttribute="top" id="oFM-Vw-9kc"/>
+                            <constraint firstItem="3Xj-ac-DR7" firstAttribute="trailing" secondItem="ara-Ft-niM" secondAttribute="trailing" id="tlk-C1-B6C"/>
                             <constraint firstItem="3Xj-ac-DR7" firstAttribute="centerX" secondItem="jyO-4f-Qbk" secondAttribute="centerX" id="wv0-go-bXH"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="classDescription" destination="GS2-cW-Qlp" id="oEE-NV-S0a"/>
+                        <outlet property="className" destination="1sm-Bt-ifI" id="eiv-bc-n2F"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
