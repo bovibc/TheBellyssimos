@@ -130,4 +130,45 @@ class MockData {
         
         return mockedClasses
     }
+    
+    let criterias = [
+        Criteria(icon: "person.3",
+                 color: UIColor(red: 255/255, green: 159/255, blue: 10/255, alpha: 1.0),
+                 name: "Diversity",
+                 title: "title1",
+                 description: "description1"),
+        
+        Criteria(icon: "gear",
+                 color: UIColor(red: 255/255, green: 69/255, blue: 58/255, alpha: 1.0),
+                 name: "Skill",
+                 title: "title2",
+                 description: "description2"),
+        
+        Criteria(icon: "person.crop.square",
+                 color: UIColor(red: 50/255, green: 173/255, blue: 230/255, alpha: 1.0),
+                 name: "Personality",
+                 title: "title3",
+                 description: "description3"),
+        
+        Criteria(icon: "person.line.dotted.person",
+                 color: UIColor(red: 172/255, green: 82/255, blue: 222/255, alpha: 1.0),
+                 name: "Previous interactions",
+                 title: "title4",
+                 description: "description4"),
+        
+        Criteria(icon: "target",
+                 color: UIColor(red: 48/255, green: 209/255, blue: 88/255, alpha: 1.0),
+                 name: "Motivation",
+                 title: "title5",
+                 description: "description5")
+    ]
+
+}
+
+struct Criteria {
+    let icon: String
+    let color: UIColor
+    let name: String
+    let title: String
+    let description: String
 }

@@ -9,12 +9,23 @@ import UIKit
 
 class CriteriaCollectionViewCell: UICollectionViewCell {
 
-    @IBOutlet weak var Title: UILabel!
-    @IBOutlet weak var Icon: UIImageView!
+    static let cellIdentifier = "colectionCell"
+
+    @IBOutlet weak var icon: UIImageView!
     
+    @IBOutlet weak var title: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        self.layer.cornerRadius = 15
+        icon.clipsToBounds = true
     }
 
+    func setCellData(_ criteria: Criteria) {
+        self.backgroundColor = criteria.color
+        
+        let imageIcon = UIImage(systemName: criteria.icon)?.withTintColor(.white, renderingMode: .alwaysOriginal)
+        icon.image = imageIcon
+        self.title.text = criteria.name
+    }
 }

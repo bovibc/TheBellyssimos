@@ -16,11 +16,14 @@
                 <rect key="frame" x="0.0" y="0.0" width="165" height="102"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KZe-1F-EfK" userLabel="Title">
-                        <rect key="frame" x="15" y="39" width="48" height="48"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="clip" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KZe-1F-EfK" userLabel="title">
+                        <rect key="frame" x="12" y="40" width="141" height="50"/>
                         <accessibility key="accessibilityConfiguration">
                             <accessibilityTraits key="traits" none="YES"/>
                         </accessibility>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="50" id="nWl-EZ-YDc"/>
+                        </constraints>
                         <attributedString key="attributedText">
                             <fragment content="Label">
                                 <attributes>
@@ -32,27 +35,27 @@
                         </attributedString>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qMI-PN-u59" userLabel="Title">
-                        <rect key="frame" x="15" y="10" width="135" height="22"/>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qMI-PN-u59" userLabel="icon">
+                        <rect key="frame" x="12" y="12" width="141" height="23"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="23" id="6Sx-R7-VMM"/>
+                        </constraints>
                     </imageView>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
-                <constraint firstItem="KZe-1F-EfK" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" constant="39" id="8pD-xS-kXm"/>
-                <constraint firstItem="qMI-PN-u59" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="PP2-8X-INV"/>
-                <constraint firstItem="qMI-PN-u59" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="15" id="bfo-fh-XcU"/>
-                <constraint firstItem="qMI-PN-u59" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="bpy-Pn-GuS"/>
-                <constraint firstItem="qMI-PN-u59" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="15" id="daM-hC-jH8"/>
-                <constraint firstItem="KZe-1F-EfK" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="15" id="iaL-Gv-9ph"/>
-                <constraint firstItem="KZe-1F-EfK" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="l3g-Jw-ycl"/>
-                <constraint firstAttribute="bottom" secondItem="KZe-1F-EfK" secondAttribute="bottom" constant="15" id="l7y-LB-bkc"/>
-                <constraint firstItem="KZe-1F-EfK" firstAttribute="top" secondItem="qMI-PN-u59" secondAttribute="bottom" constant="2" id="oen-YX-rAt"/>
+                <constraint firstItem="KZe-1F-EfK" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="12" id="0nn-QK-R2u"/>
+                <constraint firstAttribute="bottom" secondItem="KZe-1F-EfK" secondAttribute="bottom" constant="12" id="PY2-m4-HCV"/>
+                <constraint firstItem="qMI-PN-u59" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="12" id="RFW-v2-fsW"/>
+                <constraint firstItem="qMI-PN-u59" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="12" id="ffk-I7-gJ8"/>
+                <constraint firstAttribute="trailing" secondItem="KZe-1F-EfK" secondAttribute="trailing" constant="12" id="sSI-S1-ZfB"/>
+                <constraint firstAttribute="trailing" secondItem="qMI-PN-u59" secondAttribute="trailing" constant="12" id="vG6-Nf-I7j"/>
             </constraints>
             <size key="customSize" width="165" height="102"/>
             <connections>
-                <outlet property="Icon" destination="qMI-PN-u59" id="Jdw-39-7xE"/>
-                <outlet property="Title" destination="KZe-1F-EfK" id="9Xw-d8-D1H"/>
+                <outlet property="icon" destination="qMI-PN-u59" id="FkG-VB-ojJ"/>
+                <outlet property="title" destination="KZe-1F-EfK" id="ZZS-P3-wFq"/>
             </connections>
             <point key="canvasLocation" x="196" y="21"/>
         </collectionViewCell>
