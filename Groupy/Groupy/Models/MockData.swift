@@ -113,7 +113,8 @@ class MockData {
                 }
 
                 newProject.name = projectNames[projectIndex]
-                
+                newProject.info = "This project is called \(projectNames[projectIndex].uppercased())!!!"
+                                
                 newClass.addToProjects(newProject)
             }
             

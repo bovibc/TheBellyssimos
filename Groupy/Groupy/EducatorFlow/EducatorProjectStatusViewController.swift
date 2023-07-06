@@ -10,33 +10,39 @@ import UIKit
 class EducatorProjectStatusViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var classDescription: UILabel!
+    @IBOutlet weak var projectDescription: UILabel!
+    
+    var viewProject: Project? = nil
+    var viewGroups: [Group]? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-//        let mocked = MockData()
-//
-//        let mockedProject: Project = mocked.mockedProject
-//
-//        for mockedGroup in mockedProject
-//        {
-//            var mockedGroup: [Group]? = mockedGroup.group?.allObjects as? [Group]
-//
-//            for mockedStudent in mockedGroup!
-//            {
-//                print(mockedStudent.name!)
-//            }
-//        }
-//
-        
+        self.setProject()
+        self.title = viewProject?.name
         let nib = UINib(nibName: "StutentCellTableViewCell", bundle: nil)
-        tableView.register(nib, forCellReuseIdentifier: StutentCellTableViewCell.cellIdentifier)
-        
+        tableView.register(nib, forCellReuseIdentifier: StudentCellTableViewCell.cellIdentifier)
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.allowsSelection = false
         
+        view.backgroundColor = UIColor.systemGray6
+        self.navigationController?.navigationBar.barTintColor = UIColor.green
+    }
+    
+    
+    private func setProject() {
         
+        let classData: Class = MockData().mockedClasses[0]
+        
+        let mockedProjects: [Project]? = classData.projects?.allObjects as? [Project]
+        
+        viewProject = mockedProjects?[0]
+        
+        projectDescription.text = viewProject?.info
+        
+        viewGroups = viewProject?.groups?.allObjects as? [Group]
+
     }
     
 }
@@ -47,26 +53,40 @@ extension EducatorProjectStatusViewController: UITableViewDelegate {
     }
     
     // tamanho celula
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 140
-    }
+//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        return 140
+//    }
     
 }
 
 extension EducatorProjectStatusViewController: UITableViewDataSource {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return viewGroups?.count ?? 0
+    }
 
     // quantidade de celulas
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let tamanhoGrupo = 3
-        return tamanhoGrupo
+        return viewGroups?[section].members?.count ?? 0
     }
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: StutentCellTableViewCell.cellIdentifier, for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: StudentCellTableViewCell.cellIdentifier, for: indexPath) as! StudentCellTableViewCell
+        
+        let grupo = viewGroups?[indexPath.section]
+        var estudantes = grupo?.members?.allObjects as? [Student]
+        estudantes = estudantes?.sorted {($0.name?.prefix(1))! < ($1.name?.prefix(1))!}
+        let estudante = estudantes?[indexPath.row]
+        
+        cell.setCell(myStudent: estudante!)
         
         return cell
         
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return viewGroups?[section].name
     }
 }

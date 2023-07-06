@@ -62,6 +62,7 @@
 		A7397AD72A559949006A6662 /* CriteriaCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7397AD52A559949006A6662 /* CriteriaCollectionViewCell.swift */; };
 		A7397AD82A559949006A6662 /* CriteriaCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A7397AD62A559949006A6662 /* CriteriaCollectionViewCell.xib */; };
 		D32482CE2A530A3D003D25B3 /* StutentCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32482CC2A530A3D003D25B3 /* StutentCellTableViewCell.swift */; };
+		D32482CE2A530A3D003D25B3 /* StudentCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32482CC2A530A3D003D25B3 /* StudentCellTableViewCell.swift */; };
 		D32482CF2A530A3D003D25B3 /* StutentCellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D32482CD2A530A3D003D25B3 /* StutentCellTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
@@ -123,6 +124,7 @@
 		A7397AD52A559949006A6662 /* CriteriaCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CriteriaCollectionViewCell.swift; sourceTree = "<group>"; };
 		A7397AD62A559949006A6662 /* CriteriaCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CriteriaCollectionViewCell.xib; sourceTree = "<group>"; };
 		D32482CC2A530A3D003D25B3 /* StutentCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StutentCellTableViewCell.swift; sourceTree = "<group>"; };
+		D32482CC2A530A3D003D25B3 /* StudentCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentCellTableViewCell.swift; sourceTree = "<group>"; };
 		D32482CD2A530A3D003D25B3 /* StutentCellTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StutentCellTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -261,7 +263,7 @@
 		D32482CB2A5309FB003D25B3 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				D32482CC2A530A3D003D25B3 /* StutentCellTableViewCell.swift */,
+				D32482CC2A530A3D003D25B3 /* StudentCellTableViewCell.swift */,
 				D32482CD2A530A3D003D25B3 /* StutentCellTableViewCell.xib */,
 				A7397AD52A559949006A6662 /* CriteriaCollectionViewCell.swift */,
 				A7397AD62A559949006A6662 /* CriteriaCollectionViewCell.xib */,
@@ -362,7 +364,7 @@
 				57E3DA052A4F15320081F8F5 /* ReadFeedbackViewController.swift in Sources */,
 				085C253F2A55AB6800B01639 /* ClassStatusTableViewCell.swift in Sources */,
 				57E3D9F32A4F10510081F8F5 /* EducatorClassStatusViewController.swift in Sources */,
-				D32482CE2A530A3D003D25B3 /* StutentCellTableViewCell.swift in Sources */,
+				D32482CE2A530A3D003D25B3 /* StudentCellTableViewCell.swift in Sources */,
 				57E3D9F92A4F109F0081F8F5 /* StudentClassStatusViewController.swift in Sources */,
 				5733FF0E2A4EF40A004D6C85 /* OnboardingViewController.swift in Sources */,
 				571336682A54393F00F9698E /* CoreDataEndpoints.swift in Sources */,
