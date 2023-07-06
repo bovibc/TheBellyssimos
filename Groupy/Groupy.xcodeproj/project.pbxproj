@@ -61,6 +61,7 @@
 		57E3DA072A4F1ECD0081F8F5 /* CreateStudentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E3DA062A4F1ECD0081F8F5 /* CreateStudentViewController.swift */; };
 		D32482CE2A530A3D003D25B3 /* StudentCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32482CC2A530A3D003D25B3 /* StudentCellTableViewCell.swift */; };
 		D32482CF2A530A3D003D25B3 /* StutentCellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D32482CD2A530A3D003D25B3 /* StutentCellTableViewCell.xib */; };
+		D37C1F7B2A56E003007FFCB1 /* RandomGroupFormation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37C1F7A2A56E003007FFCB1 /* RandomGroupFormation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -120,6 +121,7 @@
 		57E3DA062A4F1ECD0081F8F5 /* CreateStudentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateStudentViewController.swift; sourceTree = "<group>"; };
 		D32482CC2A530A3D003D25B3 /* StudentCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentCellTableViewCell.swift; sourceTree = "<group>"; };
 		D32482CD2A530A3D003D25B3 /* StutentCellTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StutentCellTableViewCell.xib; sourceTree = "<group>"; };
+		D37C1F7A2A56E003007FFCB1 /* RandomGroupFormation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomGroupFormation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -193,6 +195,7 @@
 				57CEBE122A55A87600C15C3C /* Class+CoreDataProperties.swift */,
 				571336672A54393F00F9698E /* CoreDataEndpoints.swift */,
 				57A386D42A5462750082760F /* MockData.swift */,
+				D37C1F7A2A56E003007FFCB1 /* RandomGroupFormation.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -382,6 +385,7 @@
 				57E3D9E52A4EFF8A0081F8F5 /* LoginViewController.swift in Sources */,
 				57E3D9E72A4EFF9A0081F8F5 /* ChooseAccountViewController.swift in Sources */,
 				57CEBE192A55A87600C15C3C /* User+CoreDataClass.swift in Sources */,
+				D37C1F7B2A56E003007FFCB1 /* RandomGroupFormation.swift in Sources */,
 				5733FF222A4EFA23004D6C85 /* ShareCodeViewController.swift in Sources */,
 				57E3D9F12A4F0FFA0081F8F5 /* EducatorProjectStatusViewController.swift in Sources */,
 				57CEBE1A2A55A87600C15C3C /* User+CoreDataProperties.swift in Sources */,

@@ -26,8 +26,8 @@ class EducatorProjectStatusViewController: UIViewController {
         tableView.dataSource = self
         tableView.allowsSelection = false
         
-        view.backgroundColor = UIColor.systemGray6
-        self.navigationController?.navigationBar.barTintColor = UIColor.green
+        navigationController?.navigationBar.barTintColor = UIColor.green
+//        view.backgroundColor = UIColor.systemGray6
     }
     
     
