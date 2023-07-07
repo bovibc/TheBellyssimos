@@ -15,9 +15,9 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var profilePicture: UIImageView!
     
     private let sectionNumber: Int = 2
-    private let declarationCellNumber: Int = 4
-    private let skillCellNumber: Int = 2
-    
+    private let declarations: [String] = ["Personality", "Skin tone", "LGBTQIA+","Motivation"]
+    private let skills: [String] = ["Swift", "Figma"]
+
     override func viewDidLoad() {
         super.viewDidLoad()
         configureNavigationBar()
@@ -25,10 +25,10 @@ class ProfileViewController: UIViewController {
         tableView.dataSource = self
         
         // Placeholders
-        var image = UIImage(named: "opera")
+        var image = UIImage(named: "bandeira")
         image = resizeImage(image: image!, targetSize: CGSize(width: 100, height: 100))
         profilePicture.image = image
-        profilePicture.layer.borderColor = UIColor(red:1, green:1, blue:1, alpha: 0).cgColor
+        profilePicture.layer.borderColor = UIColor.black.cgColor
         profilePicture.layer.borderWidth = 1
         profilePicture.layer.masksToBounds = false
         profilePicture.layer.cornerRadius = profilePicture.frame.size.width / 2
@@ -79,10 +79,6 @@ extension ProfileViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     }
     
-    // tamanho celula
-//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        return 140
-//    }
     
 }
 
@@ -94,11 +90,7 @@ extension ProfileViewController: UITableViewDataSource {
 
     // quantidade de celulas
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if section == 0 {
-            return declarationCellNumber
-        } else {
-            return skillCellNumber
-        }
+        return (section == 0 ? declarations.count : skills.count)
     }
     
     
@@ -111,10 +103,6 @@ extension ProfileViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        if section == 0 {
-            return "SELF-DECLARATION"
-        } else {
-            return "SKILLS"
-        }
+        return (section == 0 ? "SELF-DECLARATION" : "SKILLS")
     }
 }
