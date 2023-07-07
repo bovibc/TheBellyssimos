@@ -38,12 +38,6 @@ class EducatorProjectStatusViewController: UIViewController {
     
     private func setProject() {
         
-        let classData: Class = MockData().mockedClasses[0]
-        
-        let mockedProjects: [Project]? = classData.projects?.allObjects as? [Project]
-        
-        viewProject = mockedProjects?[0]
-        
         projectDescription.text = viewProject?.info
         
         viewGroups = viewProject?.groups?.allObjects as? [Group]
