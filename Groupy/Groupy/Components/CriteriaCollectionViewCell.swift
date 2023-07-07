@@ -15,6 +15,7 @@ class CriteriaCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var title: UILabel!
     
+    @IBOutlet weak var background: UIView!
     override func awakeFromNib() {
         super.awakeFromNib()
         self.layer.cornerRadius = 15
@@ -22,9 +23,9 @@ class CriteriaCollectionViewCell: UICollectionViewCell {
     }
 
     func setCellData(_ criteria: Criteria) {
-        self.backgroundColor = criteria.color
+        self.background.backgroundColor = .systemGray6
         
-        let imageIcon = UIImage(systemName: criteria.icon)?.withTintColor(.white, renderingMode: .alwaysOriginal)
+        let imageIcon = UIImage(systemName: criteria.icon)?.withTintColor(criteria.color, renderingMode: .alwaysOriginal)
         icon.image = imageIcon
         self.title.text = criteria.name
     }
