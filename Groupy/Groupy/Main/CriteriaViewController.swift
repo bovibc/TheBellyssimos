@@ -14,7 +14,7 @@ class CriteriaViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.navigationBar.topItem?.title = "Criteria"
+        configureNavigationBar()
         
         let nib = UINib(nibName: "CriteriaCollectionViewCell", bundle: nil)
         collectionView.register(nib, forCellWithReuseIdentifier: CriteriaCollectionViewCell.cellIdentifier)
@@ -22,6 +22,14 @@ class CriteriaViewController: UIViewController {
         collectionView.delegate = self
         collectionView.dataSource = self
         setCriteriaData()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        configureNavigationBar()
+    }
+    
+    private func configureNavigationBar() {
+        self.navigationController?.navigationBar.topItem?.title = "Criteria"
     }
     
     private func setCriteriaData() {
