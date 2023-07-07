@@ -9,6 +9,16 @@ import UIKit
 
 class CriteriaHelpViewController: UIViewController {
 
+    @IBOutlet weak var questionLabel: UILabel!
+    @IBOutlet weak var bottomLimitLabel: UILabel!
+    @IBOutlet weak var upperLimitLabel: UILabel!
+    
+    @IBOutlet weak var answerButton: UIButton!
+    
+    @IBOutlet weak var progressBar: UIProgressView!
+    
+    @IBOutlet weak var answerWeight: UISlider!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

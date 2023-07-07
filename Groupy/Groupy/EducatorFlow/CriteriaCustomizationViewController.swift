@@ -10,6 +10,16 @@ import UIKit
 class CriteriaCustomizationViewController: UIViewController {
 
     @IBOutlet weak var colleaguesSwitch: UISwitch!
+    
+    @IBOutlet weak var mbtiWeight: UISlider!
+    @IBOutlet weak var workingWeight: UISlider!
+    @IBOutlet weak var differentSkillWeight: UISlider!
+    @IBOutlet weak var motivationWeight: UISlider!
+    
+    @IBOutlet weak var helpButton: UIButton!
+    @IBOutlet weak var createButton: UIButton!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

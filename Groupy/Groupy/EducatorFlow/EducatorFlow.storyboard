@@ -264,6 +264,14 @@
                             <constraint firstItem="wj1-yk-AnB" firstAttribute="leading" secondItem="D0y-wL-q9e" secondAttribute="leading" constant="16" id="wqY-2H-DMM"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="answerButton" destination="j2p-O2-uET" id="rQX-oV-bqL"/>
+                        <outlet property="answerWeight" destination="DPI-iu-DCn" id="0RB-L0-GKu"/>
+                        <outlet property="bottomLimitLabel" destination="8Fc-4L-fa3" id="p8V-Xt-Nz9"/>
+                        <outlet property="progressBar" destination="wj1-yk-AnB" id="1WL-HC-ayD"/>
+                        <outlet property="questionLabel" destination="Pfd-zX-HSh" id="PNW-E9-cok"/>
+                        <outlet property="upperLimitLabel" destination="Ewe-5w-UDv" id="WjE-pA-1LZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nMP-X9-vad" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -484,6 +492,15 @@
                             <constraint firstItem="ZJe-jt-3rv" firstAttribute="leading" secondItem="VXB-Tk-Mla" secondAttribute="leading" constant="16" id="wa9-uj-pSa"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="colleaguesSwitch" destination="H03-ds-0E8" id="kpk-Ji-e0d"/>
+                        <outlet property="createButton" destination="dGk-bm-zf8" id="Qup-Gh-20G"/>
+                        <outlet property="differentSkillWeight" destination="ZJe-jt-3rv" id="Fvc-bh-8X6"/>
+                        <outlet property="helpButton" destination="S8u-fL-zZg" id="cmu-GS-vJP"/>
+                        <outlet property="mbtiWeight" destination="w7G-sF-mKw" id="YWy-II-uJP"/>
+                        <outlet property="motivationWeight" destination="5sI-D8-9Zw" id="uuG-EI-1S4"/>
+                        <outlet property="workingWeight" destination="fTW-rt-XW2" id="I4z-cI-Ctn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oJU-zs-C5Y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
