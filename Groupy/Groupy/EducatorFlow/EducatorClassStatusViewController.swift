@@ -58,6 +58,16 @@ class EducatorClassStatusViewController: UIViewController, UITableViewDelegate, 
         cell.setCell(myStudent: students?[indexPath.row])
         return cell
     }
+    
+    private func getProject(name: String?) -> Project? {
+        guard let projects = projects else { return nil }
+        for project in projects {
+            if project.name?.contains(name ?? "") ?? false {
+                return project
+            }
+        }
+        return nil
+    }
 
     func numberOfSections(in tableView: UITableView) -> Int {
         return 2
@@ -70,6 +80,18 @@ class EducatorClassStatusViewController: UIViewController, UITableViewDelegate, 
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return (section == 0 ? "PROJECTS" : "STUDENTS")
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.section == 0 {
+            let storyboard = UIStoryboard(name: "EducatorFlow", bundle: nil)
+            let viewController = storyboard.instantiateViewController(withIdentifier: "EducatorProjectStatusViewController") as? EducatorProjectStatusViewController
+            if let viewController = viewController {
+                viewController.viewProject = getProject(name: projects?[indexPath.row].name)
+                navigationController?.show(viewController, sender: nil)
+            }
+            
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
