@@ -22,6 +22,10 @@ class MyClassesViewController: UIViewController, UICollectionViewDelegate, UICol
         self.setClasses()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        self.configureNavigationBar()
+    }
+    
     private func setClasses() {
         let mocked = MockData()
         completeData = mocked.mockedClasses
@@ -57,8 +61,27 @@ class MyClassesViewController: UIViewController, UICollectionViewDelegate, UICol
         let storyboard = UIStoryboard(name: "EducatorFlow", bundle: nil)
         let viewController = storyboard.instantiateViewController(withIdentifier: "classStatusViewController") as? EducatorClassStatusViewController
         if let viewController = viewController {
+            let cell = filteredData[indexPath.row]
+            //viewController.chosenClass = getClassByName(name: cell.name)
             navigationController?.show(viewController, sender: nil)
         }
+    }
+    
+    func createMenu() -> UIMenu {
+        let educatorStoryboard = UIStoryboard(name: "EducatorFlow", bundle: nil)
+        var menuItems: [UIAction] {
+            return [
+                UIAction(title: "Join class", handler: { _ in
+                    let joinClassView = educatorStoryboard.instantiateViewController(withIdentifier: "EducatorJoinClass" )
+                    self.navigationController?.present(joinClassView, animated: true)
+                }),
+                UIAction(title: "Create class", handler: { _ in
+                    let createClassView = educatorStoryboard.instantiateViewController(withIdentifier: "CreateClass")
+                    self.navigationController?.present(createClassView, animated: true)
+                }),
+            ]
+        }
+        return UIMenu(title: "", image: nil, identifier: nil, options: [], children: menuItems)
     }
 }
 
@@ -78,25 +101,6 @@ extension MyClassesViewController: UISearchBarDelegate {
         }
         
         collectionView.reloadData()
-    }
-    
-    func createMenu() -> UIMenu {
-        let educatorStoryboard = UIStoryboard(name: "EducatorFlow", bundle: nil)
-
-        var menuItems: [UIAction] {
-            return [
-                UIAction(title: "Join class", handler: { _ in
-                    let joinClassView = educatorStoryboard.instantiateViewController(withIdentifier: "EducatorJoinClass" )
-                    self.navigationController?.present(joinClassView, animated: true)
-                }),
-                UIAction(title: "Create class", handler: { _ in
-                    let createClassView = educatorStoryboard.instantiateViewController(withIdentifier: "CreateClass")
-                    self.navigationController?.present(createClassView, animated: true)
-                }),
-            ]
-        }
-        
-        return UIMenu(title: "", image: nil, identifier: nil, options: [], children: menuItems)
     }
 }
 
