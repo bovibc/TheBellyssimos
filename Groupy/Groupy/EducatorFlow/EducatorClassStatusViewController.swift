@@ -7,19 +7,76 @@
 
 import UIKit
 
-class EducatorClassStatusViewController: UIViewController {
-
+class EducatorClassStatusViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    @IBOutlet weak var tableView: UITableView!
+    var chosenClass: Class?
+    var projects: [Project]?
+    var students: [Student]?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tableView.register(UINib(nibName: "StutentCellTableViewCell", bundle: nil), forCellReuseIdentifier: StudentCellTableViewCell.cellIdentifier)
+        configureTableView()
+        configureData()
         configureNavigationBar()
+    }
+    
+    private func configureTableView() {
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
+    }
+    
+    private func configureData() {
+        guard let chosenClass = chosenClass else { return }
+        projects = chosenClass.projects?.allObjects as? [Project]
+        students = chosenClass.students?.allObjects as? [Student]
     }
 
     private func configureNavigationBar() {
-        self.title = "My Classes"
+        self.title = chosenClass?.name ?? "My Classes"
+        let appearance = UINavigationBarAppearance()
+        appearance.configureWithOpaqueBackground()
+        appearance.backgroundColor = .systemBackground
+        navigationController?.navigationBar.standardAppearance = appearance
+        navigationController?.navigationBar.scrollEdgeAppearance = navigationController?.navigationBar.standardAppearance
         self.navigationController?.navigationItem.rightBarButtonItem = UIBarButtonItem(
             barButtonSystemItem: .add,
             target: self,
             action: nil
         )
+    }
+    
+    private func getProjectCell(_ index: Int) -> UITableViewCell {
+        guard let project = projects?[index].name else { return UITableViewCell() }
+        let cell = UITableViewCell()
+        cell.textLabel?.text = "\(index). \(project)"
+        return cell
+    }
+    
+    private func getStudentCell(_ indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: StudentCellTableViewCell.cellIdentifier, for: indexPath) as! StudentCellTableViewCell
+        cell.setCell(myStudent: students?[indexPath.row])
+        return cell
+    }
+
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        guard let projects = projects, let students = students else { return 0 }
+        return (section == 0 ? projects.count : students.count)
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return (section == 0 ? "PROJECTS" : "STUDENTS")
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if indexPath.section == 0 {
+            return getProjectCell(indexPath.row)
+        } else {
+            return getStudentCell(indexPath)
+        }
     }
 }

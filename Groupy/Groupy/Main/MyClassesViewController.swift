@@ -47,6 +47,15 @@ class MyClassesViewController: UIViewController, UICollectionViewDelegate, UICol
         self.collectionView.register(UINib(nibName: "MyClassesCollectionViewCell", bundle: Bundle.main), forCellWithReuseIdentifier: "myClassesCollectionViewCell")
     }
 
+    private func getClassByName(name: String?) -> Class? {
+        for classes in filteredData {
+            if classes.name == name {
+                return classes
+            }
+        }
+        return nil
+    }
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "myClassesCollectionViewCell", for: indexPath as IndexPath) as! MyClassesCollectionViewCell
         cell.setCell(myClass: filteredData[indexPath.row])
@@ -62,7 +71,7 @@ class MyClassesViewController: UIViewController, UICollectionViewDelegate, UICol
         let viewController = storyboard.instantiateViewController(withIdentifier: "classStatusViewController") as? EducatorClassStatusViewController
         if let viewController = viewController {
             let cell = filteredData[indexPath.row]
-            //viewController.chosenClass = getClassByName(name: cell.name)
+            viewController.chosenClass = getClassByName(name: cell.name)
             navigationController?.show(viewController, sender: nil)
         }
     }

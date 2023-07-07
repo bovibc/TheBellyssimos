@@ -17,11 +17,35 @@ class MyClassesCollectionViewCell: UICollectionViewCell {
     
     func setCell(myClass: Class) {
         setCellLayout()
+        resetData()
         setCellData(myClass)
     }
     
     private func setCellData(_ myClass: Class) {
+        let projects = myClass.projects?.allObjects as? [Project]
         self.titleLabel.text = myClass.name ?? ""
+        
+        if let first = projects?[0], let name = first.name {
+            self.firstProject.text = name
+            if let startDate = first.startDate, let dueDate = first.dueDate {
+                self.firstProjectDate.text = "(\(startDate) - \(dueDate))"
+            }
+        }
+        
+        if let second = projects?[1], let name = second.name {
+            self.secondProject.text = name
+            if let startDate = second.startDate, let dueDate = second.dueDate {
+                self.secondProjectDate.text = "(\(startDate) - \(dueDate))"
+            }
+        }
+    }
+    
+    private func resetData() {
+        titleLabel.text = ""
+        firstProject.text = ""
+        secondProject.text = ""
+        firstProjectDate.text = ""
+        secondProjectDate.text = ""
     }
     
     private func setCellLayout() {
