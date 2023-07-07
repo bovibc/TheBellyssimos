@@ -183,7 +183,7 @@
         <!--Create Project View Controller-->
         <scene sceneID="wqF-lp-p8j">
             <objects>
-                <viewController id="ZgE-cc-3UL" customClass="CreateProjectViewController" customModule="Groupy" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CreateProjectViewController" id="ZgE-cc-3UL" customClass="CreateProjectViewController" customModule="Groupy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="XYS-Se-nw4">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

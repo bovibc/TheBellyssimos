@@ -39,11 +39,12 @@ class EducatorClassStatusViewController: UIViewController, UITableViewDelegate, 
         appearance.backgroundColor = .systemBackground
         navigationController?.navigationBar.standardAppearance = appearance
         navigationController?.navigationBar.scrollEdgeAppearance = navigationController?.navigationBar.standardAppearance
-        self.navigationController?.navigationItem.rightBarButtonItem = UIBarButtonItem(
-            barButtonSystemItem: .add,
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(
+            title: nil,
+            image: UIImage(systemName: "ellipsis.circle"),
             target: self,
-            action: nil
-        )
+            action: nil,
+            menu: createMenu())
     }
     
     private func getProjectCell(_ index: Int) -> UITableViewCell {
@@ -100,5 +101,20 @@ class EducatorClassStatusViewController: UIViewController, UITableViewDelegate, 
         } else {
             return getStudentCell(indexPath)
         }
+    }
+    
+    func createMenu() -> UIMenu {
+        let educatorStoryboard = UIStoryboard(name: "EducatorFlow", bundle: nil)
+        var menuItems: [UIAction] {
+            return [
+                UIAction(title: "New Project", handler: { _ in
+                    let joinClassView = educatorStoryboard.instantiateViewController(withIdentifier: "CreateProjectViewController" )
+                    self.navigationController?.present(joinClassView, animated: true)
+                }),
+                UIAction(title: "Share Code", handler: { _ in
+                }),
+            ]
+        }
+        return UIMenu(title: "", image: nil, identifier: nil, options: [], children: menuItems)
     }
 }
