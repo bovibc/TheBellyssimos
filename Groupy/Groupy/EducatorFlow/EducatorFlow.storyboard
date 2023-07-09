@@ -273,6 +273,9 @@
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Form groups by criteria" cornerStyle="large"/>
+                                <connections>
+                                    <action selector="criteriaPressed:" destination="ZgE-cc-3UL" eventType="touchUpInside" id="KZx-CZ-yXj"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hHi-g3-yE1">
                                 <rect key="frame" x="16" y="487" width="361" height="48"/>
@@ -281,6 +284,9 @@
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="tinted" title="Form groups randomly" cornerStyle="large"/>
+                                <connections>
+                                    <action selector="randomlyPressed:" destination="ZgE-cc-3UL" eventType="touchUpInside" id="PhU-NH-S9f"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cRd-SR-re0">
                                 <rect key="frame" x="16" y="551" width="361" height="48"/>

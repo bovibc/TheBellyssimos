@@ -19,6 +19,36 @@ class CreateProjectViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    
+    @IBAction func criteriaPressed(_ sender: UIButton) {
+        let storyboard = UIStoryboard(name: "EducatorFlow", bundle: nil)
+        let criteriaCustomization = storyboard.instantiateViewController(withIdentifier: "CriteriaCustomizationViewController" )
+        self.navigationController?.show(criteriaCustomization, sender: true)
+    }
+
+    @IBAction func randomlyPressed(_ sender: UIButton) {
+        // Create the action buttons for the alert.
+        let defaultAction = UIAlertAction(title: "Form groups",
+                             style: .default) { (action) in
+            self.navigationController?.popViewController(animated: true)
+        }
+        let cancelAction = UIAlertAction(title: "Cancel",
+                             style: .cancel) { (action) in
+         // Respond to user selection of the action.
+        }
+
+        // Create and configure the alert controller.
+        let alert = UIAlertController(title: "Form groups randomly",
+              message: "You are about to form groups randomly for this project, without a specific criterion selected.",
+              preferredStyle: .alert)
+        alert.addAction(defaultAction)
+        alert.addAction(cancelAction)
+             
+        self.present(alert, animated: true) {
+           // The alert was presented
+        }
+    }
+    
 
     /*
     // MARK: - Navigation
