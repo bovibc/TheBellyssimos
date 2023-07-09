@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="MyJ-wU-gfH">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="MyJ-wU-gfH">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -187,8 +188,135 @@
                     <view key="view" contentMode="scaleToFill" id="XYS-Se-nw4">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ndN-Fh-TuP">
+                                <rect key="frame" x="141" y="607" width="110" height="200"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </stackView>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Project name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FZd-8w-ZU8">
+                                <rect key="frame" x="16" y="75" width="361" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="6Ko-yu-INC"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="wxg-Nd-Icn" userLabel="TextView Stack">
+                                <rect key="frame" x="16" y="151" width="361" height="144"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DESCRIPTION" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Bs-i1-C9i">
+                                        <rect key="frame" x="0.0" y="0.0" width="361" height="14.333333333333334"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <color key="textColor" systemColor="systemGray2Color"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="DxK-Cm-t1b">
+                                        <rect key="frame" x="0.0" y="18.33333333333335" width="361" height="125.66666666666669"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <color key="textColor" systemColor="labelColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="144" id="reM-bt-5zS"/>
+                                </constraints>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="juv-5P-AdC" userLabel="Dates Stack">
+                                <rect key="frame" x="16" y="311" width="361" height="88"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xe5-rR-gle" userLabel="StartDate Stack">
+                                        <rect key="frame" x="0.0" y="0.0" width="361" height="46"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KTS-YO-Ms8">
+                                                <rect key="frame" x="0.0" y="0.0" width="88" height="46"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="88" id="BSI-M3-UJd"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="BSw-HE-3ht">
+                                                <rect key="frame" x="88" y="0.0" width="273" height="46"/>
+                                            </datePicker>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Dl-kE-yX6" userLabel="DueDate Stack">
+                                        <rect key="frame" x="0.0" y="50" width="361" height="38"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="End date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UjB-Tr-aq2">
+                                                <rect key="frame" x="0.0" y="0.0" width="88" height="38"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="88" id="px9-gh-EPV"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="ANu-MD-IXb">
+                                                <rect key="frame" x="88" y="0.0" width="273" height="38"/>
+                                            </datePicker>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="88" id="3sq-e6-yPo"/>
+                                    <constraint firstItem="6Dl-kE-yX6" firstAttribute="top" secondItem="juv-5P-AdC" secondAttribute="top" constant="50" id="bnw-OB-cnd"/>
+                                    <constraint firstAttribute="width" constant="361" id="lJo-qR-Abf"/>
+                                </constraints>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LPT-2a-Xb9">
+                                <rect key="frame" x="16" y="423" width="361" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="LzG-tV-12z"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Form groups by criteria" cornerStyle="large"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hHi-g3-yE1">
+                                <rect key="frame" x="16" y="487" width="361" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="vjT-xE-dYM"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="tinted" title="Form groups randomly" cornerStyle="large"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cRd-SR-re0">
+                                <rect key="frame" x="16" y="551" width="361" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="OO2-Te-8Gz"/>
+                                </constraints>
+                                <color key="tintColor" systemColor="systemRedColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Deactivate students" cornerStyle="large"/>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="PAO-NM-jy9"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="cRd-SR-re0" firstAttribute="leading" secondItem="PAO-NM-jy9" secondAttribute="leading" constant="16" id="3nL-ch-Hav"/>
+                            <constraint firstItem="juv-5P-AdC" firstAttribute="top" secondItem="wxg-Nd-Icn" secondAttribute="bottom" constant="16" id="5pt-Gq-M21"/>
+                            <constraint firstItem="cRd-SR-re0" firstAttribute="top" secondItem="hHi-g3-yE1" secondAttribute="bottom" constant="16" id="MPs-ON-lC8"/>
+                            <constraint firstItem="FZd-8w-ZU8" firstAttribute="leading" secondItem="PAO-NM-jy9" secondAttribute="leading" constant="16" id="PCb-fK-1rc"/>
+                            <constraint firstItem="wxg-Nd-Icn" firstAttribute="centerX" secondItem="XYS-Se-nw4" secondAttribute="centerX" id="PkP-Jj-sCo"/>
+                            <constraint firstItem="PAO-NM-jy9" firstAttribute="trailing" secondItem="FZd-8w-ZU8" secondAttribute="trailing" constant="16" id="Qzq-Y7-HR4"/>
+                            <constraint firstItem="LPT-2a-Xb9" firstAttribute="top" secondItem="juv-5P-AdC" secondAttribute="bottom" constant="24" id="Ujz-jq-rtY"/>
+                            <constraint firstItem="juv-5P-AdC" firstAttribute="centerX" secondItem="XYS-Se-nw4" secondAttribute="centerX" id="VHv-6n-xvP"/>
+                            <constraint firstItem="hHi-g3-yE1" firstAttribute="top" secondItem="LPT-2a-Xb9" secondAttribute="bottom" constant="16" id="ZBx-Uc-a3L"/>
+                            <constraint firstItem="PAO-NM-jy9" firstAttribute="trailing" secondItem="wxg-Nd-Icn" secondAttribute="trailing" constant="16" id="Zri-g0-MKS"/>
+                            <constraint firstItem="LPT-2a-Xb9" firstAttribute="leading" secondItem="PAO-NM-jy9" secondAttribute="leading" constant="16" id="aMb-my-GST"/>
+                            <constraint firstAttribute="trailing" secondItem="juv-5P-AdC" secondAttribute="trailing" constant="16" id="b8k-Np-xY7"/>
+                            <constraint firstItem="PAO-NM-jy9" firstAttribute="trailing" secondItem="hHi-g3-yE1" secondAttribute="trailing" constant="16" id="bub-JN-ywR"/>
+                            <constraint firstItem="wxg-Nd-Icn" firstAttribute="top" secondItem="FZd-8w-ZU8" secondAttribute="bottom" constant="32" id="fK0-Bm-gSN"/>
+                            <constraint firstItem="juv-5P-AdC" firstAttribute="leading" secondItem="PAO-NM-jy9" secondAttribute="leading" constant="16" id="fbE-3k-pCc"/>
+                            <constraint firstItem="FZd-8w-ZU8" firstAttribute="centerX" secondItem="XYS-Se-nw4" secondAttribute="centerX" id="gMN-tg-lB9"/>
+                            <constraint firstItem="PAO-NM-jy9" firstAttribute="trailing" secondItem="cRd-SR-re0" secondAttribute="trailing" constant="16" id="kes-P0-k6L"/>
+                            <constraint firstItem="hHi-g3-yE1" firstAttribute="leading" secondItem="PAO-NM-jy9" secondAttribute="leading" constant="16" id="mBo-K2-4fe"/>
+                            <constraint firstItem="wxg-Nd-Icn" firstAttribute="leading" secondItem="PAO-NM-jy9" secondAttribute="leading" constant="16" id="py8-qt-v3e"/>
+                            <constraint firstItem="PAO-NM-jy9" firstAttribute="trailing" secondItem="LPT-2a-Xb9" secondAttribute="trailing" constant="16" id="rO9-RL-V97"/>
+                            <constraint firstItem="FZd-8w-ZU8" firstAttribute="top" secondItem="PAO-NM-jy9" secondAttribute="top" constant="16" id="vaJ-MA-7Ye"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rfb-hs-2ah" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -510,6 +638,9 @@
         </scene>
     </scenes>
     <resources>
+        <systemColor name="labelColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="opaqueSeparatorColor">
             <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
@@ -521,6 +652,9 @@
         </systemColor>
         <systemColor name="systemGray6Color">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

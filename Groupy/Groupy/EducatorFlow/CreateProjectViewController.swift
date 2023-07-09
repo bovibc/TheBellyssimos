@@ -11,7 +11,11 @@ class CreateProjectViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        navigationController?.navigationBar.prefersLargeTitles = false
+        self.title = "Create project"
 
+        self.view.backgroundColor = UIColor.systemGray6
         // Do any additional setup after loading the view.
     }
     
