@@ -109,7 +109,7 @@ class EducatorClassStatusViewController: UIViewController, UITableViewDelegate, 
             return [
                 UIAction(title: "New Project", handler: { _ in
                     let joinClassView = educatorStoryboard.instantiateViewController(withIdentifier: "CreateProjectViewController" )
-                    self.navigationController?.present(joinClassView, animated: true)
+                    self.navigationController?.show(joinClassView, sender: true)
                 }),
                 UIAction(title: "Share Code", handler: { _ in
                 }),
