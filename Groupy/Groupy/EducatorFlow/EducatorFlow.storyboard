@@ -324,6 +324,12 @@
                             <constraint firstItem="FZd-8w-ZU8" firstAttribute="top" secondItem="PAO-NM-jy9" secondAttribute="top" constant="16" id="vaJ-MA-7Ye"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="projectDescription" destination="DxK-Cm-t1b" id="9jv-TF-WZT"/>
+                        <outlet property="projectEndDate" destination="ANu-MD-IXb" id="mfD-wT-awf"/>
+                        <outlet property="projectName" destination="FZd-8w-ZU8" id="3eh-Mh-ejn"/>
+                        <outlet property="projectStartDate" destination="BSw-HE-3ht" id="Ng4-SA-mFk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rfb-hs-2ah" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

@@ -6,8 +6,16 @@
 //
 
 import UIKit
+import CoreData
 
 class EducatorClassStatusViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
+    // core data context
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+
+    // variavel que vai receber um array de Users e ser usada no componente
+    var fetchedClasses:[Class]?
+
     @IBOutlet weak var tableView: UITableView!
     var chosenClass: Class?
     var projects: [Project]?
@@ -15,6 +23,14 @@ class EducatorClassStatusViewController: UIViewController, UITableViewDelegate, 
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tableView.register(UINib(nibName: "StutentCellTableViewCell", bundle: nil), forCellReuseIdentifier: StudentCellTableViewCell.cellIdentifier)
+        configureTableView()
+        configureData()
+        configureNavigationBar()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        fetchClass()
         self.tableView.register(UINib(nibName: "StutentCellTableViewCell", bundle: nil), forCellReuseIdentifier: StudentCellTableViewCell.cellIdentifier)
         configureTableView()
         configureData()
@@ -103,13 +119,41 @@ class EducatorClassStatusViewController: UIViewController, UITableViewDelegate, 
         }
     }
     
+    private func fetchClass() {
+        do {
+            let request = Class.fetchRequest() as NSFetchRequest<Class>
+            
+            // define o(s) filtro(s) para a request
+            let pred = NSPredicate(format: "name CONTAINS '\(chosenClass?.name ?? "class")'")
+            request.predicate = pred
+            
+            // faz a request e adiciona no items apenas o User filtrado
+            let classArray = try context.fetch(request)
+            
+            chosenClass = classArray[0]
+
+            projects = chosenClass?.projects?.allObjects as? [Project]
+            students = chosenClass?.students?.allObjects as? [Student]
+            
+            DispatchQueue.main.async {
+               self.tableView.reloadData()
+            }
+        }
+        catch {
+            
+        }
+    }
+
     func createMenu() -> UIMenu {
         let educatorStoryboard = UIStoryboard(name: "EducatorFlow", bundle: nil)
         var menuItems: [UIAction] {
             return [
                 UIAction(title: "New Project", handler: { _ in
-                    let joinClassView = educatorStoryboard.instantiateViewController(withIdentifier: "CreateProjectViewController" )
-                    self.navigationController?.show(joinClassView, sender: true)
+                    let createProject = educatorStoryboard.instantiateViewController(withIdentifier: "CreateProjectViewController" ) as? CreateProjectViewController
+                    if let createProject = createProject {
+                        createProject.chosenClass = self.chosenClass
+                        self.navigationController?.show(createProject, sender: nil)
+                    }
                 }),
                 UIAction(title: "Share Code", handler: { _ in
                 }),
@@ -117,4 +161,5 @@ class EducatorClassStatusViewController: UIViewController, UITableViewDelegate, 
         }
         return UIMenu(title: "", image: nil, identifier: nil, options: [], children: menuItems)
     }
+    
 }
