@@ -21,16 +21,11 @@ class CreateProjectViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var projectDescription: UITextView!
     @IBOutlet weak var projectStartDate: UIDatePicker!
     @IBOutlet weak var projectEndDate: UIDatePicker!
-    
-    private func configureData() {
-        guard let chosenClass = chosenClass else { return }
-    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupKeyboard()
         self.fetchClasses()
-        configureData()
         navigationController?.navigationBar.prefersLargeTitles = false
         self.title = "Create project"
         self.projectName.delegate = self
@@ -39,6 +34,9 @@ class CreateProjectViewController: UIViewController, UITextFieldDelegate {
         // Do any additional setup after loading the view.
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        navigationController?.navigationBar.prefersLargeTitles = true
+    }
     
     @IBAction func criteriaPressed(_ sender: UIButton) {
         let storyboard = UIStoryboard(name: "EducatorFlow", bundle: nil)
