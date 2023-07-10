@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CreateClassViewController: UIViewController {
+class CreateClassViewController: UIViewController, UITextFieldDelegate {
 
     // set core data context
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
@@ -36,14 +36,11 @@ class CreateClassViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.setupKeyboard()
         self.view.backgroundColor = UIColor.systemGray6
-
-        title = "Create Class"
-
-        
-
-        // Do any additional setup after loading the view.
+        self.title = "Create Class"
+        className.delegate = self
+        classDescription.delegate = self
     }
     
     func addClass(_ className: String,_ classDescription: String) {
@@ -91,14 +88,26 @@ class CreateClassViewController: UIViewController {
             
         }
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    func setupKeyboard() {
+        let toolbar = UIToolbar()
+        let space =  UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        let doneButton = UIBarButtonItem(title: "Done", style: .done,
+                                         target: self, action: #selector(hideKeyboardAction))
+        toolbar.setItems([space,doneButton], animated: true)
+        toolbar.sizeToFit()
+        
+        className.inputAccessoryView = toolbar
+        classDescription.inputAccessoryView = toolbar
     }
-    */
+    
+    @objc func hideKeyboardAction() {
+        view.endEditing(true)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        hideKeyboardAction()
+        return false
+    }
 
 }

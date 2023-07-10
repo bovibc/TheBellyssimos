@@ -29,7 +29,6 @@ class CreateProjectViewController: UIViewController, UITextFieldDelegate {
         navigationController?.navigationBar.prefersLargeTitles = false
         self.title = "Create project"
         self.projectName.delegate = self
-
         self.view.backgroundColor = UIColor.systemGray6
         // Do any additional setup after loading the view.
     }
