@@ -9,10 +9,30 @@ import UIKit
 
 class CriteriaHelpViewController: UIViewController {
 
+    @IBOutlet weak var questionLabel: UILabel!
+    @IBOutlet weak var bottomLimitLabel: UILabel!
+    @IBOutlet weak var upperLimitLabel: UILabel!
+    
+    @IBOutlet weak var answerButton: UIButton!
+    
+    @IBOutlet weak var progressBar: UIProgressView!
+    
+    @IBOutlet weak var answerWeight: UISlider!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        self.title = "Criteria Customization"
+        
+        navigationItem.largeTitleDisplayMode = .never
+        
+        let appearance = UINavigationBarAppearance()
+        appearance.configureWithOpaqueBackground()
+        appearance.backgroundColor = .systemBackground
+        navigationController?.navigationBar.standardAppearance = appearance
+        navigationController?.navigationBar.scrollEdgeAppearance = navigationController?.navigationBar.standardAppearance
+
+        view.backgroundColor = UIColor.systemGray6
     }
     
 

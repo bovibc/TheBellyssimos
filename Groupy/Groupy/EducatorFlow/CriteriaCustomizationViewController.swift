@@ -9,10 +9,31 @@ import UIKit
 
 class CriteriaCustomizationViewController: UIViewController {
 
+    @IBOutlet weak var colleaguesSwitch: UISwitch!
+    
+    @IBOutlet weak var mbtiWeight: UISlider!
+    @IBOutlet weak var workingWeight: UISlider!
+    @IBOutlet weak var differentSkillWeight: UISlider!
+    @IBOutlet weak var motivationWeight: UISlider!
+    
+    @IBOutlet weak var helpButton: UIButton!
+    @IBOutlet weak var createButton: UIButton!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        self.title = "Group criteiria"
+        
+        navigationItem.largeTitleDisplayMode = .always
+        
+        let appearance = UINavigationBarAppearance()
+        appearance.configureWithOpaqueBackground()
+        appearance.backgroundColor = .systemBackground
+        navigationController?.navigationBar.standardAppearance = appearance
+        navigationController?.navigationBar.scrollEdgeAppearance = navigationController?.navigationBar.standardAppearance
+
+        view.backgroundColor = UIColor.systemGray6
     }
     
 

@@ -26,18 +26,17 @@ class EducatorProjectStatusViewController: UIViewController {
         tableView.dataSource = self
         tableView.allowsSelection = false
         
-        navigationController?.navigationBar.barTintColor = UIColor.green
-//        view.backgroundColor = UIColor.systemGray6
+        let appearance = UINavigationBarAppearance()
+        appearance.configureWithOpaqueBackground()
+        appearance.backgroundColor = .systemBackground
+        navigationController?.navigationBar.standardAppearance = appearance
+        navigationController?.navigationBar.scrollEdgeAppearance = navigationController?.navigationBar.standardAppearance
+
+        view.backgroundColor = UIColor.systemGray6
     }
     
     
     private func setProject() {
-        
-        let classData: Class = MockData().mockedClasses[0]
-        
-        let mockedProjects: [Project]? = classData.projects?.allObjects as? [Project]
-        
-        viewProject = mockedProjects?[0]
         
         projectDescription.text = viewProject?.info
         
