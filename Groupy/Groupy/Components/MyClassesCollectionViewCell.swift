@@ -25,7 +25,7 @@ class MyClassesCollectionViewCell: UICollectionViewCell {
         let projects = myClass.projects?.allObjects as? [Project]
         self.titleLabel.text = myClass.name ?? ""
 
-        if projects != [] {
+        if projects!.count >= 2 {
             if let first = projects?[0], let name = first.name {
                 self.firstProject.text = name
                 if let startDate = first.startDate, let dueDate = first.dueDate {
