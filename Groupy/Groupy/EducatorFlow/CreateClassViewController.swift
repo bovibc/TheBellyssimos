@@ -14,8 +14,8 @@ class CreateClassViewController: UIViewController, UITextFieldDelegate {
 
     var fetchedClasses: [Class]?
 
+    @IBOutlet weak var descriptionField: UITextView!
     @IBOutlet weak var className: UITextField!
-    @IBOutlet weak var classDescription: UITextField!
     
     
     @IBAction func closeModal(_ sender: UIButton) {
@@ -24,7 +24,7 @@ class CreateClassViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func createClass(_ sender: UIButton) {
         let name = className.text
-        let description = classDescription.text
+        let description = descriptionField.text
 
         // space to add endpoint to create a class
         if name != "" && description != ""
@@ -40,7 +40,6 @@ class CreateClassViewController: UIViewController, UITextFieldDelegate {
         self.view.backgroundColor = UIColor.systemGray6
         self.title = "Create Class"
         className.delegate = self
-        classDescription.delegate = self
     }
     
     func addClass(_ className: String,_ classDescription: String) {
@@ -98,7 +97,7 @@ class CreateClassViewController: UIViewController, UITextFieldDelegate {
         toolbar.sizeToFit()
         
         className.inputAccessoryView = toolbar
-        classDescription.inputAccessoryView = toolbar
+        descriptionField.inputAccessoryView = toolbar
     }
     
     @objc func hideKeyboardAction() {

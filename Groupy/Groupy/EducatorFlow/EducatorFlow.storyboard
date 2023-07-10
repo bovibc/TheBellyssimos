@@ -47,19 +47,35 @@
                                 </items>
                             </navigationBar>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="JFp-qH-l0G">
-                                <rect key="frame" x="16" y="119" width="361" height="68"/>
+                                <rect key="frame" x="16" y="119" width="361" height="34"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Class name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1sm-Bt-ifI">
                                         <rect key="frame" x="0.0" y="0.0" width="361" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Description" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GS2-cW-Qlp">
-                                        <rect key="frame" x="0.0" y="34" width="361" height="34"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
                                 </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="r7r-Pt-Kiz" userLabel="TextView Stack">
+                                <rect key="frame" x="16" y="185" width="361" height="144"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DESCRIPTION" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jus-2v-eTT">
+                                        <rect key="frame" x="0.0" y="0.0" width="361" height="14.333333333333334"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <color key="textColor" systemColor="systemGray2Color"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="g3m-z0-1Gl">
+                                        <rect key="frame" x="0.0" y="18.33333333333335" width="361" height="125.66666666666669"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <color key="textColor" systemColor="labelColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="144" id="Y8X-3G-jrZ"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ara-Ft-niM"/>
@@ -68,7 +84,10 @@
                             <constraint firstItem="JFp-qH-l0G" firstAttribute="top" secondItem="3Xj-ac-DR7" secondAttribute="bottom" constant="16" id="57v-6M-0HT"/>
                             <constraint firstItem="JFp-qH-l0G" firstAttribute="leading" secondItem="ara-Ft-niM" secondAttribute="leading" constant="16" id="86Z-A4-wtl"/>
                             <constraint firstItem="ara-Ft-niM" firstAttribute="trailing" secondItem="JFp-qH-l0G" secondAttribute="trailing" constant="16" id="9ho-Sl-Su0"/>
+                            <constraint firstItem="ara-Ft-niM" firstAttribute="trailing" secondItem="r7r-Pt-Kiz" secondAttribute="trailing" constant="16" id="Ek0-qi-nWS"/>
+                            <constraint firstItem="r7r-Pt-Kiz" firstAttribute="top" secondItem="1sm-Bt-ifI" secondAttribute="bottom" constant="32" id="HhL-LW-VA2"/>
                             <constraint firstItem="JFp-qH-l0G" firstAttribute="centerX" secondItem="jyO-4f-Qbk" secondAttribute="centerX" id="PKW-eK-96U"/>
+                            <constraint firstItem="r7r-Pt-Kiz" firstAttribute="leading" secondItem="ara-Ft-niM" secondAttribute="leading" constant="16" id="UAp-Wm-etv"/>
                             <constraint firstItem="3Xj-ac-DR7" firstAttribute="leading" secondItem="ara-Ft-niM" secondAttribute="leading" id="jdg-lI-Qm2"/>
                             <constraint firstItem="3Xj-ac-DR7" firstAttribute="top" secondItem="ara-Ft-niM" secondAttribute="top" id="oFM-Vw-9kc"/>
                             <constraint firstItem="3Xj-ac-DR7" firstAttribute="trailing" secondItem="ara-Ft-niM" secondAttribute="trailing" id="tlk-C1-B6C"/>
@@ -76,8 +95,8 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="classDescription" destination="GS2-cW-Qlp" id="oEE-NV-S0a"/>
                         <outlet property="className" destination="1sm-Bt-ifI" id="eiv-bc-n2F"/>
+                        <outlet property="descriptionField" destination="g3m-z0-1Gl" id="ob5-9r-uJ4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
