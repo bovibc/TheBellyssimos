@@ -13,6 +13,7 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var profileName: UILabel!
     @IBOutlet weak var profilePicture: UIImageView!
+    @IBOutlet weak var logOutButton: UIButton!
     
     private let sectionNumber: Int = 2
     private let declarations: [String] = ["Personality", "Skin tone", "LGBTQIA+","Motivation"]
@@ -26,7 +27,7 @@ class ProfileViewController: UIViewController {
         
         // Placeholders
         var image = UIImage(named: "bandeira")
-        image = resizeImage(image: image!, targetSize: CGSize(width: 100, height: 100))
+        image = resizeImage(image: image!, targetSize: CGSize(width: 144, height: 144))
         profilePicture.image = image
         profilePicture.layer.borderColor = UIColor.black.cgColor
         profilePicture.layer.borderWidth = 1
