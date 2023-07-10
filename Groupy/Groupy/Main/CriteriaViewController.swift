@@ -30,6 +30,7 @@ class CriteriaViewController: UIViewController {
     
     private func configureNavigationBar() {
         self.navigationController?.navigationBar.topItem?.title = "Criteria"
+        self.navigationController?.navigationBar.topItem?.rightBarButtonItem = nil
     }
     
     private func setCriteriaData() {

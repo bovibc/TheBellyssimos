@@ -42,6 +42,7 @@ class ProfileViewController: UIViewController {
     
     private func configureNavigationBar() {
         self.navigationController?.navigationBar.topItem?.title = "Profile"
+        self.navigationController?.navigationBar.topItem?.rightBarButtonItem = nil
         let appearance = UINavigationBarAppearance()
         appearance.configureWithOpaqueBackground()
         appearance.backgroundColor = .systemBackground
