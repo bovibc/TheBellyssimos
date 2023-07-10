@@ -64,9 +64,15 @@ class EducatorClassStatusViewController: UIViewController, UITableViewDelegate, 
     }
     
     private func getProjectCell(_ index: Int) -> UITableViewCell {
-        guard let project = projects?[index].name else { return UITableViewCell() }
+        guard let projects = projects else { return UITableViewCell() }
         let cell = UITableViewCell()
-        cell.textLabel?.text = "\(index). \(project)"
+        if projects.count == 0 {
+            cell.textLabel?.text = "No projects"
+        } else {
+            guard let project = projects[index].name else { return UITableViewCell() }
+            cell.textLabel?.text = "\(index+1). \(project)"
+        }
+        
         return cell
     }
     
@@ -92,7 +98,11 @@ class EducatorClassStatusViewController: UIViewController, UITableViewDelegate, 
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         guard let projects = projects, let students = students else { return 0 }
-        return (section == 0 ? projects.count : students.count)
+        if section == 0 {
+            return (projects.count == 0 ? 1 : projects.count)
+        } else {
+            return students.count
+        }
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
