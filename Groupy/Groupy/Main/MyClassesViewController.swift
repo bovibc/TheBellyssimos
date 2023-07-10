@@ -28,7 +28,6 @@ class MyClassesViewController: UIViewController, UICollectionViewDelegate, UICol
     override func viewWillAppear(_ animated: Bool) {
         self.fetchClasses()
         self.setupKeyboard()
-        self.addHideKeyboardGesture()
         self.configureNavigationBar()
         self.setClasses()
         self.setCollectionView()
@@ -156,12 +155,6 @@ extension MyClassesViewController: UISearchBarDelegate {
         }
         
         collectionView.reloadData()
-    }
-    
-    func addHideKeyboardGesture() {
-        let tapGesture = UITapGestureRecognizer(target: self,
-                                                action: #selector(hideKeyboardAction))
-        view.addGestureRecognizer(tapGesture)
     }
     
     func setupKeyboard() {
