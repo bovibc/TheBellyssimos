@@ -176,8 +176,6 @@ extension MyClassesViewController: UISearchBarDelegate {
     @objc func hideKeyboardAction() {
         view.endEditing(true)
     }
-
-    
 }
 
 extension MyClassesViewController: UIViewControllerTransitioningDelegate

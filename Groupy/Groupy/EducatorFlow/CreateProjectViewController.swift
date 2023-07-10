@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CreateProjectViewController: UIViewController {
+class CreateProjectViewController: UIViewController, UITextFieldDelegate {
 
     // core data context
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
@@ -28,10 +28,12 @@ class CreateProjectViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.setupKeyboard()
         self.fetchClasses()
         configureData()
         navigationController?.navigationBar.prefersLargeTitles = false
         self.title = "Create project"
+        self.projectName.delegate = self
 
         self.view.backgroundColor = UIColor.systemGray6
         // Do any additional setup after loading the view.
@@ -142,15 +144,25 @@ class CreateProjectViewController: UIViewController {
         }
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func setupKeyboard() {
+        let toolbar = UIToolbar()
+        let space =  UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        let doneButton = UIBarButtonItem(title: "Done", style: .done,
+                                         target: self, action: #selector(hideKeyboardAction))
+        toolbar.setItems([space,doneButton], animated: true)
+        toolbar.sizeToFit()
+        
+        projectName.inputAccessoryView = toolbar
+        projectDescription.inputAccessoryView = toolbar
     }
-    */
+    
+    @objc func hideKeyboardAction() {
+        view.endEditing(true)
+    }
 
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        hideKeyboardAction()
+        return false
+    }
+    
 }
