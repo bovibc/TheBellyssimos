@@ -37,13 +37,13 @@
                     <constraint firstItem="r6A-Qh-QgJ" firstAttribute="leading" secondItem="g0o-kH-tOR" secondAttribute="trailing" constant="10" id="IvC-LI-HRf"/>
                     <constraint firstAttribute="bottom" secondItem="g0o-kH-tOR" secondAttribute="bottom" constant="10" id="TIp-1D-KCB"/>
                     <constraint firstAttribute="trailing" secondItem="r6A-Qh-QgJ" secondAttribute="trailing" constant="10" id="X4e-eJ-Veq"/>
-                    <constraint firstAttribute="bottom" secondItem="r6A-Qh-QgJ" secondAttribute="bottom" id="lH0-Hz-baw"/>
                     <constraint firstAttribute="bottom" secondItem="r6A-Qh-QgJ" secondAttribute="bottom" id="x4K-3s-0pz"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="Name" destination="r6A-Qh-QgJ" id="Sdd-W6-uFK"/>
+                <outlet property="name" destination="r6A-Qh-QgJ" id="vGi-lv-MiY"/>
                 <outlet property="picture" destination="g0o-kH-tOR" id="0wK-Ej-el9"/>
             </connections>
             <point key="canvasLocation" x="138.93129770992365" y="19.718309859154932"/>
