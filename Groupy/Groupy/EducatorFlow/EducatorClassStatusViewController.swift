@@ -17,6 +17,7 @@ class EducatorClassStatusViewController: UIViewController, UITableViewDelegate, 
     var fetchedClasses:[Class]?
 
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var descriptionLabel: UILabel!
     var chosenClass: Class?
     var projects: [Project]?
     var students: [Student]?
@@ -46,6 +47,7 @@ class EducatorClassStatusViewController: UIViewController, UITableViewDelegate, 
         guard let chosenClass = chosenClass else { return }
         projects = chosenClass.projects?.allObjects as? [Project]
         students = chosenClass.students?.allObjects as? [Student]
+        descriptionLabel.text = chosenClass.info
     }
 
     private func configureNavigationBar() {
