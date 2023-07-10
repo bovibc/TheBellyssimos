@@ -18,7 +18,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="78w-4i-Vb9">
-                        <rect key="frame" x="0.0" y="0.0" width="160" height="44"/>
+                        <rect key="frame" x="10" y="0.0" width="160" height="44"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="160" id="4Bx-Jg-2q7"/>
                         </constraints>
@@ -37,20 +37,15 @@
                     <constraint firstItem="Cex-f9-M1R" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="7q3-IP-SP5"/>
                     <constraint firstAttribute="bottom" secondItem="Cex-f9-M1R" secondAttribute="bottom" id="Goc-TH-czt"/>
                     <constraint firstAttribute="bottom" secondItem="78w-4i-Vb9" secondAttribute="bottom" id="Kam-UW-ga3"/>
+                    <constraint firstItem="78w-4i-Vb9" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="cpM-fM-cI9"/>
                     <constraint firstItem="78w-4i-Vb9" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="dOl-yt-xGq"/>
                     <constraint firstAttribute="trailing" secondItem="Cex-f9-M1R" secondAttribute="trailing" constant="10" id="nY8-fk-odZ"/>
-                    <constraint firstItem="78w-4i-Vb9" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="rIV-2N-jx8"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="descriptionLabel" destination="78w-4i-Vb9" id="1py-Nc-RZP"/>
-                <outlet property="descriptionPicker" destination="Cex-f9-M1R" id="pB0-eb-Lv6"/>
-                <outlet property="detailsPicker" destination="Cex-f9-M1R" id="LOM-RX-YeG"/>
                 <outlet property="labelDecription" destination="78w-4i-Vb9" id="l0L-A9-Ykq"/>
                 <outlet property="pickerDescription" destination="Cex-f9-M1R" id="XkW-4f-kTM"/>
-                <outlet property="textLabel" destination="78w-4i-Vb9" id="K20-D3-ns7"/>
-                <outlet property="textPicker" destination="Cex-f9-M1R" id="uB0-tt-2LQ"/>
             </connections>
             <point key="canvasLocation" x="139" y="21"/>
         </tableViewCell>

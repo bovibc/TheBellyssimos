@@ -64,6 +64,8 @@
 		D37C1F7B2A56E003007FFCB1 /* RandomGroupFormation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37C1F7A2A56E003007FFCB1 /* RandomGroupFormation.swift */; };
 		D3910F5B2A5C380A00C279B8 /* PickerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3910F592A5C380A00C279B8 /* PickerTableViewCell.swift */; };
 		D3910F5C2A5C380A00C279B8 /* PickerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3910F5A2A5C380A00C279B8 /* PickerTableViewCell.xib */; };
+		D3910F652A5C55B400C279B8 /* CheckTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3910F632A5C55B300C279B8 /* CheckTableViewCell.swift */; };
+		D3910F662A5C55B400C279B8 /* CheckTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3910F642A5C55B400C279B8 /* CheckTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -126,6 +128,8 @@
 		D37C1F7A2A56E003007FFCB1 /* RandomGroupFormation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomGroupFormation.swift; sourceTree = "<group>"; };
 		D3910F592A5C380A00C279B8 /* PickerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerTableViewCell.swift; sourceTree = "<group>"; };
 		D3910F5A2A5C380A00C279B8 /* PickerTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PickerTableViewCell.xib; sourceTree = "<group>"; };
+		D3910F632A5C55B300C279B8 /* CheckTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckTableViewCell.swift; sourceTree = "<group>"; };
+		D3910F642A5C55B400C279B8 /* CheckTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CheckTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -272,6 +276,8 @@
 				0801E4D42A5438660048526A /* MyClassesCollectionViewCell.xib */,
 				D3910F592A5C380A00C279B8 /* PickerTableViewCell.swift */,
 				D3910F5A2A5C380A00C279B8 /* PickerTableViewCell.xib */,
+				D3910F632A5C55B300C279B8 /* CheckTableViewCell.swift */,
+				D3910F642A5C55B400C279B8 /* CheckTableViewCell.xib */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -337,6 +343,7 @@
 				D32482CF2A530A3D003D25B3 /* StutentCellTableViewCell.xib in Resources */,
 				A7397AD82A559949006A6662 /* CriteriaCollectionViewCell.xib in Resources */,
 				5733FF142A4EF5ED004D6C85 /* LoginFlow.storyboard in Resources */,
+				D3910F662A5C55B400C279B8 /* CheckTableViewCell.xib in Resources */,
 				5733FF162A4EF5FB004D6C85 /* StudentFlow.storyboard in Resources */,
 				0801E4D62A5438660048526A /* MyClassesCollectionViewCell.xib in Resources */,
 				D3910F5C2A5C380A00C279B8 /* PickerTableViewCell.xib in Resources */,
@@ -390,6 +397,7 @@
 				57E3D9EF2A4F0FB10081F8F5 /* EducatorJoinClassViewController.swift in Sources */,
 				57E3D9DD2A4EFDFF0081F8F5 /* CreateProjectViewController.swift in Sources */,
 				57E3DA032A4F151E0081F8F5 /* GiveFeedbackViewController.swift in Sources */,
+				D3910F652A5C55B400C279B8 /* CheckTableViewCell.swift in Sources */,
 				57E3D9E52A4EFF8A0081F8F5 /* LoginViewController.swift in Sources */,
 				57E3D9E72A4EFF9A0081F8F5 /* ChooseAccountViewController.swift in Sources */,
 				57CEBE192A55A87600C15C3C /* User+CoreDataClass.swift in Sources */,

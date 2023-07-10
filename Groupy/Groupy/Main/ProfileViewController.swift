@@ -25,8 +25,10 @@ class ProfileViewController: UIViewController {
         configureNavigationBar()
         tableView.delegate = self
         tableView.dataSource = self
-        let nib = UINib(nibName: "PickerTableViewCell", bundle: nil)
-        tableView.register(nib, forCellReuseIdentifier: PickerTableViewCell.cellIdentifier)
+        let nib1 = UINib(nibName: "PickerTableViewCell", bundle: nil)
+        let nib2 = UINib(nibName: "CheckTableViewCell", bundle: nil)
+        tableView.register(nib1, forCellReuseIdentifier: PickerTableViewCell.cellIdentifier)
+        tableView.register(nib2, forCellReuseIdentifier: CheckTableViewCell.cellIdentifier)
         configureImage()
     }
     
@@ -83,8 +85,22 @@ class ProfileViewController: UIViewController {
 extension ProfileViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // Unselect the row, and instead, show the state with a checkmark.
+        tableView.deselectRow(at: indexPath, animated: false)
+        
+        guard let cell = tableView.cellForRow(at: indexPath) else { return }
+        
+        // Show a check mark next to packed items.
+        if cell.accessoryType == .checkmark {
+            cell.accessoryType = .none
+        } else {
+            cell.accessoryType = .checkmark
+        }
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+            return 44
+    }
     
 }
 
@@ -99,17 +115,7 @@ extension ProfileViewController: UITableViewDataSource {
         return (section == 0 ? declarations.count : skills.count)
     }
     
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-
-        let cell = tableView.dequeueReusableCell(withIdentifier: PickerTableViewCell.cellIdentifier, for: indexPath) as! PickerTableViewCell
-        
-        cell.setCell(myLabel: declarations[indexPath.row], myPicker: parameters[indexPath.row])
-        
-//        if indexPath.section == 1 {
-//            let cell = tableView.dequeueReusableCell(withIdentifier: "profileCell", for: indexPath)
-//        }
-        
+    private func roundingCornersCell(_ cell: UITableViewCell, _ indexPath: IndexPath){
         //Top Left Right Corners
         let maskPathTop = UIBezierPath(roundedRect: cell.bounds, byRoundingCorners: [.topLeft, .topRight], cornerRadii: CGSize(width: 5.0, height: 5.0))
         let shapeLayerTop = CAShapeLayer()
@@ -140,9 +146,30 @@ extension ProfileViewController: UITableViewDataSource {
         {
             cell.layer.mask = shapeLayerBottom
         }
-
-        
+    }
+    
+    private func getPickerCell(_ indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: PickerTableViewCell.cellIdentifier, for: indexPath) as! PickerTableViewCell
+        cell.setCell(myLabel: declarations[indexPath.row], myPicker: parameters[indexPath.row])
+        roundingCornersCell(cell, indexPath)
         return cell
+    }
+    
+    private func getCheckCell(_ indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: CheckTableViewCell.cellIdentifier, for: indexPath) as! CheckTableViewCell
+        
+        cell.setCell(myLabel: skills[indexPath.row])
+        roundingCornersCell(cell, indexPath)
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        if indexPath.section == 0 {
+            return getPickerCell(indexPath)
+        } else {
+            return getCheckCell(indexPath)
+        }
         
     }
     
