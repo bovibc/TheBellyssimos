@@ -62,6 +62,8 @@
 		D32482CE2A530A3D003D25B3 /* StudentCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32482CC2A530A3D003D25B3 /* StudentCellTableViewCell.swift */; };
 		D32482CF2A530A3D003D25B3 /* StutentCellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D32482CD2A530A3D003D25B3 /* StutentCellTableViewCell.xib */; };
 		D37C1F7B2A56E003007FFCB1 /* RandomGroupFormation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37C1F7A2A56E003007FFCB1 /* RandomGroupFormation.swift */; };
+		D3910F5B2A5C380A00C279B8 /* PickerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3910F592A5C380A00C279B8 /* PickerTableViewCell.swift */; };
+		D3910F5C2A5C380A00C279B8 /* PickerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3910F5A2A5C380A00C279B8 /* PickerTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -122,6 +124,8 @@
 		D32482CC2A530A3D003D25B3 /* StudentCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentCellTableViewCell.swift; sourceTree = "<group>"; };
 		D32482CD2A530A3D003D25B3 /* StutentCellTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StutentCellTableViewCell.xib; sourceTree = "<group>"; };
 		D37C1F7A2A56E003007FFCB1 /* RandomGroupFormation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomGroupFormation.swift; sourceTree = "<group>"; };
+		D3910F592A5C380A00C279B8 /* PickerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerTableViewCell.swift; sourceTree = "<group>"; };
+		D3910F5A2A5C380A00C279B8 /* PickerTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PickerTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -266,6 +270,8 @@
 				A7397AD62A559949006A6662 /* CriteriaCollectionViewCell.xib */,
 				0801E4D32A5438660048526A /* MyClassesCollectionViewCell.swift */,
 				0801E4D42A5438660048526A /* MyClassesCollectionViewCell.xib */,
+				D3910F592A5C380A00C279B8 /* PickerTableViewCell.swift */,
+				D3910F5A2A5C380A00C279B8 /* PickerTableViewCell.xib */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -333,6 +339,7 @@
 				5733FF142A4EF5ED004D6C85 /* LoginFlow.storyboard in Resources */,
 				5733FF162A4EF5FB004D6C85 /* StudentFlow.storyboard in Resources */,
 				0801E4D62A5438660048526A /* MyClassesCollectionViewCell.xib in Resources */,
+				D3910F5C2A5C380A00C279B8 /* PickerTableViewCell.xib in Resources */,
 				0838F9942A49B18C00897044 /* LaunchScreen.storyboard in Resources */,
 				0838F9912A49B18C00897044 /* Assets.xcassets in Resources */,
 				0838F98C2A49B18B00897044 /* Main.storyboard in Resources */,
@@ -358,6 +365,7 @@
 				57E3DA052A4F15320081F8F5 /* ReadFeedbackViewController.swift in Sources */,
 				57E3D9F32A4F10510081F8F5 /* EducatorClassStatusViewController.swift in Sources */,
 				D32482CE2A530A3D003D25B3 /* StudentCellTableViewCell.swift in Sources */,
+				D3910F5B2A5C380A00C279B8 /* PickerTableViewCell.swift in Sources */,
 				57E3D9F92A4F109F0081F8F5 /* StudentClassStatusViewController.swift in Sources */,
 				5733FF0E2A4EF40A004D6C85 /* OnboardingViewController.swift in Sources */,
 				571336682A54393F00F9698E /* CoreDataEndpoints.swift in Sources */,

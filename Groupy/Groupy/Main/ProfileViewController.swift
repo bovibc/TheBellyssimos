@@ -16,16 +16,21 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var logOutButton: UIButton!
     
     private let sectionNumber: Int = 2
-    private let declarations: [String] = ["Personality", "Skin tone", "LGBTQIA+","Motivation"]
+    private let declarations: [String] = ["MBTI", "Working style","Skin tone", "Gender","Enthnicity"]
     private let skills: [String] = ["Swift", "Figma"]
+    private let parameters = [MockData().mbtiPersonality,MockData().wsPersonality,MockData().skinTone,MockData().gender,MockData().ethnicities]
 
     override func viewDidLoad() {
         super.viewDidLoad()
         configureNavigationBar()
         tableView.delegate = self
         tableView.dataSource = self
-        
-        // Placeholders
+        let nib = UINib(nibName: "PickerTableViewCell", bundle: nil)
+        tableView.register(nib, forCellReuseIdentifier: PickerTableViewCell.cellIdentifier)
+        configureImage()
+    }
+    
+    private func configureImage() {
         var image = UIImage(named: "bandeira")
         image = resizeImage(image: image!, targetSize: CGSize(width: 144, height: 144))
         profilePicture.image = image
@@ -34,7 +39,6 @@ class ProfileViewController: UIViewController {
         profilePicture.layer.masksToBounds = false
         profilePicture.layer.cornerRadius = profilePicture.frame.size.width / 2
         profilePicture.clipsToBounds = true
-
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -97,8 +101,46 @@ extension ProfileViewController: UITableViewDataSource {
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+
+        let cell = tableView.dequeueReusableCell(withIdentifier: PickerTableViewCell.cellIdentifier, for: indexPath) as! PickerTableViewCell
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "profileCell", for: indexPath)
+        cell.setCell(myLabel: declarations[indexPath.row], myPicker: parameters[indexPath.row])
+        
+//        if indexPath.section == 1 {
+//            let cell = tableView.dequeueReusableCell(withIdentifier: "profileCell", for: indexPath)
+//        }
+        
+        //Top Left Right Corners
+        let maskPathTop = UIBezierPath(roundedRect: cell.bounds, byRoundingCorners: [.topLeft, .topRight], cornerRadii: CGSize(width: 5.0, height: 5.0))
+        let shapeLayerTop = CAShapeLayer()
+        shapeLayerTop.frame = cell.bounds
+        shapeLayerTop.path = maskPathTop.cgPath
+        
+        //Bottom Left Right Corners
+        let maskPathBottom = UIBezierPath(roundedRect: cell.bounds, byRoundingCorners: [.bottomLeft, .bottomRight], cornerRadii: CGSize(width: 5.0, height: 5.0))
+        let shapeLayerBottom = CAShapeLayer()
+        shapeLayerBottom.frame = cell.bounds
+        shapeLayerBottom.path = maskPathBottom.cgPath
+        
+        //All Corners
+        let maskPathAll = UIBezierPath(roundedRect: cell.bounds, byRoundingCorners: [.topLeft, .topRight, .bottomRight, .bottomLeft], cornerRadii: CGSize(width: 5.0, height: 5.0))
+        let shapeLayerAll = CAShapeLayer()
+        shapeLayerAll.frame = cell.bounds
+        shapeLayerAll.path = maskPathAll.cgPath
+        
+        if (indexPath.row == 0 && indexPath.row == tableView.numberOfRows(inSection: indexPath.section)-1)
+        {
+            cell.layer.mask = shapeLayerAll
+        }
+        else if (indexPath.row == 0)
+        {
+            cell.layer.mask = shapeLayerTop
+        }
+        else if (indexPath.row == tableView.numberOfRows(inSection: indexPath.section)-1)
+        {
+            cell.layer.mask = shapeLayerBottom
+        }
+
         
         return cell
         
