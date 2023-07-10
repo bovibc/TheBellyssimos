@@ -14,10 +14,15 @@ class MockData {
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
 
     var mockedClasses: [Class] = []
+    
+    var mockedStudents: [Student] = []
 
     init() {
+        // set mocked students
+        self.mockedStudents = mockStudents()
+        
         // set mocked classes
-        self.mockedClasses = mockClasses()
+        //self.mockedClasses = mockClasses()
     }
 
     var nomes = ["Ana", "Beatriz", "Isabela", "Carol", "Mariana", "Oceana", "Paulo", "Rodrigo", "Thiago", "Matheus", "Ronaldo", "Lucio", "Alberto", "Mariano", "José", "Romariana", "Cefaleia", "Jemiana", "Jamanto"]
@@ -129,6 +134,53 @@ class MockData {
         }
         
         return mockedClasses
+    }
+    
+    func mockStudents() -> [Student] {
+        
+        var mockedStudents: [Student] = []
+        
+        // cria novos alunos e adiciona no mockedStudents
+        for _ in 0...40 {
+            let newStudent = Student(context: self.context)
+            
+            newStudent.name = nomes[Int.random(in: 0...18)] + " " + sobrenomes[Int.random(in: 0...13)]
+            newStudent.firstTime = false
+            newStudent.id = Int64(Int.random(in: 1000...9999))
+            newStudent.loggedIn = false
+            
+            if Bool.random()
+            {
+                if Bool.random()
+                {
+                    newStudent.ethnicity = ethnicities[Int.random(in: 0...3)]
+                }
+                
+                if Bool.random()
+                {
+                    newStudent.gender = gender[Int.random(in: 0...1)]
+                }
+                
+                if Bool.random()
+                {
+                    newStudent.skinTone = skinTone[Int.random(in: 0...1)]
+                }
+                
+                if Bool.random()
+                {
+                    newStudent.mbtiPersonality = mbtiPersonality[Int.random(in: 0...15)]
+                }
+                
+                if Bool.random()
+                {
+                    newStudent.wsPersonality = wsPersonality[Int.random(in: 0...3)]
+                }
+            }
+            
+            mockedStudents.append(newStudent)
+        }
+        
+        return mockedStudents
     }
     
     let criterias = [

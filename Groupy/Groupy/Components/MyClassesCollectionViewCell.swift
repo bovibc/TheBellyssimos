@@ -24,20 +24,29 @@ class MyClassesCollectionViewCell: UICollectionViewCell {
     private func setCellData(_ myClass: Class) {
         let projects = myClass.projects?.allObjects as? [Project]
         self.titleLabel.text = myClass.name ?? ""
-        
-        if let first = projects?[0], let name = first.name {
-            self.firstProject.text = name
-            if let startDate = first.startDate, let dueDate = first.dueDate {
-                self.firstProjectDate.text = "(\(startDate) - \(dueDate))"
+
+        if projects != [] {
+            if let first = projects?[0], let name = first.name {
+                self.firstProject.text = name
+                if let startDate = first.startDate, let dueDate = first.dueDate {
+                    self.firstProjectDate.text = "(\(startDate) - \(dueDate))"
+                }
+            }
+            
+            if let second = projects?[1], let name = second.name {
+                self.secondProject.text = name
+                if let startDate = second.startDate, let dueDate = second.dueDate {
+                    self.secondProjectDate.text = "(\(startDate) - \(dueDate))"
+                }
             }
         }
-        
-        if let second = projects?[1], let name = second.name {
-            self.secondProject.text = name
-            if let startDate = second.startDate, let dueDate = second.dueDate {
-                self.secondProjectDate.text = "(\(startDate) - \(dueDate))"
-            }
+        else {
+            self.firstProject.text = ""
+            self.firstProjectDate.text = ""
+            self.secondProject.text = ""
+            self.secondProjectDate.text = ""
         }
+
     }
     
     private func resetData() {
