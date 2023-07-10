@@ -110,14 +110,15 @@ class EducatorClassStatusViewController: UIViewController, UITableViewDelegate, 
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.section == 0 {
-            let storyboard = UIStoryboard(name: "EducatorFlow", bundle: nil)
-            let viewController = storyboard.instantiateViewController(withIdentifier: "EducatorProjectStatusViewController") as? EducatorProjectStatusViewController
-            if let viewController = viewController {
-                viewController.viewProject = getProject(name: projects?[indexPath.row].name)
-                navigationController?.show(viewController, sender: nil)
+        if projects?.count != 0  {
+            if indexPath.section == 0 {
+                let storyboard = UIStoryboard(name: "EducatorFlow", bundle: nil)
+                let viewController = storyboard.instantiateViewController(withIdentifier: "EducatorProjectStatusViewController") as? EducatorProjectStatusViewController
+                if let viewController = viewController {
+                    viewController.viewProject = getProject(name: projects?[indexPath.row].name)
+                    navigationController?.show(viewController, sender: nil)
+                }
             }
-            
         }
     }
     
