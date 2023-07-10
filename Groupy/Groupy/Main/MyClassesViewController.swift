@@ -27,7 +27,8 @@ class MyClassesViewController: UIViewController, UICollectionViewDelegate, UICol
     
     override func viewWillAppear(_ animated: Bool) {
         self.fetchClasses()
-        //self.setCollectionView()
+        self.setupKeyboard()
+        self.addHideKeyboardGesture()
         self.configureNavigationBar()
         self.setClasses()
         self.setCollectionView()
@@ -156,6 +157,34 @@ extension MyClassesViewController: UISearchBarDelegate {
         
         collectionView.reloadData()
     }
+    
+    func addHideKeyboardGesture() {
+        let tapGesture = UITapGestureRecognizer(target: self,
+                                                action: #selector(hideKeyboardAction))
+        view.addGestureRecognizer(tapGesture)
+    }
+    
+    func setupKeyboard() {
+        let toolbar = UIToolbar()
+        let space =  UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        let doneButton = UIBarButtonItem(title: "Done", style: .done,
+                                         target: self, action: #selector(hideKeyboardAction))
+        toolbar.setItems([space,doneButton], animated: true)
+        toolbar.sizeToFit()
+        
+        searchBar.delegate = self
+        searchBar.inputAccessoryView = toolbar
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        hideKeyboardAction()
+    }
+    
+    @objc func hideKeyboardAction() {
+        view.endEditing(true)
+    }
+
+    
 }
 
 extension MyClassesViewController: UIViewControllerTransitioningDelegate
