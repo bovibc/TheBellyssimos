@@ -8,16 +8,12 @@
 import UIKit
 
 class CriteriaCustomizationViewController: UIViewController {
-
-    @IBOutlet weak var colleaguesSwitch: UISwitch!
-    
-    @IBOutlet weak var mbtiWeight: UISlider!
-    @IBOutlet weak var workingWeight: UISlider!
-    @IBOutlet weak var differentSkillWeight: UISlider!
-    @IBOutlet weak var motivationWeight: UISlider!
     
     @IBOutlet weak var helpButton: UIButton!
     @IBOutlet weak var createButton: UIButton!
+    
+    private let matchPersonality: [String] = ["MBTI", "Working styles"]
+    private let parameters: [String] = ["Different skill set", "Same motivation", "New colleagues"]
     
     
     override func viewDidLoad() {
