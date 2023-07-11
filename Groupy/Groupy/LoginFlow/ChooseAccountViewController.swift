@@ -78,6 +78,11 @@ class ChooseAccountViewController: UIViewController {
                // The alert was presented
             }
         }
+        else if accountType == "educator" {
+            let storyboard = UIStoryboard(name: "LoginFlow", bundle: nil)
+            let createEducatorView = storyboard.instantiateViewController(withIdentifier: "CreateEducatorViewController")
+            self.present(createEducatorView, animated: true)
+        }
     }
     
     /*
