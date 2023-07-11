@@ -14,6 +14,7 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var profilePicture: UIImageView!
     @IBOutlet weak var logOutButton: UIButton!
+    @IBOutlet weak var deleteButton: UIButton!
     
     private let textTable: [String] = ["Change passwod", "Change e-mail"]
     
@@ -22,6 +23,10 @@ class ProfileViewController: UIViewController {
         configureNavigationBar()
         tableView.delegate = self
         tableView.dataSource = self
+        
+        // Talvez tirar
+        tableView.allowsSelection = false
+        
         configureImage()
     }
     
