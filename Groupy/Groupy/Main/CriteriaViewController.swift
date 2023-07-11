@@ -40,9 +40,29 @@ class CriteriaViewController: UIViewController {
 
 extension CriteriaViewController: UICollectionViewDelegate {
     
-    private func collectionView(_ tableView: UICollectionViewCell, didSelectRowAt indexPath: IndexPath) {
+    private func getCriteriaType(label: String?) -> CriteriaType {
+        guard let label = label else { return .Diversity }
+        if label == CriteriaType.Diversity.rawValue {
+            return .Diversity
+        } else if label == CriteriaType.Personality.rawValue {
+            return .Personality
+        } else if label == CriteriaType.Motivation.rawValue {
+            return .Motivation
+        } else if label == CriteriaType.Skill.rawValue {
+            return .Skill
+        } else {
+            return .Previous_Interations
+        }
     }
-
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let viewController = storyboard.instantiateViewController(withIdentifier: "CriteriaDetailsViewController") as? CriteriaDetailsViewController
+        if let viewController = viewController {
+            viewController.criteriaType = getCriteriaType(label: criterias?[indexPath.row].name)
+            navigationController?.show(viewController, sender: nil)
+        }
+    }
 }
 
 extension CriteriaViewController: UICollectionViewDataSource {

@@ -91,12 +91,6 @@ class CreateProjectViewController: UIViewController, UITextFieldDelegate {
         // resgata o que foi inserido nos campos
         let newProjectName = projectName.text
         let newProjectInfo = projectDescription.text
-        //let newProjectStartDateFormatter = DateFormatter()
-        //let newProjectEndDateFormatter = DateFormatter()
-        //newProjectStartDateFormatter.dateFormat = "dd/MM/YY"
-        //newProjectEndDateFormatter.dateFormat = "dd/MM/YY"
-        //let newProjectStartDate = newProjectStartDateFormatter.string(from: projectStartDate.date)
-        //let newProjectEndDate = newProjectEndDateFormatter.string(from: projectEndDate.date)
         let newProjectStartDate = projectStartDate.date
         let newProjectEndDate = projectEndDate.date
         
