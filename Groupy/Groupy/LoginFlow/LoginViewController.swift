@@ -12,10 +12,22 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        self.view.backgroundColor = UIColor.systemGray6
+
+        title = "Login"
     }
     
-
+    @IBAction func createAccountTapped(_ sender: UIButton) {
+        let storyboard = UIStoryboard(name: "LoginFlow", bundle: nil)
+        let chooseAccountView = storyboard.instantiateViewController(withIdentifier: "ChooseAccountViewController")
+        self.present(chooseAccountView, animated: true)
+    }
+    
+    @IBAction func cancelTapped(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    
     /*
     // MARK: - Navigation
 

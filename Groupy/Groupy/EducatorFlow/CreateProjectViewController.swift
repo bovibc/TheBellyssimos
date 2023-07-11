@@ -21,7 +21,11 @@ class CreateProjectViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var projectDescription: UITextView!
     @IBOutlet weak var projectStartDate: UIDatePicker!
     @IBOutlet weak var projectEndDate: UIDatePicker!
-
+    @IBOutlet weak var groupSize: UILabel!
+    @IBOutlet weak var stepperValue: UIStepper!
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupKeyboard()
@@ -31,6 +35,14 @@ class CreateProjectViewController: UIViewController, UITextFieldDelegate {
         self.projectName.delegate = self
         self.view.backgroundColor = UIColor.systemGray6
         // Do any additional setup after loading the view.
+        
+        let students = chosenClass?.students?.allObjects as! [Student]
+        let studentsCount = students.count
+
+        stepperValue.minimumValue = 2
+        stepperValue.maximumValue = floor(Double(studentsCount/2))
+        stepperValue.stepValue = 1
+        stepperValue.value = 4
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -65,6 +77,11 @@ class CreateProjectViewController: UIViewController, UITextFieldDelegate {
         self.present(alert, animated: true) {
            // The alert was presented
         }
+    }
+    
+    
+    @IBAction func stepperTapped(_ sender: UIStepper) {
+        groupSize.text = String(format: "%.0f", stepperValue.value)
     }
     
     func addProjectToClass(_ criteria: String) {
@@ -107,7 +124,7 @@ class CreateProjectViewController: UIViewController, UITextFieldDelegate {
         var formedGroups: [Group]?
 
         if criteria == "random" {
-            formedGroups = randomGroupFormation(myClass: classToEdit, groupSize: 5)
+            formedGroups = randomGroupFormation(myClass: classToEdit, groupSize: Int(stepperValue.value))
             
             for eachGroup in formedGroups! {
                 newProject.addToGroups(eachGroup)

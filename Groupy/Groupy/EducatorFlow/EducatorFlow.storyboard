@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="MyJ-wU-gfH">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="MyJ-wU-gfH">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -208,10 +209,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ndN-Fh-TuP">
-                                <rect key="frame" x="141" y="607" width="110" height="200"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </stackView>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Project name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FZd-8w-ZU8">
                                 <rect key="frame" x="16" y="75" width="361" height="44"/>
                                 <constraints>
@@ -241,8 +238,65 @@
                                     <constraint firstAttribute="height" constant="144" id="reM-bt-5zS"/>
                                 </constraints>
                             </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="uHR-Xe-J4V" userLabel="GroupSize">
+                                <rect key="frame" x="16" y="311" width="361" height="32"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Students per group: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ds8-MU-pUf">
+                                        <rect key="frame" x="0.0" y="0.0" width="170" height="32"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="170" id="W11-68-4ij"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="4" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C4K-Bd-lEw">
+                                        <rect key="frame" x="194" y="0.0" width="49" height="32"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="iuB-b0-tTX">
+                                        <rect key="frame" x="267" y="0.0" width="94" height="32"/>
+                                        <connections>
+                                            <action selector="stepperTapped:" destination="ZgE-cc-3UL" eventType="valueChanged" id="qx4-vT-Oes"/>
+                                        </connections>
+                                    </stepper>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LPT-2a-Xb9">
+                                <rect key="frame" x="16" y="471" width="361" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="LzG-tV-12z"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Form groups by criteria" cornerStyle="large"/>
+                                <connections>
+                                    <action selector="criteriaPressed:" destination="ZgE-cc-3UL" eventType="touchUpInside" id="KZx-CZ-yXj"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hHi-g3-yE1">
+                                <rect key="frame" x="16" y="535" width="361" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="vjT-xE-dYM"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="tinted" title="Form groups randomly" cornerStyle="large"/>
+                                <connections>
+                                    <action selector="randomlyPressed:" destination="ZgE-cc-3UL" eventType="touchUpInside" id="PhU-NH-S9f"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cRd-SR-re0">
+                                <rect key="frame" x="16" y="599" width="361" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="OO2-Te-8Gz"/>
+                                </constraints>
+                                <color key="tintColor" systemColor="systemRedColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Deactivate students" cornerStyle="large"/>
+                            </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="juv-5P-AdC" userLabel="Dates Stack">
-                                <rect key="frame" x="16" y="311" width="361" height="88"/>
+                                <rect key="frame" x="16" y="359" width="361" height="88"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xe5-rR-gle" userLabel="StartDate Stack">
                                         <rect key="frame" x="0.0" y="0.0" width="361" height="46"/>
@@ -285,43 +339,13 @@
                                     <constraint firstAttribute="width" constant="361" id="lJo-qR-Abf"/>
                                 </constraints>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LPT-2a-Xb9">
-                                <rect key="frame" x="16" y="423" width="361" height="48"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="48" id="LzG-tV-12z"/>
-                                </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Form groups by criteria" cornerStyle="large"/>
-                                <connections>
-                                    <action selector="criteriaPressed:" destination="ZgE-cc-3UL" eventType="touchUpInside" id="KZx-CZ-yXj"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hHi-g3-yE1">
-                                <rect key="frame" x="16" y="487" width="361" height="48"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="48" id="vjT-xE-dYM"/>
-                                </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="tinted" title="Form groups randomly" cornerStyle="large"/>
-                                <connections>
-                                    <action selector="randomlyPressed:" destination="ZgE-cc-3UL" eventType="touchUpInside" id="PhU-NH-S9f"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cRd-SR-re0">
-                                <rect key="frame" x="16" y="551" width="361" height="48"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="48" id="OO2-Te-8Gz"/>
-                                </constraints>
-                                <color key="tintColor" systemColor="systemRedColor"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Deactivate students" cornerStyle="large"/>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="PAO-NM-jy9"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="uHR-Xe-J4V" firstAttribute="top" secondItem="wxg-Nd-Icn" secondAttribute="bottom" constant="16" id="1gt-3g-kdB"/>
+                            <constraint firstItem="juv-5P-AdC" firstAttribute="top" secondItem="uHR-Xe-J4V" secondAttribute="bottom" constant="16" id="2A1-7o-Qow"/>
                             <constraint firstItem="cRd-SR-re0" firstAttribute="leading" secondItem="PAO-NM-jy9" secondAttribute="leading" constant="16" id="3nL-ch-Hav"/>
-                            <constraint firstItem="juv-5P-AdC" firstAttribute="top" secondItem="wxg-Nd-Icn" secondAttribute="bottom" constant="16" id="5pt-Gq-M21"/>
                             <constraint firstItem="cRd-SR-re0" firstAttribute="top" secondItem="hHi-g3-yE1" secondAttribute="bottom" constant="16" id="MPs-ON-lC8"/>
                             <constraint firstItem="FZd-8w-ZU8" firstAttribute="leading" secondItem="PAO-NM-jy9" secondAttribute="leading" constant="16" id="PCb-fK-1rc"/>
                             <constraint firstItem="wxg-Nd-Icn" firstAttribute="centerX" secondItem="XYS-Se-nw4" secondAttribute="centerX" id="PkP-Jj-sCo"/>
@@ -333,9 +357,12 @@
                             <constraint firstItem="LPT-2a-Xb9" firstAttribute="leading" secondItem="PAO-NM-jy9" secondAttribute="leading" constant="16" id="aMb-my-GST"/>
                             <constraint firstAttribute="trailing" secondItem="juv-5P-AdC" secondAttribute="trailing" constant="16" id="b8k-Np-xY7"/>
                             <constraint firstItem="PAO-NM-jy9" firstAttribute="trailing" secondItem="hHi-g3-yE1" secondAttribute="trailing" constant="16" id="bub-JN-ywR"/>
+                            <constraint firstItem="uHR-Xe-J4V" firstAttribute="leading" secondItem="PAO-NM-jy9" secondAttribute="leading" constant="16" id="csO-PO-CRM"/>
                             <constraint firstItem="wxg-Nd-Icn" firstAttribute="top" secondItem="FZd-8w-ZU8" secondAttribute="bottom" constant="32" id="fK0-Bm-gSN"/>
                             <constraint firstItem="juv-5P-AdC" firstAttribute="leading" secondItem="PAO-NM-jy9" secondAttribute="leading" constant="16" id="fbE-3k-pCc"/>
+                            <constraint firstItem="PAO-NM-jy9" firstAttribute="trailing" secondItem="uHR-Xe-J4V" secondAttribute="trailing" constant="16" id="g4h-BE-gwD"/>
                             <constraint firstItem="FZd-8w-ZU8" firstAttribute="centerX" secondItem="XYS-Se-nw4" secondAttribute="centerX" id="gMN-tg-lB9"/>
+                            <constraint firstItem="uHR-Xe-J4V" firstAttribute="centerX" secondItem="XYS-Se-nw4" secondAttribute="centerX" id="hw6-ve-aYC"/>
                             <constraint firstItem="PAO-NM-jy9" firstAttribute="trailing" secondItem="cRd-SR-re0" secondAttribute="trailing" constant="16" id="kes-P0-k6L"/>
                             <constraint firstItem="hHi-g3-yE1" firstAttribute="leading" secondItem="PAO-NM-jy9" secondAttribute="leading" constant="16" id="mBo-K2-4fe"/>
                             <constraint firstItem="wxg-Nd-Icn" firstAttribute="leading" secondItem="PAO-NM-jy9" secondAttribute="leading" constant="16" id="py8-qt-v3e"/>
@@ -344,15 +371,17 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="groupSize" destination="C4K-Bd-lEw" id="e4Z-BC-aVU"/>
                         <outlet property="projectDescription" destination="DxK-Cm-t1b" id="9jv-TF-WZT"/>
                         <outlet property="projectEndDate" destination="ANu-MD-IXb" id="mfD-wT-awf"/>
                         <outlet property="projectName" destination="FZd-8w-ZU8" id="3eh-Mh-ejn"/>
                         <outlet property="projectStartDate" destination="BSw-HE-3ht" id="Ng4-SA-mFk"/>
+                        <outlet property="stepperValue" destination="iuB-b0-tTX" id="x0x-AH-4Ip"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rfb-hs-2ah" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1181" y="753"/>
+            <point key="canvasLocation" x="1180.9160305343512" y="752.81690140845069"/>
         </scene>
         <!--Criteria Help View Controller-->
         <scene sceneID="bMs-8x-GP3">
