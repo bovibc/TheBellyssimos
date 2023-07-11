@@ -62,6 +62,8 @@
 		D308BCB02A5D7C390019F33C /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D308BCAF2A5D7C390019F33C /* ProfileTableViewCell.swift */; };
 		D32482CE2A530A3D003D25B3 /* StudentCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32482CC2A530A3D003D25B3 /* StudentCellTableViewCell.swift */; };
 		D32482CF2A530A3D003D25B3 /* StutentCellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D32482CD2A530A3D003D25B3 /* StutentCellTableViewCell.xib */; };
+		D3486C2F2A5D884A00678210 /* CustomizationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3486C2D2A5D884A00678210 /* CustomizationTableViewCell.swift */; };
+		D3486C302A5D884A00678210 /* CustomizationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3486C2E2A5D884A00678210 /* CustomizationTableViewCell.xib */; };
 		D37C1F7B2A56E003007FFCB1 /* RandomGroupFormation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37C1F7A2A56E003007FFCB1 /* RandomGroupFormation.swift */; };
 /* End PBXBuildFile section */
 
@@ -123,6 +125,8 @@
 		D308BCAF2A5D7C390019F33C /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
 		D32482CC2A530A3D003D25B3 /* StudentCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentCellTableViewCell.swift; sourceTree = "<group>"; };
 		D32482CD2A530A3D003D25B3 /* StutentCellTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StutentCellTableViewCell.xib; sourceTree = "<group>"; };
+		D3486C2D2A5D884A00678210 /* CustomizationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomizationTableViewCell.swift; sourceTree = "<group>"; };
+		D3486C2E2A5D884A00678210 /* CustomizationTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomizationTableViewCell.xib; sourceTree = "<group>"; };
 		D37C1F7A2A56E003007FFCB1 /* RandomGroupFormation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomGroupFormation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -269,6 +273,8 @@
 				A7397AD62A559949006A6662 /* CriteriaCollectionViewCell.xib */,
 				0801E4D32A5438660048526A /* MyClassesCollectionViewCell.swift */,
 				0801E4D42A5438660048526A /* MyClassesCollectionViewCell.xib */,
+				D3486C2D2A5D884A00678210 /* CustomizationTableViewCell.swift */,
+				D3486C2E2A5D884A00678210 /* CustomizationTableViewCell.xib */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -338,6 +344,7 @@
 				0801E4D62A5438660048526A /* MyClassesCollectionViewCell.xib in Resources */,
 				0838F9942A49B18C00897044 /* LaunchScreen.storyboard in Resources */,
 				0838F9912A49B18C00897044 /* Assets.xcassets in Resources */,
+				D3486C302A5D884A00678210 /* CustomizationTableViewCell.xib in Resources */,
 				0838F98C2A49B18B00897044 /* Main.storyboard in Resources */,
 				5733FF182A4EF614004D6C85 /* EducatorFlow.storyboard in Resources */,
 			);
@@ -396,6 +403,7 @@
 				57E3D9DF2A4EFE160081F8F5 /* CriteriaCustomizationViewController.swift in Sources */,
 				57E3D9EB2A4F07870081F8F5 /* CreateStudentPersonalityViewController.swift in Sources */,
 				0801E4D52A5438660048526A /* MyClassesCollectionViewCell.swift in Sources */,
+				D3486C2F2A5D884A00678210 /* CustomizationTableViewCell.swift in Sources */,
 				57CEBE182A55A87600C15C3C /* Student+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
