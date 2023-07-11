@@ -41,6 +41,15 @@ class EducatorProjectStatusViewController: UIViewController {
         projectDescription.text = viewProject?.info
         
         viewGroups = viewProject?.groups?.allObjects as? [Group]
+        
+        viewGroups = viewGroups?.sorted {
+            let num1 = Int(($0.name?.components(separatedBy: CharacterSet.decimalDigits.inverted).joined())!)!
+            
+            let num2 = Int(($1.name?.components(separatedBy: CharacterSet.decimalDigits.inverted).joined())!)!
+            
+            return num1 < num2
+            
+        }
 
     }
     
@@ -78,6 +87,10 @@ extension EducatorProjectStatusViewController: UITableViewDataSource {
         
         return cell
         
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 32
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
