@@ -28,6 +28,7 @@ class MyClassesViewController: UIViewController, UICollectionViewDelegate, UICol
     override func viewWillAppear(_ animated: Bool) {
         self.fetchClasses()
         self.setupKeyboard()
+        self.setColors()
         self.configureNavigationBar()
         self.setClasses()
         self.setCollectionView()
@@ -35,6 +36,15 @@ class MyClassesViewController: UIViewController, UICollectionViewDelegate, UICol
     
     override func viewDidAppear(_ animated: Bool) {
         self.configureNavigationBar()
+    }
+    
+    private func setColors() {
+        self.view.backgroundColor = .systemGray6
+        let appearance = UINavigationBarAppearance()
+        appearance.configureWithOpaqueBackground()
+        appearance.backgroundColor = .systemBackground
+        navigationController?.navigationBar.standardAppearance = appearance
+        navigationController?.navigationBar.scrollEdgeAppearance = navigationController?.navigationBar.standardAppearance
     }
     
     private func fetchClasses() {

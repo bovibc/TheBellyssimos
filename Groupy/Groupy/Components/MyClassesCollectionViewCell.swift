@@ -85,6 +85,7 @@ class MyClassesCollectionViewCell: UICollectionViewCell {
     }
     
     private func setCellLayout() {
+        self.clipsToBounds = true
         self.layer.borderColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.3).cgColor
         self.layer.cornerRadius = 15
         self.layer.borderWidth = 1

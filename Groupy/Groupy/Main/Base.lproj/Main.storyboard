@@ -173,7 +173,8 @@
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="eQ5-xU-96Y">
                                 <rect key="frame" x="16" y="175" width="361" height="594"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                <color key="tintColor" systemColor="systemGray6Color"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="nev-vB-tBj">
                                     <size key="itemSize" width="128" height="128"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -187,7 +188,9 @@
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="aAB-pP-uP1">
                                             <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" systemColor="systemGray6Color"/>
                                         </collectionViewCellContentView>
+                                        <color key="backgroundColor" systemColor="systemGray6Color"/>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
@@ -200,7 +203,7 @@
                             </searchBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Bes-BK-aHh"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemGray6Color"/>
                         <constraints>
                             <constraint firstItem="EYf-1a-b9t" firstAttribute="leading" secondItem="Bes-BK-aHh" secondAttribute="leading" id="5PV-Gf-ica"/>
                             <constraint firstItem="eQ5-xU-96Y" firstAttribute="leading" secondItem="Bes-BK-aHh" secondAttribute="leading" constant="16" id="98f-xN-WCN"/>
