@@ -12,6 +12,8 @@ class CustomizationTableViewCell: UITableViewCell {
     @IBOutlet weak var valueSwitch: UISwitch!
     @IBOutlet weak var labelDescription: UILabel!
     
+    static let cellIdentifier: String = "customizationCell"
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

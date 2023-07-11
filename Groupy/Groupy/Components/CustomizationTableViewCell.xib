@@ -23,15 +23,15 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LUf-UZ-jNF">
-                        <rect key="frame" x="261" y="7" width="51" height="31"/>
+                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="LUf-UZ-jNF">
+                        <rect key="frame" x="251" y="7" width="51" height="31"/>
                     </switch>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="LUf-UZ-jNF" secondAttribute="bottom" constant="6" id="3HR-KZ-g2J"/>
                     <constraint firstAttribute="bottom" secondItem="wSI-Mk-DkL" secondAttribute="bottom" id="9YS-o6-zll"/>
                     <constraint firstItem="wSI-Mk-DkL" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="CeS-Vf-3Q1"/>
-                    <constraint firstAttribute="trailing" secondItem="LUf-UZ-jNF" secondAttribute="trailing" constant="10" id="T7h-3M-eRN"/>
+                    <constraint firstAttribute="trailing" secondItem="LUf-UZ-jNF" secondAttribute="trailing" constant="20" id="T7h-3M-eRN"/>
                     <constraint firstItem="LUf-UZ-jNF" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="7" id="U8L-i4-5lZ"/>
                     <constraint firstItem="wSI-Mk-DkL" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="r8A-eB-2IT"/>
                 </constraints>

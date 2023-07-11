@@ -561,7 +561,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dGk-bm-zf8">
-                                <rect key="frame" x="16" y="499" width="361" height="50"/>
+                                <rect key="frame" x="16" y="349" width="361" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="ppy-cP-rJ8"/>
                                 </constraints>
@@ -569,7 +569,7 @@
                                 <buttonConfiguration key="configuration" style="filled" title="Create groups"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S8u-fL-zZg">
-                                <rect key="frame" x="16" y="565" width="361" height="50"/>
+                                <rect key="frame" x="16" y="415" width="361" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="BEX-pW-8p9"/>
                                 </constraints>
@@ -577,11 +577,12 @@
                                 <buttonConfiguration key="configuration" style="tinted" title="Help me customize"/>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="73u-c6-BIU">
-                                <rect key="frame" x="16" y="75" width="361" height="400"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <rect key="frame" x="16" y="75" width="361" height="250"/>
+                                <color key="backgroundColor" systemColor="systemGray6Color"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="400" id="Hrr-JT-wdw"/>
+                                    <constraint firstAttribute="height" constant="250" id="Hrr-JT-wdw"/>
                                 </constraints>
+                                <color key="separatorColor" systemColor="systemGray6Color"/>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="VXB-Tk-Mla"/>
@@ -601,6 +602,7 @@
                     <connections>
                         <outlet property="createButton" destination="dGk-bm-zf8" id="Qup-Gh-20G"/>
                         <outlet property="helpButton" destination="S8u-fL-zZg" id="cmu-GS-vJP"/>
+                        <outlet property="tableView" destination="73u-c6-BIU" id="dIZ-4X-jDN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oJU-zs-C5Y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
