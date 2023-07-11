@@ -19,14 +19,28 @@ class CriteriaDetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.navigationBar.prefersLargeTitles = false
+        self.setColors()
+        self.setScreenData()
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        navigationController?.navigationBar.prefersLargeTitles = true
+    }
+    
+    private func setScreenData() {
         let criteriaData = CriteriaData(criteriaType: criteriaType).getCriteriaData()
         self.title = criteriaType.rawValue
         self.titleLabel.text = criteriaData.title
         self.imageView.image = criteriaData.image
         self.detailsLabel.text = criteriaData.text
     }
-
-    override func viewWillDisappear(_ animated: Bool) {
-        navigationController?.navigationBar.prefersLargeTitles = true
+    
+    private func setColors() {
+        self.view.backgroundColor = .systemGray6
+        let appearance = UINavigationBarAppearance()
+        appearance.configureWithOpaqueBackground()
+        appearance.backgroundColor = .systemBackground
+        navigationController?.navigationBar.standardAppearance = appearance
+        navigationController?.navigationBar.scrollEdgeAppearance = navigationController?.navigationBar.standardAppearance
     }
 }

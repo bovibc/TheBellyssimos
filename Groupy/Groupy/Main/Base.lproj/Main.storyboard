@@ -431,7 +431,7 @@ Development of a more productive and motivating work environment.</string>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <color key="backgroundColor" systemColor="systemGray6Color"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="KUy-ip-kme" secondAttribute="trailing" constant="16" id="HWz-YZ-3l0"/>
                                             <constraint firstAttribute="trailing" secondItem="RSv-Xl-YJQ" secondAttribute="trailing" constant="16" id="RVN-t0-nny"/>
@@ -446,6 +446,7 @@ Development of a more productive and motivating work environment.</string>
                                         </constraints>
                                     </view>
                                 </subviews>
+                                <color key="backgroundColor" systemColor="systemGray6Color"/>
                                 <constraints>
                                     <constraint firstItem="hF5-tN-QBG" firstAttribute="top" secondItem="6b1-03-HeX" secondAttribute="top" id="2LE-VU-BWn"/>
                                     <constraint firstItem="hF5-tN-QBG" firstAttribute="centerY" secondItem="6b1-03-HeX" secondAttribute="centerY" priority="250" id="3wp-NB-bXv"/>
