@@ -20,6 +20,7 @@ class CriteriaDetailsViewController: UIViewController {
         super.viewDidLoad()
         navigationController?.navigationBar.prefersLargeTitles = false
         let criteriaData = CriteriaData(criteriaType: criteriaType).getCriteriaData()
+        self.title = criteriaType.rawValue
         self.titleLabel.text = criteriaData.title
         self.imageView.image = criteriaData.image
         self.detailsLabel.text = criteriaData.text
