@@ -16,7 +16,7 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var logOutButton: UIButton!
     @IBOutlet weak var deleteButton: UIButton!
     
-    private let textTable: [String] = ["Change passwod", "Change e-mail"]
+    private let textTable: [String] = ["Change password", "Change e-mail"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
