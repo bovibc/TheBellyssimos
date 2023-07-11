@@ -20,7 +20,7 @@
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Xsr-VD-dnc">
                                 <rect key="frame" x="16" y="119" width="361" height="717"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" systemColor="systemGray6Color"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="16" minimumInteritemSpacing="12" id="uEs-TQ-2hZ">
                                     <size key="itemSize" width="165" height="102"/>
                                     <size key="estimatedItemSize" width="165" height="128"/>
@@ -42,7 +42,7 @@
                             </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="fQ0-WI-qLA"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemGray6Color"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="Xsr-VD-dnc" secondAttribute="trailing" constant="16" id="Xj3-dl-EEV"/>
                             <constraint firstItem="Xsr-VD-dnc" firstAttribute="top" secondItem="fQ0-WI-qLA" secondAttribute="top" constant="16" id="dOf-ii-vma"/>
