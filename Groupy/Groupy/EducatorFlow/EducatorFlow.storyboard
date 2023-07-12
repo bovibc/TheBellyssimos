@@ -628,7 +628,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dGk-bm-zf8">
-                                <rect key="frame" x="16" y="349" width="361" height="50"/>
+                                <rect key="frame" x="16" y="374" width="361" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="ppy-cP-rJ8"/>
                                 </constraints>
@@ -636,7 +636,7 @@
                                 <buttonConfiguration key="configuration" style="filled" title="Create groups"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S8u-fL-zZg">
-                                <rect key="frame" x="16" y="415" width="361" height="50"/>
+                                <rect key="frame" x="16" y="440" width="361" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="BEX-pW-8p9"/>
                                 </constraints>
@@ -646,13 +646,14 @@
                                     <action selector="customizeTapped:" destination="sTT-df-c64" eventType="touchUpInside" id="LmJ-dy-3iZ"/>
                                 </connections>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="73u-c6-BIU">
-                                <rect key="frame" x="16" y="75" width="361" height="250"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="73u-c6-BIU">
+                                <rect key="frame" x="0.0" y="75" width="393" height="275"/>
                                 <color key="backgroundColor" systemColor="systemGray6Color"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="250" id="Hrr-JT-wdw"/>
+                                    <constraint firstAttribute="height" constant="275" id="Hrr-JT-wdw"/>
                                 </constraints>
                                 <color key="separatorColor" systemColor="systemGray6Color"/>
+                                <color key="sectionIndexBackgroundColor" systemColor="systemGray6Color"/>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="VXB-Tk-Mla"/>
@@ -662,11 +663,11 @@
                             <constraint firstItem="S8u-fL-zZg" firstAttribute="leading" secondItem="VXB-Tk-Mla" secondAttribute="leading" constant="16" id="7d6-yu-EJd"/>
                             <constraint firstItem="dGk-bm-zf8" firstAttribute="leading" secondItem="VXB-Tk-Mla" secondAttribute="leading" constant="16" id="Ahb-b6-lKV"/>
                             <constraint firstItem="VXB-Tk-Mla" firstAttribute="trailing" secondItem="S8u-fL-zZg" secondAttribute="trailing" constant="16" id="Aqx-My-Y04"/>
-                            <constraint firstItem="73u-c6-BIU" firstAttribute="leading" secondItem="VXB-Tk-Mla" secondAttribute="leading" constant="16" id="C34-gZ-dle"/>
+                            <constraint firstItem="73u-c6-BIU" firstAttribute="leading" secondItem="VXB-Tk-Mla" secondAttribute="leading" id="C34-gZ-dle"/>
                             <constraint firstItem="73u-c6-BIU" firstAttribute="top" secondItem="VXB-Tk-Mla" secondAttribute="top" constant="16" id="Lsv-az-c7t"/>
                             <constraint firstItem="S8u-fL-zZg" firstAttribute="top" secondItem="dGk-bm-zf8" secondAttribute="bottom" constant="16" id="d4V-Nd-dvJ"/>
                             <constraint firstItem="dGk-bm-zf8" firstAttribute="top" secondItem="73u-c6-BIU" secondAttribute="bottom" constant="24" id="gsf-Nd-bh1"/>
-                            <constraint firstItem="VXB-Tk-Mla" firstAttribute="trailing" secondItem="73u-c6-BIU" secondAttribute="trailing" constant="16" id="j5f-OV-lFz"/>
+                            <constraint firstItem="VXB-Tk-Mla" firstAttribute="trailing" secondItem="73u-c6-BIU" secondAttribute="trailing" id="j5f-OV-lFz"/>
                         </constraints>
                     </view>
                     <connections>

@@ -75,51 +75,12 @@ extension CriteriaCustomizationViewController: UITableViewDataSource {
         return 5
     }
     
-    private func roundingCornersCell(_ cell: UITableViewCell, _ indexPath: IndexPath){
-        //Top Left Right Corners
-        let maskPathTop = UIBezierPath(roundedRect: cell.bounds, byRoundingCorners: [.topLeft, .topRight], cornerRadii: CGSize(width: 5.0, height: 5.0))
-        let shapeLayerTop = CAShapeLayer()
-        shapeLayerTop.frame = cell.bounds
-        shapeLayerTop.path = maskPathTop.cgPath
-        
-        //Bottom Left Right Corners
-        let maskPathBottom = UIBezierPath(roundedRect: cell.bounds, byRoundingCorners: [.bottomLeft, .bottomRight], cornerRadii: CGSize(width: 5.0, height: 5.0))
-        let shapeLayerBottom = CAShapeLayer()
-        shapeLayerBottom.frame = cell.bounds
-        shapeLayerBottom.path = maskPathBottom.cgPath
-        
-        //All Corners
-        let maskPathAll = UIBezierPath(roundedRect: cell.bounds, byRoundingCorners: [.topLeft, .topRight, .bottomRight, .bottomLeft], cornerRadii: CGSize(width: 5.0, height: 5.0))
-        let shapeLayerAll = CAShapeLayer()
-        shapeLayerAll.frame = cell.bounds
-        shapeLayerAll.path = maskPathAll.cgPath
-        
-        if (indexPath.row == 0 && indexPath.row == tableView.numberOfRows(inSection: indexPath.section)-1)
-        {
-            cell.layer.mask = shapeLayerAll
-        }
-        else if (indexPath.row == 0)
-        {
-            cell.layer.mask = shapeLayerTop
-        }
-        else if (indexPath.row == tableView.numberOfRows(inSection: indexPath.section)-1)
-        {
-            cell.layer.mask = shapeLayerBottom
-        }
-    }
-    
-    private func getCell(_ indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: CustomizationTableViewCell.cellIdentifier, for: indexPath) as! CustomizationTableViewCell
         
         cell.setCell(myLabel: parameters[indexPath.row])
-        
-        roundingCornersCell(cell, indexPath)
                 
         return cell
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return getCell(indexPath)
     }
     
 }
