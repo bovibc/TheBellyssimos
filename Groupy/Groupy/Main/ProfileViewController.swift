@@ -8,7 +8,7 @@
 import UIKit
 import AVFoundation
 
-class ProfileViewController: UIViewController {
+class ProfileViewController: UIViewController, UITabBarControllerDelegate {
 
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
 
@@ -28,7 +28,14 @@ class ProfileViewController: UIViewController {
         if educators?.count == 0 {
             let loginStoryboard = UIStoryboard(name: "LoginFlow", bundle: nil)
             let loginViewController = loginStoryboard.instantiateViewController(withIdentifier: "LoginViewController")
-            present(loginViewController, animated: true, completion: nil)
+            self.present(loginViewController, animated: true, completion: {
+                if let tabBarController = self.tabBarController {
+                    // Get a reference to the desired view controller you want to redirect to
+                    let viewControllerToRedirect = tabBarController.viewControllers?[0]
+                    // Set the desired view controller as the selected view controller
+                    tabBarController.selectedViewController = viewControllerToRedirect
+                }
+            })
         }
         else {
             configureNavigationBar()
@@ -60,7 +67,14 @@ class ProfileViewController: UIViewController {
         if educators?.count == 0 {
             let loginStoryboard = UIStoryboard(name: "LoginFlow", bundle: nil)
             let loginViewController = loginStoryboard.instantiateViewController(withIdentifier: "LoginViewController")
-            present(loginViewController, animated: true, completion: nil)
+            self.present(loginViewController, animated: true, completion: {
+                if let tabBarController = self.tabBarController {
+                    // Get a reference to the desired view controller you want to redirect to
+                    let viewControllerToRedirect = tabBarController.viewControllers?[0]
+                    // Set the desired view controller as the selected view controller
+                    tabBarController.selectedViewController = viewControllerToRedirect
+                }
+            })
         }
         configureNavigationBar()
     }
