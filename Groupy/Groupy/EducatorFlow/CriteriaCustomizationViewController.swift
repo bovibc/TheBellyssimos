@@ -28,6 +28,21 @@ class CriteriaCustomizationViewController: UIViewController {
         
     }
     
+//    func showAlert() {
+//        let defaultAction = UIAlertAction(title: "OK",
+//                             style: .default) { (action) in
+//        }
+//
+//        // Create and configure the alert controller.
+//        let alert = UIAlertController(title: "Feature unavailable",
+//              message: "We're sorry, but this feature in not up for test on this build version.",
+//              preferredStyle: .alert)
+//        alert.addAction(defaultAction)
+//             
+//        present(alert, animated: true) {
+//           // The alert was presented
+//        }
+//    }
     
     @IBAction func customizeTapped(_ sender: UIButton) {
         let defaultAction = UIAlertAction(title: "OK",
@@ -79,6 +94,10 @@ extension CriteriaCustomizationViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: CustomizationTableViewCell.cellIdentifier, for: indexPath) as! CustomizationTableViewCell
         
         cell.setCell(myLabel: parameters[indexPath.row])
+        
+//        if indexPath.row < 5 && cell.valueSwitch.isOn {
+//            showAlert()
+//        }
                 
         return cell
     }
