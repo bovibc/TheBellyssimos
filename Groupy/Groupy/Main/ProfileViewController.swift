@@ -54,9 +54,9 @@ class ProfileViewController: UIViewController, UITabBarControllerDelegate {
     
     private func configureImage() {
         var image = UIImage(named: "bandeira")
-        image = resizeImage(image: image!, targetSize: CGSize(width: 144, height: 144))
+        //image = resizeImage(image: image!, targetSize: CGSize(width: 144, height: 144))
         profilePicture.image = image
-        profilePicture.layer.borderColor = UIColor.black.cgColor
+        profilePicture.layer.borderColor = UIColor.systemGray2.cgColor
         profilePicture.layer.borderWidth = 1
         profilePicture.layer.masksToBounds = false
         profilePicture.layer.cornerRadius = profilePicture.frame.size.width / 2
