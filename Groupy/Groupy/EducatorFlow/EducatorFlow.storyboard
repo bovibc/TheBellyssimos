@@ -639,6 +639,9 @@
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="tinted" title="Help me customize"/>
+                                <connections>
+                                    <action selector="customizeTapped:" destination="sTT-df-c64" eventType="touchUpInside" id="LmJ-dy-3iZ"/>
+                                </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="73u-c6-BIU">
                                 <rect key="frame" x="16" y="75" width="361" height="250"/>
