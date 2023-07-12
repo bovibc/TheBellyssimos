@@ -66,6 +66,7 @@
 		D3486C2F2A5D884A00678210 /* CustomizationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3486C2D2A5D884A00678210 /* CustomizationTableViewCell.swift */; };
 		D3486C302A5D884A00678210 /* CustomizationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3486C2E2A5D884A00678210 /* CustomizationTableViewCell.xib */; };
 		D37C1F7B2A56E003007FFCB1 /* RandomGroupFormation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37C1F7A2A56E003007FFCB1 /* RandomGroupFormation.swift */; };
+		D3979A992A5ED286003351DA /* ColleaguesAltorithm.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3979A982A5ED286003351DA /* ColleaguesAltorithm.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -130,6 +131,7 @@
 		D3486C2D2A5D884A00678210 /* CustomizationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomizationTableViewCell.swift; sourceTree = "<group>"; };
 		D3486C2E2A5D884A00678210 /* CustomizationTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomizationTableViewCell.xib; sourceTree = "<group>"; };
 		D37C1F7A2A56E003007FFCB1 /* RandomGroupFormation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomGroupFormation.swift; sourceTree = "<group>"; };
+		D3979A982A5ED286003351DA /* ColleaguesAltorithm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColleaguesAltorithm.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -212,6 +214,7 @@
 				571336672A54393F00F9698E /* CoreDataEndpoints.swift */,
 				57A386D42A5462750082760F /* MockData.swift */,
 				D37C1F7A2A56E003007FFCB1 /* RandomGroupFormation.swift */,
+				D3979A982A5ED286003351DA /* ColleaguesAltorithm.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -374,6 +377,7 @@
 				0838F98F2A49B18B00897044 /* Groupy.xcdatamodeld in Sources */,
 				A7397AD72A559949006A6662 /* CriteriaCollectionViewCell.swift in Sources */,
 				5733FF262A4EFCFE004D6C85 /* ShareCodeDetailViewController.swift in Sources */,
+				D3979A992A5ED286003351DA /* ColleaguesAltorithm.swift in Sources */,
 				0887D72F2A52F75B00DC9560 /* TabBarViewController.swift in Sources */,
 				08D7B47A2A49B96900712E7A /* CriteriaViewController.swift in Sources */,
 				57E3DA052A4F15320081F8F5 /* ReadFeedbackViewController.swift in Sources */,
