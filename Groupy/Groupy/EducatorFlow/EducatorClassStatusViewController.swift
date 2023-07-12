@@ -132,6 +132,18 @@ class EducatorClassStatusViewController: UIViewController, UITableViewDelegate, 
         }
     }
     
+    func loadShareCodeView() {
+        
+        
+        let educatorStoryboard = UIStoryboard(name: "EducatorFlow", bundle: nil)
+        let shareCodeView = educatorStoryboard.instantiateViewController(withIdentifier: "ShareCodeViewController")
+        //self.navigationController?.present(createClassView, animated: true)
+        if let sheet = shareCodeView.sheetPresentationController {
+            sheet.detents = [.medium()]
+        }
+        self.present(shareCodeView, animated: true, completion: nil)
+    }
+    
     private func fetchClass() {
         do {
             let request = Class.fetchRequest() as NSFetchRequest<Class>
@@ -169,6 +181,7 @@ class EducatorClassStatusViewController: UIViewController, UITableViewDelegate, 
                     }
                 }),
                 UIAction(title: "Share Code", handler: { _ in
+                    self.loadShareCodeView()
                 }),
             ]
         }

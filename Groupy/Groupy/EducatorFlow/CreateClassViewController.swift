@@ -30,7 +30,7 @@ class CreateClassViewController: UIViewController, UITextFieldDelegate {
         if name != "" && description != ""
         {
             addClass(name ?? "default", description ?? "default")
-            self.dismiss(animated: true, completion: nil)
+            loadShareCodeView()
         }
     }
     
@@ -40,6 +40,18 @@ class CreateClassViewController: UIViewController, UITextFieldDelegate {
         self.view.backgroundColor = UIColor.systemGray6
         self.title = "Create Class"
         className.delegate = self
+    }
+    
+    func loadShareCodeView() {
+        
+        
+        let educatorStoryboard = UIStoryboard(name: "EducatorFlow", bundle: nil)
+        let shareCodeView = educatorStoryboard.instantiateViewController(withIdentifier: "ShareCodeViewController")
+        //self.navigationController?.present(createClassView, animated: true)
+        if let sheet = shareCodeView.sheetPresentationController {
+            sheet.detents = [.medium()]
+        }
+        self.present(shareCodeView, animated: true, completion: nil)
     }
     
     func addClass(_ className: String,_ classDescription: String) {
