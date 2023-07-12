@@ -7,7 +7,7 @@
 
 import UIKit
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passowordTextField: UITextField!
@@ -17,6 +17,8 @@ class LoginViewController: UIViewController {
         self.setupKeyboard()
         self.view.backgroundColor = UIColor.systemGray6
         self.title = "Login"
+        emailTextField.delegate = self
+        passowordTextField.delegate = self
     }
     
     @IBAction func createAccountTapped(_ sender: UIButton) {

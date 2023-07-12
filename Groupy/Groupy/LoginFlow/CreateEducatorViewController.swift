@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CreateEducatorViewController: UIViewController {
+class CreateEducatorViewController: UIViewController, UITextFieldDelegate {
 
     // set core data context
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
@@ -23,6 +23,11 @@ class CreateEducatorViewController: UIViewController {
         super.viewDidLoad()
         self.setupKeyboard()
         self.view.backgroundColor = UIColor.systemGray6
+        nameField.delegate = self
+        organizationField.delegate = self
+        emailField.delegate = self
+        passwordField.delegate = self
+        confirmPasswordField.delegate = self
     }
     
     func validateFields() -> Bool {
