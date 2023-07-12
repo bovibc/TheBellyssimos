@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CreateProjectViewController: UIViewController {
+class CreateProjectViewController: UIViewController, UITextFieldDelegate {
 
     // core data context
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
@@ -21,22 +21,33 @@ class CreateProjectViewController: UIViewController {
     @IBOutlet weak var projectDescription: UITextView!
     @IBOutlet weak var projectStartDate: UIDatePicker!
     @IBOutlet weak var projectEndDate: UIDatePicker!
+    @IBOutlet weak var groupSize: UILabel!
+    @IBOutlet weak var stepperValue: UIStepper!
     
-    private func configureData() {
-        guard let chosenClass = chosenClass else { return }
-    }
-
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.setupKeyboard()
         self.fetchClasses()
-        configureData()
         navigationController?.navigationBar.prefersLargeTitles = false
         self.title = "Create project"
-
+        self.projectName.delegate = self
         self.view.backgroundColor = UIColor.systemGray6
         // Do any additional setup after loading the view.
+        
+        let students = chosenClass?.students?.allObjects as! [Student]
+        let studentsCount = students.count
+
+        stepperValue.minimumValue = 2
+        stepperValue.maximumValue = floor(Double(studentsCount/2))
+        stepperValue.stepValue = 1
+        stepperValue.value = 4
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        navigationController?.navigationBar.prefersLargeTitles = true
+    }
     
     @IBAction func criteriaPressed(_ sender: UIButton) {
         let storyboard = UIStoryboard(name: "EducatorFlow", bundle: nil)
@@ -68,6 +79,11 @@ class CreateProjectViewController: UIViewController {
         }
     }
     
+    
+    @IBAction func stepperTapped(_ sender: UIStepper) {
+        groupSize.text = String(format: "%.0f", stepperValue.value)
+    }
+    
     func addProjectToClass(_ criteria: String) {
         
         // instancia o objeto a ser adicionado no Core Data
@@ -92,12 +108,6 @@ class CreateProjectViewController: UIViewController {
         // resgata o que foi inserido nos campos
         let newProjectName = projectName.text
         let newProjectInfo = projectDescription.text
-        //let newProjectStartDateFormatter = DateFormatter()
-        //let newProjectEndDateFormatter = DateFormatter()
-        //newProjectStartDateFormatter.dateFormat = "dd/MM/YY"
-        //newProjectEndDateFormatter.dateFormat = "dd/MM/YY"
-        //let newProjectStartDate = newProjectStartDateFormatter.string(from: projectStartDate.date)
-        //let newProjectEndDate = newProjectEndDateFormatter.string(from: projectEndDate.date)
         let newProjectStartDate = projectStartDate.date
         let newProjectEndDate = projectEndDate.date
         
@@ -114,7 +124,7 @@ class CreateProjectViewController: UIViewController {
         var formedGroups: [Group]?
 
         if criteria == "random" {
-            formedGroups = randomGroupFormation(myClass: classToEdit, groupSize: 5)
+            formedGroups = randomGroupFormation(myClass: classToEdit, groupSize: Int(stepperValue.value))
             
             for eachGroup in formedGroups! {
                 newProject.addToGroups(eachGroup)
@@ -142,15 +152,25 @@ class CreateProjectViewController: UIViewController {
         }
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func setupKeyboard() {
+        let toolbar = UIToolbar()
+        let space =  UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        let doneButton = UIBarButtonItem(title: "Done", style: .done,
+                                         target: self, action: #selector(hideKeyboardAction))
+        toolbar.setItems([space,doneButton], animated: true)
+        toolbar.sizeToFit()
+        
+        projectName.inputAccessoryView = toolbar
+        projectDescription.inputAccessoryView = toolbar
     }
-    */
+    
+    @objc func hideKeyboardAction() {
+        view.endEditing(true)
+    }
 
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        hideKeyboardAction()
+        return false
+    }
+    
 }

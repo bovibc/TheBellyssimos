@@ -7,23 +7,40 @@
 
 import UIKit
 
+
 class CriteriaDetailsViewController: UIViewController {
 
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var detailsLabel: UILabel!
+    
+    var criteriaType: CriteriaType = .Diversity
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.navigationBar.prefersLargeTitles = false
+        self.setColors()
+        self.setScreenData()
+    }
 
-        // Do any additional setup after loading the view.
+    override func viewWillDisappear(_ animated: Bool) {
+        navigationController?.navigationBar.prefersLargeTitles = true
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    private func setScreenData() {
+        let criteriaData = CriteriaData(criteriaType: criteriaType).getCriteriaData()
+        self.title = criteriaType.rawValue
+        self.titleLabel.text = criteriaData.title
+        self.imageView.image = criteriaData.image
+        self.detailsLabel.text = criteriaData.text
     }
-    */
-
+    
+    private func setColors() {
+        self.view.backgroundColor = .systemGray6
+        let appearance = UINavigationBarAppearance()
+        appearance.configureWithOpaqueBackground()
+        appearance.backgroundColor = .systemBackground
+        navigationController?.navigationBar.standardAppearance = appearance
+        navigationController?.navigationBar.scrollEdgeAppearance = navigationController?.navigationBar.standardAppearance
+    }
 }

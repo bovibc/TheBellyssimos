@@ -7,15 +7,15 @@
 
 import UIKit
 
-class CreateClassViewController: UIViewController {
+class CreateClassViewController: UIViewController, UITextFieldDelegate {
 
     // set core data context
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
 
     var fetchedClasses: [Class]?
 
+    @IBOutlet weak var descriptionField: UITextView!
     @IBOutlet weak var className: UITextField!
-    @IBOutlet weak var classDescription: UITextField!
     
     
     @IBAction func closeModal(_ sender: UIButton) {
@@ -24,26 +24,34 @@ class CreateClassViewController: UIViewController {
     
     @IBAction func createClass(_ sender: UIButton) {
         let name = className.text
-        let description = classDescription.text
+        let description = descriptionField.text
 
         // space to add endpoint to create a class
         if name != "" && description != ""
         {
             addClass(name ?? "default", description ?? "default")
-            self.dismiss(animated: true, completion: nil)
+            loadShareCodeView()
         }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.setupKeyboard()
         self.view.backgroundColor = UIColor.systemGray6
-
-        title = "Create Class"
-
+        self.title = "Create Class"
+        className.delegate = self
+    }
+    
+    func loadShareCodeView() {
         
-
-        // Do any additional setup after loading the view.
+        
+        let educatorStoryboard = UIStoryboard(name: "EducatorFlow", bundle: nil)
+        let shareCodeView = educatorStoryboard.instantiateViewController(withIdentifier: "ShareCodeViewController")
+        //self.navigationController?.present(createClassView, animated: true)
+        if let sheet = shareCodeView.sheetPresentationController {
+            sheet.detents = [.medium()]
+        }
+        self.present(shareCodeView, animated: true, completion: nil)
     }
     
     func addClass(_ className: String,_ classDescription: String) {
@@ -91,14 +99,26 @@ class CreateClassViewController: UIViewController {
             
         }
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    func setupKeyboard() {
+        let toolbar = UIToolbar()
+        let space =  UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        let doneButton = UIBarButtonItem(title: "Done", style: .done,
+                                         target: self, action: #selector(hideKeyboardAction))
+        toolbar.setItems([space,doneButton], animated: true)
+        toolbar.sizeToFit()
+        
+        className.inputAccessoryView = toolbar
+        descriptionField.inputAccessoryView = toolbar
     }
-    */
+    
+    @objc func hideKeyboardAction() {
+        view.endEditing(true)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        hideKeyboardAction()
+        return false
+    }
 
 }

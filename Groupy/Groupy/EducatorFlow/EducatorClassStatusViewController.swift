@@ -17,6 +17,7 @@ class EducatorClassStatusViewController: UIViewController, UITableViewDelegate, 
     var fetchedClasses:[Class]?
 
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var descriptionLabel: UILabel!
     var chosenClass: Class?
     var projects: [Project]?
     var students: [Student]?
@@ -46,6 +47,7 @@ class EducatorClassStatusViewController: UIViewController, UITableViewDelegate, 
         guard let chosenClass = chosenClass else { return }
         projects = chosenClass.projects?.allObjects as? [Project]
         students = chosenClass.students?.allObjects as? [Student]
+        descriptionLabel.text = chosenClass.info
     }
 
     private func configureNavigationBar() {
@@ -64,9 +66,15 @@ class EducatorClassStatusViewController: UIViewController, UITableViewDelegate, 
     }
     
     private func getProjectCell(_ index: Int) -> UITableViewCell {
-        guard let project = projects?[index].name else { return UITableViewCell() }
+        guard let projects = projects else { return UITableViewCell() }
         let cell = UITableViewCell()
-        cell.textLabel?.text = "\(index). \(project)"
+        if projects.count == 0 {
+            cell.textLabel?.text = "No projects"
+        } else {
+            guard let project = projects[index].name else { return UITableViewCell() }
+            cell.textLabel?.text = "\(index+1). \(project)"
+        }
+        
         return cell
     }
     
@@ -92,7 +100,11 @@ class EducatorClassStatusViewController: UIViewController, UITableViewDelegate, 
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         guard let projects = projects, let students = students else { return 0 }
-        return (section == 0 ? projects.count : students.count)
+        if section == 0 {
+            return (projects.count == 0 ? 1 : projects.count)
+        } else {
+            return students.count
+        }
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -100,14 +112,15 @@ class EducatorClassStatusViewController: UIViewController, UITableViewDelegate, 
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.section == 0 {
-            let storyboard = UIStoryboard(name: "EducatorFlow", bundle: nil)
-            let viewController = storyboard.instantiateViewController(withIdentifier: "EducatorProjectStatusViewController") as? EducatorProjectStatusViewController
-            if let viewController = viewController {
-                viewController.viewProject = getProject(name: projects?[indexPath.row].name)
-                navigationController?.show(viewController, sender: nil)
+        if projects?.count != 0  {
+            if indexPath.section == 0 {
+                let storyboard = UIStoryboard(name: "EducatorFlow", bundle: nil)
+                let viewController = storyboard.instantiateViewController(withIdentifier: "EducatorProjectStatusViewController") as? EducatorProjectStatusViewController
+                if let viewController = viewController {
+                    viewController.viewProject = getProject(name: projects?[indexPath.row].name)
+                    navigationController?.show(viewController, sender: nil)
+                }
             }
-            
         }
     }
     
@@ -117,6 +130,18 @@ class EducatorClassStatusViewController: UIViewController, UITableViewDelegate, 
         } else {
             return getStudentCell(indexPath)
         }
+    }
+    
+    func loadShareCodeView() {
+        
+        
+        let educatorStoryboard = UIStoryboard(name: "EducatorFlow", bundle: nil)
+        let shareCodeView = educatorStoryboard.instantiateViewController(withIdentifier: "ShareCodeViewController")
+        //self.navigationController?.present(createClassView, animated: true)
+        if let sheet = shareCodeView.sheetPresentationController {
+            sheet.detents = [.medium()]
+        }
+        self.present(shareCodeView, animated: true, completion: nil)
     }
     
     private func fetchClass() {
@@ -156,6 +181,7 @@ class EducatorClassStatusViewController: UIViewController, UITableViewDelegate, 
                     }
                 }),
                 UIAction(title: "Share Code", handler: { _ in
+                    self.loadShareCodeView()
                 }),
             ]
         }

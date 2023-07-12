@@ -15,6 +15,8 @@ class MyClassesCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var firstProjectDate: UILabel!
     @IBOutlet weak var secondProjectDate: UILabel!
     
+    private var projects: [Project]?
+    
     func setCell(myClass: Class) {
         setCellLayout()
         resetData()
@@ -22,31 +24,56 @@ class MyClassesCollectionViewCell: UICollectionViewCell {
     }
     
     private func setCellData(_ myClass: Class) {
-        let projects = myClass.projects?.allObjects as? [Project]
+        projects = myClass.projects?.allObjects as? [Project]
         self.titleLabel.text = myClass.name ?? ""
+        self.setProjects()
 
-        if projects!.count >= 2 {
-            if let first = projects?[0], let name = first.name {
-                self.firstProject.text = name
-                if let startDate = first.startDate, let dueDate = first.dueDate {
-                    self.firstProjectDate.text = "(\(startDate) - \(dueDate))"
-                }
-            }
-            
-            if let second = projects?[1], let name = second.name {
-                self.secondProject.text = name
-                if let startDate = second.startDate, let dueDate = second.dueDate {
-                    self.secondProjectDate.text = "(\(startDate) - \(dueDate))"
+    }
+    
+    private func setProjects() {
+        validateFirstProject()
+        validateSecondProject()
+    }
+    
+    private func validateFirstProject() {
+        if let projects = projects {
+            if projects.count == 0 {
+                self.firstProject.text = "There are no projects in this class yet!"
+                self.firstProjectDate.text = ""
+            } else if projects.count >= 1 {
+                if let name = projects[0].name {
+                    self.firstProject.text = name
+                    if let startDate = projects[0].startDate, let dueDate = projects[0].dueDate {
+                        
+                        self.firstProjectDate.text = "\(formatDate(date: startDate)) - \(formatDate(date: dueDate))"
+                    }
                 }
             }
         }
-        else {
-            self.firstProject.text = ""
-            self.firstProjectDate.text = ""
+    }
+    
+    private func validateSecondProject() {
+        guard let projects = projects else { return }
+        
+        if projects.count >= 2 {
+            if let name = projects[1].name {
+                self.secondProject.text = name
+                if let startDate = projects[1].startDate, let dueDate = projects[1].dueDate {
+                    self.secondProjectDate.text = "\(formatDate(date: startDate)) - \(formatDate(date: dueDate))"
+                }
+            }
+        } else {
             self.secondProject.text = ""
             self.secondProjectDate.text = ""
         }
-
+    }
+    
+    private func formatDate(date: Date) -> String {
+        let date = Date()
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MMM dd" 
+        formatter.timeZone = TimeZone(abbreviation: "IST")
+        return formatter.string(from: date)
     }
     
     private func resetData() {
@@ -58,6 +85,7 @@ class MyClassesCollectionViewCell: UICollectionViewCell {
     }
     
     private func setCellLayout() {
+        self.clipsToBounds = true
         self.layer.borderColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.3).cgColor
         self.layer.cornerRadius = 15
         self.layer.borderWidth = 1

@@ -23,7 +23,7 @@ class CriteriaCollectionViewCell: UICollectionViewCell {
     }
 
     func setCellData(_ criteria: Criteria) {
-        self.background.backgroundColor = .systemGray6
+        self.background.backgroundColor = .white
         
         let imageIcon = UIImage(systemName: criteria.icon)?.withTintColor(criteria.color, renderingMode: .alwaysOriginal)
         icon.image = imageIcon

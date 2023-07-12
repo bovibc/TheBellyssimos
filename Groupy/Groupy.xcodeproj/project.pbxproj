@@ -16,6 +16,7 @@
 		0838F98F2A49B18B00897044 /* Groupy.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0838F98D2A49B18B00897044 /* Groupy.xcdatamodeld */; };
 		0838F9912A49B18C00897044 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0838F9902A49B18C00897044 /* Assets.xcassets */; };
 		0838F9942A49B18C00897044 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0838F9922A49B18C00897044 /* LaunchScreen.storyboard */; };
+		0881DEA52A5D795000166008 /* CriteriaData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0881DEA42A5D795000166008 /* CriteriaData.swift */; };
 		0887D72F2A52F75B00DC9560 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0887D72E2A52F75B00DC9560 /* TabBarViewController.swift */; };
 		08D7B47A2A49B96900712E7A /* CriteriaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08D7B4792A49B96900712E7A /* CriteriaViewController.swift */; };
 		571336682A54393F00F9698E /* CoreDataEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 571336672A54393F00F9698E /* CoreDataEndpoints.swift */; };
@@ -59,8 +60,11 @@
 		57E3DA072A4F1ECD0081F8F5 /* CreateStudentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E3DA062A4F1ECD0081F8F5 /* CreateStudentViewController.swift */; };
 		A7397AD72A559949006A6662 /* CriteriaCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7397AD52A559949006A6662 /* CriteriaCollectionViewCell.swift */; };
 		A7397AD82A559949006A6662 /* CriteriaCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A7397AD62A559949006A6662 /* CriteriaCollectionViewCell.xib */; };
+		D308BCB02A5D7C390019F33C /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D308BCAF2A5D7C390019F33C /* ProfileTableViewCell.swift */; };
 		D32482CE2A530A3D003D25B3 /* StudentCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32482CC2A530A3D003D25B3 /* StudentCellTableViewCell.swift */; };
 		D32482CF2A530A3D003D25B3 /* StutentCellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D32482CD2A530A3D003D25B3 /* StutentCellTableViewCell.xib */; };
+		D3486C2F2A5D884A00678210 /* CustomizationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3486C2D2A5D884A00678210 /* CustomizationTableViewCell.swift */; };
+		D3486C302A5D884A00678210 /* CustomizationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3486C2E2A5D884A00678210 /* CustomizationTableViewCell.xib */; };
 		D37C1F7B2A56E003007FFCB1 /* RandomGroupFormation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37C1F7A2A56E003007FFCB1 /* RandomGroupFormation.swift */; };
 /* End PBXBuildFile section */
 
@@ -76,6 +80,7 @@
 		0838F9902A49B18C00897044 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0838F9932A49B18C00897044 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0838F9952A49B18C00897044 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0881DEA42A5D795000166008 /* CriteriaData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CriteriaData.swift; sourceTree = "<group>"; };
 		0887D72E2A52F75B00DC9560 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		08D7B4792A49B96900712E7A /* CriteriaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CriteriaViewController.swift; sourceTree = "<group>"; };
 		571336672A54393F00F9698E /* CoreDataEndpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataEndpoints.swift; sourceTree = "<group>"; };
@@ -119,8 +124,11 @@
 		57E3DA062A4F1ECD0081F8F5 /* CreateStudentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateStudentViewController.swift; sourceTree = "<group>"; };
 		A7397AD52A559949006A6662 /* CriteriaCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CriteriaCollectionViewCell.swift; sourceTree = "<group>"; };
 		A7397AD62A559949006A6662 /* CriteriaCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CriteriaCollectionViewCell.xib; sourceTree = "<group>"; };
+		D308BCAF2A5D7C390019F33C /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
 		D32482CC2A530A3D003D25B3 /* StudentCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentCellTableViewCell.swift; sourceTree = "<group>"; };
 		D32482CD2A530A3D003D25B3 /* StutentCellTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StutentCellTableViewCell.xib; sourceTree = "<group>"; };
+		D3486C2D2A5D884A00678210 /* CustomizationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomizationTableViewCell.swift; sourceTree = "<group>"; };
+		D3486C2E2A5D884A00678210 /* CustomizationTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomizationTableViewCell.xib; sourceTree = "<group>"; };
 		D37C1F7A2A56E003007FFCB1 /* RandomGroupFormation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomGroupFormation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -171,6 +179,14 @@
 			path = Groupy;
 			sourceTree = "<group>";
 		};
+		0881DEA32A5D793F00166008 /* Aux */ = {
+			isa = PBXGroup;
+			children = (
+				0881DEA42A5D795000166008 /* CriteriaData.swift */,
+			);
+			path = Aux;
+			sourceTree = "<group>";
+		};
 		08D7B4782A49B91B00712E7A /* Delegates */ = {
 			isa = PBXGroup;
 			children = (
@@ -203,6 +219,7 @@
 		5733FF192A4EF65D004D6C85 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				0881DEA32A5D793F00166008 /* Aux */,
 				0838F98A2A49B18B00897044 /* Main.storyboard */,
 				0838F9882A49B18B00897044 /* MyClassesViewController.swift */,
 				08D7B4792A49B96900712E7A /* CriteriaViewController.swift */,
@@ -210,6 +227,7 @@
 				5733FF112A4EF4AD004D6C85 /* CriteriaDetailsViewController.swift */,
 				5733FF0D2A4EF40A004D6C85 /* OnboardingViewController.swift */,
 				0887D72E2A52F75B00DC9560 /* TabBarViewController.swift */,
+				D308BCAF2A5D7C390019F33C /* ProfileTableViewCell.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -266,6 +284,8 @@
 				A7397AD62A559949006A6662 /* CriteriaCollectionViewCell.xib */,
 				0801E4D32A5438660048526A /* MyClassesCollectionViewCell.swift */,
 				0801E4D42A5438660048526A /* MyClassesCollectionViewCell.xib */,
+				D3486C2D2A5D884A00678210 /* CustomizationTableViewCell.swift */,
+				D3486C2E2A5D884A00678210 /* CustomizationTableViewCell.xib */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -335,6 +355,7 @@
 				0801E4D62A5438660048526A /* MyClassesCollectionViewCell.xib in Resources */,
 				0838F9942A49B18C00897044 /* LaunchScreen.storyboard in Resources */,
 				0838F9912A49B18C00897044 /* Assets.xcassets in Resources */,
+				D3486C302A5D884A00678210 /* CustomizationTableViewCell.xib in Resources */,
 				0838F98C2A49B18B00897044 /* Main.storyboard in Resources */,
 				5733FF182A4EF614004D6C85 /* EducatorFlow.storyboard in Resources */,
 			);
@@ -374,6 +395,7 @@
 				57E3D9F72A4F10890081F8F5 /* StudentJoinClassViewController.swift in Sources */,
 				57E3D9ED2A4F08E70081F8F5 /* CreateEducatorViewController.swift in Sources */,
 				57CEBE1D2A55A87600C15C3C /* Class+CoreDataClass.swift in Sources */,
+				0881DEA52A5D795000166008 /* CriteriaData.swift in Sources */,
 				57CEBE1B2A55A87600C15C3C /* Project+CoreDataClass.swift in Sources */,
 				57CEBE1C2A55A87600C15C3C /* Project+CoreDataProperties.swift in Sources */,
 				57E3D9F52A4F10780081F8F5 /* StudentProjectStatusViewController.swift in Sources */,
@@ -389,9 +411,11 @@
 				5733FF222A4EFA23004D6C85 /* ShareCodeViewController.swift in Sources */,
 				57E3D9F12A4F0FFA0081F8F5 /* EducatorProjectStatusViewController.swift in Sources */,
 				57CEBE1A2A55A87600C15C3C /* User+CoreDataProperties.swift in Sources */,
+				D308BCB02A5D7C390019F33C /* ProfileTableViewCell.swift in Sources */,
 				57E3D9DF2A4EFE160081F8F5 /* CriteriaCustomizationViewController.swift in Sources */,
 				57E3D9EB2A4F07870081F8F5 /* CreateStudentPersonalityViewController.swift in Sources */,
 				0801E4D52A5438660048526A /* MyClassesCollectionViewCell.swift in Sources */,
+				D3486C2F2A5D884A00678210 /* CustomizationTableViewCell.swift in Sources */,
 				57CEBE182A55A87600C15C3C /* Student+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

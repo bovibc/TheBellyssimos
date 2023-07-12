@@ -9,8 +9,7 @@ import UIKit
 
 class StudentCellTableViewCell: UITableViewCell {
     
-    var rowHeight : CGFloat!
-    static let cellIdentifier = "cell"
+    static let cellIdentifier = "stundentCell"
 
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var picture: UIImageView!
