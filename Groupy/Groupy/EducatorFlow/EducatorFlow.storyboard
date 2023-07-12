@@ -355,6 +355,9 @@
                                 <color key="tintColor" systemColor="systemRedColor"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Deactivate students" cornerStyle="large"/>
+                                <connections>
+                                    <action selector="deactivateStudentsTapped:" destination="ZgE-cc-3UL" eventType="touchUpInside" id="3gA-Bx-dLJ"/>
+                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="juv-5P-AdC" userLabel="Dates Stack">
                                 <rect key="frame" x="16" y="359" width="361" height="88"/>

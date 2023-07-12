@@ -143,6 +143,23 @@ class CreateProjectViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
+    @IBAction func deactivateStudentsTapped(_ sender: UIButton) {
+        let defaultAction = UIAlertAction(title: "OK",
+                             style: .default) { (action) in
+        }
+
+        // Create and configure the alert controller.
+        let alert = UIAlertController(title: "Feature unavailable",
+              message: "We're sorry, but this feature in not up for test on this build version.",
+              preferredStyle: .alert)
+        alert.addAction(defaultAction)
+             
+        self.present(alert, animated: true) {
+           // The alert was presented
+        }
+    }
+    
+    
     private func fetchClasses() {
         do {
             self.fetchedClasses = try context.fetch(Class.fetchRequest())
