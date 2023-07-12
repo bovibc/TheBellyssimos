@@ -29,6 +29,7 @@ class MyClassesViewController: UIViewController, UICollectionViewDelegate, UICol
     
     override func viewWillAppear(_ animated: Bool) {
         self.fetchClasses()
+        fetchEducators()
         self.setupKeyboard()
         self.setColors()
         self.configureNavigationBar()
@@ -143,6 +144,7 @@ class MyClassesViewController: UIViewController, UICollectionViewDelegate, UICol
                 UIAction(title: "Create class", handler: { _ in
                     //let createClassView = educatorStoryboard.instantiateViewController(withIdentifier: "CreateClass")
                     //self.navigationController?.present(createClassView, animated: true)
+                    self.fetchEducators()
                     if self.educators?.count == 0 {
                         let loginStoryboard = UIStoryboard(name: "LoginFlow", bundle: nil)
                         let loginViewController = loginStoryboard.instantiateViewController(withIdentifier: "LoginViewController")
