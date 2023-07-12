@@ -15,6 +15,7 @@ class MyClassesViewController: UIViewController, UICollectionViewDelegate, UICol
     
     // variavel que vai receber um array de Users e ser usada no componente
     var fetchedClasses:[Class]?
+    var educators:[Educator]?
     
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var collectionView: UICollectionView!
@@ -23,6 +24,7 @@ class MyClassesViewController: UIViewController, UICollectionViewDelegate, UICol
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        fetchEducators()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -36,6 +38,7 @@ class MyClassesViewController: UIViewController, UICollectionViewDelegate, UICol
     
     override func viewDidAppear(_ animated: Bool) {
         self.configureNavigationBar()
+        fetchEducators()
     }
     
     private func setColors() {
@@ -129,12 +132,43 @@ class MyClassesViewController: UIViewController, UICollectionViewDelegate, UICol
                 UIAction(title: "Create class", handler: { _ in
                     //let createClassView = educatorStoryboard.instantiateViewController(withIdentifier: "CreateClass")
                     //self.navigationController?.present(createClassView, animated: true)
-                    self.loadCreateClass()
+                    if self.educators?.count == 0 {
+                        let loginStoryboard = UIStoryboard(name: "LoginFlow", bundle: nil)
+                        let loginViewController = loginStoryboard.instantiateViewController(withIdentifier: "LoginViewController")
+                        self.present(loginViewController, animated: true, completion: {
+                            if let tabBarController = self.tabBarController {
+                                // Get a reference to the desired view controller you want to redirect to
+                                let viewControllerToRedirect = tabBarController.viewControllers?[0]
+                                // Set the desired view controller as the selected view controller
+                                tabBarController.selectedViewController = viewControllerToRedirect
+                            }
+                        })
+                    }
+                    else {
+                        self.loadCreateClass()
+                    }
                 }),
             ]
         }
         return UIMenu(title: "", image: nil, identifier: nil, options: [], children: menuItems)
     }
+    
+    func fetchEducators() {
+        do {
+            // importante: declarar self.items se tudo isso estiver dentro de uma classe
+            educators = try context.fetch(Educator.fetchRequest())
+            
+            // caso tenha uma table view, eh so descomentar as linhas abaixo para
+            // renderiza-la novamente apos fazer o fetch de Users
+            // DispatchQueue.main.async {
+            //   self.tableView.reloadData()
+            // }
+        }
+        catch {
+            
+        }
+    }
+
     
     func loadCreateClass()
     {
