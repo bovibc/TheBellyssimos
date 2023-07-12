@@ -45,37 +45,60 @@ class CreateProjectViewController: UIViewController, UITextFieldDelegate {
         stepperValue.value = 4
     }
     
+    func validateFields() -> Bool {
+        
+        var validation = true
+        
+        if projectName.text == "" {
+            let placeholderText = "Missing project name"
+            let placeholderColor = UIColor.red
+
+            let attributedPlaceholder = NSAttributedString(
+                string: placeholderText,
+                attributes: [NSAttributedString.Key.foregroundColor: placeholderColor]
+            )
+            
+            projectName.attributedPlaceholder = attributedPlaceholder
+            validation = false
+        }
+        return validation
+    }
+    
     override func viewWillDisappear(_ animated: Bool) {
         navigationController?.navigationBar.prefersLargeTitles = true
     }
     
     @IBAction func criteriaPressed(_ sender: UIButton) {
-        let storyboard = UIStoryboard(name: "EducatorFlow", bundle: nil)
-        let criteriaCustomization = storyboard.instantiateViewController(withIdentifier: "CriteriaCustomizationViewController" )
-        self.navigationController?.show(criteriaCustomization, sender: true)
+        if validateFields() {
+            let storyboard = UIStoryboard(name: "EducatorFlow", bundle: nil)
+            let criteriaCustomization = storyboard.instantiateViewController(withIdentifier: "CriteriaCustomizationViewController" )
+            self.navigationController?.show(criteriaCustomization, sender: true)
+        }
     }
 
     @IBAction func randomlyPressed(_ sender: UIButton) {
-        // Create the action buttons for the alert.
-        let defaultAction = UIAlertAction(title: "Form groups",
-                             style: .default) { (action) in
-            self.addProjectToClass("random")
-            self.navigationController?.popViewController(animated: true)
-        }
-        let cancelAction = UIAlertAction(title: "Cancel",
-                             style: .cancel) { (action) in
-         // Respond to user selection of the action.
-        }
+        if validateFields() {
+            // Create the action buttons for the alert.
+            let defaultAction = UIAlertAction(title: "Form groups",
+                                 style: .default) { (action) in
+                self.addProjectToClass("random")
+                self.navigationController?.popViewController(animated: true)
+            }
+            let cancelAction = UIAlertAction(title: "Cancel",
+                                 style: .cancel) { (action) in
+             // Respond to user selection of the action.
+            }
 
-        // Create and configure the alert controller.
-        let alert = UIAlertController(title: "Form groups randomly",
-              message: "You are about to form groups randomly for this project, without a specific criterion selected.",
-              preferredStyle: .alert)
-        alert.addAction(defaultAction)
-        alert.addAction(cancelAction)
-             
-        self.present(alert, animated: true) {
-           // The alert was presented
+            // Create and configure the alert controller.
+            let alert = UIAlertController(title: "Form groups randomly",
+                  message: "You are about to form groups randomly for this project, without a specific criterion selected.",
+                  preferredStyle: .alert)
+            alert.addAction(defaultAction)
+            alert.addAction(cancelAction)
+                 
+            self.present(alert, animated: true) {
+               // The alert was presented
+            }
         }
     }
     

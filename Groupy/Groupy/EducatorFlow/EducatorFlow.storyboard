@@ -275,8 +275,8 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="6Ko-yu-INC"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no"/>
                             </textField>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="wxg-Nd-Icn" userLabel="TextView Stack">
                                 <rect key="frame" x="16" y="151" width="361" height="144"/>
