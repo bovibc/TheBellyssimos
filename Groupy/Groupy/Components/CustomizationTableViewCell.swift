@@ -25,6 +25,25 @@ class CustomizationTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    
+    @IBAction func switchValueChanged(_ sender: Any) {
+        if labelDescription.text != "New colleagues" {
+            showAlert(title: "Feature unavailable", message: "We're sorry, but the only criteria available on this build version is 'New colleagues'.")
+            valueSwitch.isOn = false
+        }
+    }
+    
+    func showAlert(title: String, message: String) {
+            let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+            alertController.addAction(okAction)
+            
+            // Get a reference to the view controller presenting the alert
+            guard let viewController = UIApplication.shared.keyWindow?.rootViewController else { return }
+            
+            viewController.present(alertController, animated: true, completion: nil)
+        }
+    
     func setCell(myLabel: String) {
         setCellData(myLabel)
     }
