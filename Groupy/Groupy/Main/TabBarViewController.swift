@@ -9,15 +9,15 @@ import UIKit
 
 class TabBarViewController: UITabBarController {
 
-    private var isFirstLogin: Bool = true
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+
+    var onboardingAppeared: Bool = false
+    var educators: [Educator]? = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    }
-
-    override func viewDidAppear(_ animated: Bool) {
-        if isFirstLogin {
-            isFirstLogin = false
+        fetchEducators()
+        if educators?.count == 0 {
             showOnboarding()
         }
     }
@@ -28,5 +28,21 @@ class TabBarViewController: UITabBarController {
         viewController.modalTransitionStyle = .coverVertical
         viewController.modalPresentationStyle = .pageSheet
         navigationController?.showDetailViewController(viewController, sender: true)
+    }
+    
+    func fetchEducators() {
+        do {
+            // importante: declarar self.items se tudo isso estiver dentro de uma classe
+            educators = try context.fetch(Educator.fetchRequest())
+            
+            // caso tenha uma table view, eh so descomentar as linhas abaixo para
+            // renderiza-la novamente apos fazer o fetch de Users
+            // DispatchQueue.main.async {
+            //   self.tableView.reloadData()
+            // }
+        }
+        catch {
+            
+        }
     }
 }
