@@ -25,6 +25,18 @@ class CreateClassViewController: UIViewController, UITextFieldDelegate {
     @IBAction func createClass(_ sender: UIButton) {
         let name = className.text
         let description = descriptionField.text
+        
+        if name == "" {
+            let placeholderText = "Missing class name"
+            let placeholderColor = UIColor.red
+
+            let attributedPlaceholder = NSAttributedString(
+                string: placeholderText,
+                attributes: [NSAttributedString.Key.foregroundColor: placeholderColor]
+            )
+            
+            className.attributedPlaceholder = attributedPlaceholder
+        }
 
         // space to add endpoint to create a class
         if name != "" && description != ""

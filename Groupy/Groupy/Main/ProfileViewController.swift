@@ -44,6 +44,11 @@ class ProfileViewController: UIViewController, UITabBarControllerDelegate {
                 }
             })
         }
+        else {
+            let loggedEducator = educators?[0]
+            
+            profileName.text = loggedEducator?.name
+        }
 
     }
     
@@ -73,6 +78,11 @@ class ProfileViewController: UIViewController, UITabBarControllerDelegate {
                     tabBarController.selectedViewController = viewControllerToRedirect
                 }
             })
+        }
+        else {
+            let loggedEducator = educators?[0]
+            
+            profileName.text = loggedEducator?.name
         }
     }
     
@@ -107,6 +117,40 @@ class ProfileViewController: UIViewController, UITabBarControllerDelegate {
         let newImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         return newImage
+    }
+    
+    
+    @IBAction func logoutTapped(_ sender: UIButton) {
+        let defaultAction = UIAlertAction(title: "OK",
+                             style: .default) { (action) in
+        }
+
+        // Create and configure the alert controller.
+        let alert = UIAlertController(title: "Feature unavailable",
+              message: "We're sorry, but this feature in not up for test on this build version.",
+              preferredStyle: .alert)
+        alert.addAction(defaultAction)
+             
+        self.present(alert, animated: true) {
+           // The alert was presented
+        }
+    }
+    
+    
+    @IBAction func deleteTapped(_ sender: UIButton) {
+        let defaultAction = UIAlertAction(title: "OK",
+                             style: .default) { (action) in
+        }
+
+        // Create and configure the alert controller.
+        let alert = UIAlertController(title: "Feature unavailable",
+              message: "We're sorry, but this feature in not up for test on this build version.",
+              preferredStyle: .alert)
+        alert.addAction(defaultAction)
+             
+        self.present(alert, animated: true) {
+           // The alert was presented
+        }
     }
     
     func fetchEducators() {
