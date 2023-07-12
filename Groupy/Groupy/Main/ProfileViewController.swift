@@ -10,24 +10,37 @@ import AVFoundation
 
 class ProfileViewController: UIViewController {
 
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+
     @IBOutlet weak var profileName: UILabel!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var profilePicture: UIImageView!
     @IBOutlet weak var logOutButton: UIButton!
     @IBOutlet weak var deleteButton: UIButton!
     
+    var educators: [Educator]? = []
     private let textTable: [String] = ["Change password", "Change e-mail"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureNavigationBar()
-        tableView.delegate = self
-        tableView.dataSource = self
+        fetchEducators()
         
-        // Talvez tirar
-        tableView.allowsSelection = false
-        
-        configureImage()
+        if educators?.count == 0 {
+            let loginStoryboard = UIStoryboard(name: "LoginFlow", bundle: nil)
+            let loginViewController = loginStoryboard.instantiateViewController(withIdentifier: "LoginViewController")
+            present(loginViewController, animated: true, completion: nil)
+        }
+        else {
+            configureNavigationBar()
+            tableView.delegate = self
+            tableView.dataSource = self
+            
+            // Talvez tirar
+            tableView.allowsSelection = false
+            
+            configureImage()
+        }
+
     }
     
     private func configureImage() {
@@ -42,6 +55,13 @@ class ProfileViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        fetchEducators()
+        
+        if educators?.count == 0 {
+            let loginStoryboard = UIStoryboard(name: "LoginFlow", bundle: nil)
+            let loginViewController = loginStoryboard.instantiateViewController(withIdentifier: "LoginViewController")
+            present(loginViewController, animated: true, completion: nil)
+        }
         configureNavigationBar()
     }
     
@@ -76,6 +96,22 @@ class ProfileViewController: UIViewController {
         let newImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         return newImage
+    }
+    
+    func fetchEducators() {
+        do {
+            // importante: declarar self.items se tudo isso estiver dentro de uma classe
+            educators = try context.fetch(Educator.fetchRequest())
+            
+            // caso tenha uma table view, eh so descomentar as linhas abaixo para
+            // renderiza-la novamente apos fazer o fetch de Users
+            // DispatchQueue.main.async {
+            //   self.tableView.reloadData()
+            // }
+        }
+        catch {
+            
+        }
     }
 
 }
