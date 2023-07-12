@@ -126,8 +126,19 @@ class MyClassesViewController: UIViewController, UICollectionViewDelegate, UICol
         var menuItems: [UIAction] {
             return [
                 UIAction(title: "Join class", handler: { _ in
-                    let joinClassView = educatorStoryboard.instantiateViewController(withIdentifier: "EducatorJoinClass" )
-                    self.navigationController?.present(joinClassView, animated: true)
+                    let defaultAction = UIAlertAction(title: "OK",
+                                         style: .default) { (action) in
+                    }
+
+                    // Create and configure the alert controller.
+                    let alert = UIAlertController(title: "Feature unavailable",
+                          message: "We're sorry, but this feature in not up for test on this build version.",
+                          preferredStyle: .alert)
+                    alert.addAction(defaultAction)
+                         
+                    self.present(alert, animated: true) {
+                       // The alert was presented
+                    }
                 }),
                 UIAction(title: "Create class", handler: { _ in
                     //let createClassView = educatorStoryboard.instantiateViewController(withIdentifier: "CreateClass")
