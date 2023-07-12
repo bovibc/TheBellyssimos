@@ -9,15 +9,15 @@ import UIKit
 
 class LoginViewController: UIViewController {
 
+    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var passowordTextField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.setupKeyboard()
         self.view.backgroundColor = UIColor.systemGray6
-
-        title = "Login"
+        self.title = "Login"
     }
-    
-
     
     @IBAction func createAccountTapped(_ sender: UIButton) {
         let storyboard = UIStoryboard(name: "LoginFlow", bundle: nil)
@@ -29,15 +29,24 @@ class LoginViewController: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
     
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func setupKeyboard() {
+        let toolbar = UIToolbar()
+        let space =  UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        let doneButton = UIBarButtonItem(title: "Done", style: .done,
+                                         target: self, action: #selector(hideKeyboardAction))
+        toolbar.setItems([space,doneButton], animated: true)
+        toolbar.sizeToFit()
+        
+        emailTextField.inputAccessoryView = toolbar
+        passowordTextField.inputAccessoryView = toolbar
     }
-    */
-
+    
+    @objc func hideKeyboardAction() {
+        view.endEditing(true)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        hideKeyboardAction()
+        return false
+    }
 }

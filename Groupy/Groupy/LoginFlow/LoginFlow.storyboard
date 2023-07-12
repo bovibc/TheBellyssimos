@@ -99,6 +99,10 @@
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="Fgb-Jt-a9B" secondAttribute="bottom" constant="16" id="teL-9I-7Xg"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="KUq-cO-SmS" id="ncS-eC-kH5"/>
+                        <outlet property="passowordTextField" destination="A9I-AE-892" id="WR6-R6-sjv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

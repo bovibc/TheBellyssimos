@@ -21,10 +21,8 @@ class CreateEducatorViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.setupKeyboard()
         self.view.backgroundColor = UIColor.systemGray6
-
-        // Do any additional setup after loading the view.
     }
     
     func validateFields() -> Bool {
@@ -154,14 +152,27 @@ class CreateEducatorViewController: UIViewController {
         }
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func setupKeyboard() {
+        let toolbar = UIToolbar()
+        let space =  UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        let doneButton = UIBarButtonItem(title: "Done", style: .done,
+                                         target: self, action: #selector(hideKeyboardAction))
+        toolbar.setItems([space,doneButton], animated: true)
+        toolbar.sizeToFit()
+        
+        nameField.inputAccessoryView = toolbar
+        organizationField.inputAccessoryView = toolbar
+        emailField.inputAccessoryView = toolbar
+        passwordField.inputAccessoryView = toolbar
+        confirmPasswordField.inputAccessoryView = toolbar
     }
-    */
-
+    
+    @objc func hideKeyboardAction() {
+        view.endEditing(true)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        hideKeyboardAction()
+        return false
+    }
 }

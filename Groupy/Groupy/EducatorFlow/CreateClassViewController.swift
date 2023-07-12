@@ -132,5 +132,4 @@ class CreateClassViewController: UIViewController, UITextFieldDelegate {
         hideKeyboardAction()
         return false
     }
-
 }
