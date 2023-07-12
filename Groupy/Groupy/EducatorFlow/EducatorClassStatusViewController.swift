@@ -111,6 +111,10 @@ class EducatorClassStatusViewController: UIViewController, UITableViewDelegate, 
         return (section == 0 ? "PROJECTS" : "STUDENTS")
     }
     
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 32
+    }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if projects?.count != 0  {
             if indexPath.section == 0 {
