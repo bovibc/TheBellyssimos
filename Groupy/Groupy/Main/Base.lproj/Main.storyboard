@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pyC-cJ-zWt">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pyC-cJ-zWt">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -180,7 +181,7 @@
         <!--My Classes-->
         <scene sceneID="n89-T2-5sI">
             <objects>
-                <viewController id="CTt-Ts-hw3" customClass="MyClassesViewController" customModule="Groupy" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MyClassesViewController" id="CTt-Ts-hw3" customClass="MyClassesViewController" customModule="Groupy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="WMX-bb-uOR">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -378,7 +379,7 @@
         <!--Tab Bar View Controller-->
         <scene sceneID="tYD-HI-wjP">
             <objects>
-                <tabBarController id="hOi-GO-x7s" customClass="TabBarViewController" customModule="Groupy" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="TabBarViewController" id="hOi-GO-x7s" customClass="TabBarViewController" customModule="Groupy" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="wq5-CA-usy"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="tHP-7m-9O9">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="49"/>

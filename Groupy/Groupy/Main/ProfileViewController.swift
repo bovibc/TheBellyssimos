@@ -8,7 +8,9 @@
 import UIKit
 import AVFoundation
 
-class ProfileViewController: UIViewController {
+class ProfileViewController: UIViewController, UITabBarControllerDelegate {
+
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
 
     @IBOutlet weak var profileName: UILabel!
     @IBOutlet weak var tableView: UITableView!
@@ -16,10 +18,12 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var logOutButton: UIButton!
     @IBOutlet weak var deleteButton: UIButton!
     
+    var educators: [Educator]? = []
     private let textTable: [String] = ["Change password", "Change e-mail"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        fetchEducators()
         configureNavigationBar()
         tableView.delegate = self
         tableView.dataSource = self
@@ -28,6 +32,19 @@ class ProfileViewController: UIViewController {
         tableView.allowsSelection = false
         
         configureImage()
+        if educators?.count == 0 {
+            let loginStoryboard = UIStoryboard(name: "LoginFlow", bundle: nil)
+            let loginViewController = loginStoryboard.instantiateViewController(withIdentifier: "LoginViewController")
+            self.present(loginViewController, animated: true, completion: {
+                if let tabBarController = self.tabBarController {
+                    // Get a reference to the desired view controller you want to redirect to
+                    let viewControllerToRedirect = tabBarController.viewControllers?[0]
+                    // Set the desired view controller as the selected view controller
+                    tabBarController.selectedViewController = viewControllerToRedirect
+                }
+            })
+        }
+
     }
     
     private func configureImage() {
@@ -42,7 +59,21 @@ class ProfileViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        fetchEducators()
         configureNavigationBar()
+
+        if educators?.count == 0 {
+            let loginStoryboard = UIStoryboard(name: "LoginFlow", bundle: nil)
+            let loginViewController = loginStoryboard.instantiateViewController(withIdentifier: "LoginViewController")
+            self.present(loginViewController, animated: true, completion: {
+                if let tabBarController = self.tabBarController {
+                    // Get a reference to the desired view controller you want to redirect to
+                    let viewControllerToRedirect = tabBarController.viewControllers?[0]
+                    // Set the desired view controller as the selected view controller
+                    tabBarController.selectedViewController = viewControllerToRedirect
+                }
+            })
+        }
     }
     
     private func configureNavigationBar() {
@@ -76,6 +107,22 @@ class ProfileViewController: UIViewController {
         let newImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         return newImage
+    }
+    
+    func fetchEducators() {
+        do {
+            // importante: declarar self.items se tudo isso estiver dentro de uma classe
+            educators = try context.fetch(Educator.fetchRequest())
+            
+            // caso tenha uma table view, eh so descomentar as linhas abaixo para
+            // renderiza-la novamente apos fazer o fetch de Users
+            // DispatchQueue.main.async {
+            //   self.tableView.reloadData()
+            // }
+        }
+        catch {
+            
+        }
     }
 
 }
