@@ -24,7 +24,14 @@ class ProfileViewController: UIViewController, UITabBarControllerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         fetchEducators()
+        configureNavigationBar()
+        tableView.delegate = self
+        tableView.dataSource = self
         
+        // Talvez tirar
+        tableView.allowsSelection = false
+        
+        configureImage()
         if educators?.count == 0 {
             let loginStoryboard = UIStoryboard(name: "LoginFlow", bundle: nil)
             let loginViewController = loginStoryboard.instantiateViewController(withIdentifier: "LoginViewController")
@@ -36,16 +43,6 @@ class ProfileViewController: UIViewController, UITabBarControllerDelegate {
                     tabBarController.selectedViewController = viewControllerToRedirect
                 }
             })
-        }
-        else {
-            configureNavigationBar()
-            tableView.delegate = self
-            tableView.dataSource = self
-            
-            // Talvez tirar
-            tableView.allowsSelection = false
-            
-            configureImage()
         }
 
     }
@@ -63,7 +60,8 @@ class ProfileViewController: UIViewController, UITabBarControllerDelegate {
     
     override func viewDidAppear(_ animated: Bool) {
         fetchEducators()
-        
+        configureNavigationBar()
+
         if educators?.count == 0 {
             let loginStoryboard = UIStoryboard(name: "LoginFlow", bundle: nil)
             let loginViewController = loginStoryboard.instantiateViewController(withIdentifier: "LoginViewController")
@@ -76,7 +74,6 @@ class ProfileViewController: UIViewController, UITabBarControllerDelegate {
                 }
             })
         }
-        configureNavigationBar()
     }
     
     private func configureNavigationBar() {
