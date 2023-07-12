@@ -81,19 +81,20 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="GjT-Az-cSK">
-                                <rect key="frame" x="16" y="397" width="361" height="150"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="GjT-Az-cSK">
+                                <rect key="frame" x="0.0" y="397" width="393" height="150"/>
                                 <color key="backgroundColor" systemColor="systemGray6Color"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="dj3-qI-pRf"/>
                                 </constraints>
                                 <color key="separatorColor" systemColor="systemGray6Color"/>
+                                <color key="sectionIndexBackgroundColor" systemColor="systemGray6Color"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="profileCell" id="GUi-V0-N2k" customClass="ProfileTableViewCell" customModule="Groupy" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="50" width="361" height="54.333332061767578"/>
+                                        <rect key="frame" x="20" y="55.333332061767578" width="353" height="54.333332061767578"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="GUi-V0-N2k" id="aL3-Ry-Z18">
-                                            <rect key="frame" x="0.0" y="0.0" width="361" height="54.333332061767578"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="353" height="54.333332061767578"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ED5-38-K8K">
@@ -103,7 +104,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="Image" translatesAutoresizingMaskIntoConstraints="NO" id="9U2-Dm-Gxp">
-                                                    <rect key="frame" x="311" y="10" width="34" height="34.333333333333336"/>
+                                                    <rect key="frame" x="303" y="10" width="34" height="34.333333333333336"/>
                                                 </imageView>
                                             </subviews>
                                             <constraints>
@@ -159,12 +160,12 @@
                             <constraint firstItem="i9m-4E-Zr8" firstAttribute="leading" secondItem="viz-hX-vNW" secondAttribute="leading" constant="16" id="Dzb-AU-C5V"/>
                             <constraint firstItem="viz-hX-vNW" firstAttribute="trailing" secondItem="FUG-KG-atP" secondAttribute="trailing" constant="16" id="GG9-EK-Rxv"/>
                             <constraint firstItem="pQV-Di-6Ga" firstAttribute="top" secondItem="GjT-Az-cSK" secondAttribute="bottom" constant="24" id="LUu-n9-Cvc"/>
-                            <constraint firstItem="viz-hX-vNW" firstAttribute="trailing" secondItem="GjT-Az-cSK" secondAttribute="trailing" constant="16" id="ZXR-yA-cUP"/>
+                            <constraint firstItem="viz-hX-vNW" firstAttribute="trailing" secondItem="GjT-Az-cSK" secondAttribute="trailing" id="ZXR-yA-cUP"/>
                             <constraint firstItem="FUG-KG-atP" firstAttribute="leading" secondItem="viz-hX-vNW" secondAttribute="leading" constant="16" id="fpd-Du-Xdp"/>
                             <constraint firstItem="viz-hX-vNW" firstAttribute="trailing" secondItem="pQV-Di-6Ga" secondAttribute="trailing" constant="16" id="fu8-lZ-Bis"/>
                             <constraint firstItem="GjT-Az-cSK" firstAttribute="top" secondItem="FUG-KG-atP" secondAttribute="bottom" constant="24" id="hz6-FX-Pzd"/>
                             <constraint firstItem="pQV-Di-6Ga" firstAttribute="leading" secondItem="viz-hX-vNW" secondAttribute="leading" constant="16" id="i5u-7H-DfZ"/>
-                            <constraint firstItem="GjT-Az-cSK" firstAttribute="leading" secondItem="viz-hX-vNW" secondAttribute="leading" constant="16" id="jzE-yW-3ou"/>
+                            <constraint firstItem="GjT-Az-cSK" firstAttribute="leading" secondItem="viz-hX-vNW" secondAttribute="leading" id="jzE-yW-3ou"/>
                             <constraint firstItem="6QV-XH-K4p" firstAttribute="top" secondItem="viz-hX-vNW" secondAttribute="top" constant="16" id="rJb-13-jOp"/>
                             <constraint firstItem="6QV-XH-K4p" firstAttribute="centerX" secondItem="kex-Hv-LX6" secondAttribute="centerX" id="zYC-TF-kYO"/>
                         </constraints>
