@@ -39,7 +39,7 @@ class CreateClassViewController: UIViewController, UITextFieldDelegate {
         }
 
         // space to add endpoint to create a class
-        if name != "" && description != ""
+        if name != ""
         {
             addClass(name ?? "default", description ?? "default")
             loadShareCodeView()

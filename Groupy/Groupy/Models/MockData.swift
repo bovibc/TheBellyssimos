@@ -25,9 +25,9 @@ class MockData {
         //self.mockedClasses = mockClasses()
     }
 
-    var nomes = ["Ana", "Beatriz", "Isabela", "Carol", "Mariana", "Oceana", "Paulo", "Rodrigo", "Thiago", "Matheus", "Ronaldo", "Lucio", "Alberto", "Mariano", "José", "Romariana", "Cefaleia", "Jemiana", "Jamanto"]
+    var nomes = ["Ana", "Beatriz", "Isabela", "Carol", "Mariana", "Oceana", "Paulo", "Rodrigo", "Thiago", "Matheus", "Ronaldo", "Lucio", "Alberto", "Mariano", "José", "Romariana", "Cefaleia", "Jemiana", "Jamanto", "Bruno", "Lana", "Ariana", "Elizabeth", "Larissa", "Luan", "Gabriel", "Clissia", "Carol", "Júnior", "Marcela", "Sérgio", "Anna", "Luna", "Geovana"]
     
-    var sobrenomes = ["Pereira", "Sobreira", "da Silve", "da Pentagônia", "dos Santos", "Aparecida", "Swift", "Lautner", "Romanoff", "Karenina", "Targaryen", "Bond", "Helioscaustos", "Rocha"]
+    var sobrenomes = ["Pereira", "Sobreira", "da Silve", "da Pentagônia", "dos Santos", "Aparecida", "Swift", "Lautner", "Romanoff", "Karenina", "Targaryen", "Bond", "Helioscaustos", "Rocha", "Del Rey", "Knowles", "Mercury", "Gil", "from Brazil", "LeCeuff", "Kardashian"]
     
     var ethnicities = ["hispanic", "chinese", "pakistani", "indian"]
 
@@ -144,7 +144,7 @@ class MockData {
         for _ in 0...40 {
             let newStudent = Student(context: self.context)
             
-            newStudent.name = nomes[Int.random(in: 0...18)] + " " + sobrenomes[Int.random(in: 0...13)]
+            newStudent.name = nomes[Int.random(in: 0...33)] + " " + sobrenomes[Int.random(in: 0...20)]
             newStudent.firstTime = false
             newStudent.id = Int64(Int.random(in: 1000...9999))
             newStudent.loggedIn = false
@@ -178,6 +178,25 @@ class MockData {
             }
             
             mockedStudents.append(newStudent)
+        }
+        
+        var currentStudentIndex = 0
+        for student in mockedStudents {
+
+            for _ in 0...7
+            {
+                var studentIndex = Int.random(in: 0...40)
+                
+                while studentIndex == currentStudentIndex {
+                    studentIndex = Int.random(in: 0...40)
+                }
+
+                if studentIndex != currentStudentIndex {
+                    student.addToWorkedWith(mockedStudents[studentIndex])
+                }
+                
+            }
+            currentStudentIndex += 1
         }
         
         return mockedStudents
