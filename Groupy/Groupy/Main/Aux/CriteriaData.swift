@@ -69,11 +69,11 @@ enum CriteriaText: String {
 }
 
 enum CriteriaImage: String {
-    case Diversity = "banana"
-    case Personality = "dog"
-    case Motivation = "gru"
-    case Skill = "images"
-    case Previous_Interations = "shrek"
+    case Diversity = "diversity"
+    case Personality = "personality"
+    case Motivation = "motivation"
+    case Skill = "skill"
+    case Previous_Interations = "interactions"
 }
 
 
