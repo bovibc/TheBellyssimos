@@ -634,6 +634,9 @@
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Create groups"/>
+                                <connections>
+                                    <action selector="createGroupsTapped:" destination="sTT-df-c64" eventType="touchUpInside" id="xXs-Wa-OIC"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S8u-fL-zZg">
                                 <rect key="frame" x="16" y="440" width="361" height="50"/>

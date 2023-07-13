@@ -70,9 +70,53 @@ class CreateProjectViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func criteriaPressed(_ sender: UIButton) {
         if validateFields() {
+            // instancia o objeto a ser adicionado no Core Data
+            let newProject = Project(context: self.context)
+            
+            // define a referencia para qual classe editar
+            var classIndex = 0
+            
+            // busca classe
+            for eachClass in fetchedClasses! {
+                if eachClass.name == chosenClass?.name {
+                    break
+                }
+                else {
+                    classIndex += 1
+                }
+            }
+            
+            // define referencia para qual classe editar
+            let classToEdit = self.fetchedClasses![classIndex]
+            
+            // resgata o que foi inserido nos campos
+            let newProjectName = projectName.text
+            let newProjectInfo = projectDescription.text
+            let newProjectStartDate = projectStartDate.date
+            let newProjectEndDate = projectEndDate.date
+            
+            // define os outros campos faltantes
+            let newProjectId = Int64(Int.random(in: 10000...99999))
+
+            // atribui campos
+            newProject.id = newProjectId
+            newProject.name = newProjectName
+            newProject.info = newProjectInfo
+            newProject.startDate = newProjectStartDate
+            newProject.dueDate = newProjectEndDate
+            
+            
+            
             let storyboard = UIStoryboard(name: "EducatorFlow", bundle: nil)
-            let criteriaCustomization = storyboard.instantiateViewController(withIdentifier: "CriteriaCustomizationViewController" )
-            self.navigationController?.show(criteriaCustomization, sender: true)
+            
+            
+            let criteriaCustomization = storyboard.instantiateViewController(withIdentifier: "CriteriaCustomizationViewController" ) as? CriteriaCustomizationViewController
+            if let criteriaCustomization = criteriaCustomization {
+                criteriaCustomization.classToEdit = classToEdit
+                criteriaCustomization.newProject = newProject
+                criteriaCustomization.stepperValue = Int(stepperValue.value)
+                self.navigationController?.show(criteriaCustomization, sender: nil)
+            }
         }
     }
 

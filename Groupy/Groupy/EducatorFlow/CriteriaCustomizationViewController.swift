@@ -8,6 +8,9 @@
 import UIKit
 
 class CriteriaCustomizationViewController: UIViewController {
+
+    // core data context
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     @IBOutlet weak var helpButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
@@ -15,6 +18,9 @@ class CriteriaCustomizationViewController: UIViewController {
     
     private let parameters: [String] = ["MBTI", "Working styles","Different skill set", "Same motivation", "New colleagues"]
     
+    var classToEdit: Class?
+    var newProject: Project?
+    var stepperValue: Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,6 +63,33 @@ class CriteriaCustomizationViewController: UIViewController {
              
         self.present(alert, animated: true) {
            // The alert was presented
+        }
+    }
+    
+    
+    @IBAction func createGroupsTapped(_ sender: UIButton) {
+        addProjectToClass()
+    }
+    
+    func addProjectToClass() {
+
+        var formedGroups: [Group]?
+
+        formedGroups = newColleaguesGroupFormation(myClass: classToEdit!, groupSize: stepperValue!)
+        
+        for eachGroup in formedGroups! {
+            newProject?.addToGroups(eachGroup)
+        }
+
+        // adiciona o projeto na classe
+        classToEdit?.addToProjects(newProject!)
+        
+        // salva projeto criado e edicao da classe no core data
+        do {
+            try self.context.save()
+        }
+        catch {
+            
         }
     }
     
