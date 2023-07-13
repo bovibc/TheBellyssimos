@@ -105,6 +105,12 @@ class CreateProjectViewController: UIViewController, UITextFieldDelegate {
             newProject.startDate = newProjectStartDate
             newProject.dueDate = newProjectEndDate
             
+            do {
+                try self.context.save()
+            }
+            catch {
+                
+            }
             
             
             let storyboard = UIStoryboard(name: "EducatorFlow", bundle: nil)

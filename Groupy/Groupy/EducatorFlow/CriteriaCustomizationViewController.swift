@@ -69,13 +69,20 @@ class CriteriaCustomizationViewController: UIViewController {
     
     @IBAction func createGroupsTapped(_ sender: UIButton) {
         addProjectToClass()
+        if let navigationController = self.navigationController {
+            let viewControllers = navigationController.viewControllers
+            if viewControllers.count >= 3 {
+                let destinationViewController = viewControllers[viewControllers.count - 3]
+                navigationController.popToViewController(destinationViewController, animated: true)
+            }
+        }
     }
     
     func addProjectToClass() {
 
         var formedGroups: [Group]?
 
-        formedGroups = newColleaguesGroupFormation(myClass: classToEdit!, groupSize: stepperValue!)
+        formedGroups = randomGroupFormation(myClass: classToEdit!, groupSize: stepperValue!)
         
         for eachGroup in formedGroups! {
             newProject?.addToGroups(eachGroup)
